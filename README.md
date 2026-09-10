@@ -20,7 +20,7 @@ Single static page, no build step. Open `index.html` or serve the folder.
 Everything you'll change lives in the `CONFIG` block at the top of the
 `<script>` in `index.html`:
 
-- `EMAILS` - who the Notes form writes to. **Replace the Abby placeholder.**
+- `EMAILS` - who the Notes form writes to (abigail@ and brooke@howellnmedia.com).
 - `CAMPAIGNS` - campaign cards. Flip `status` to `'live'` when one goes live;
   add artwork paths to `creative`.
 - `LAUNCH` - the go-live date the countdown reads from.
