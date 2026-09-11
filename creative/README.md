@@ -4,7 +4,7 @@ Drop campaign artwork in this folder, then reference it from the `CAMPAIGNS`
 config at the top of the `<script>` block in `index.html`:
 
 ```js
-{ name:'Prospecting - Broad', platform:'Meta', status:'live', ...
+{ name:'Product Campaign', platform:'Meta', status:'live', ...
   creative:['creative/brown-sugar-01.jpg','creative/brown-sugar-02.jpg'] }
 ```
 
