@@ -42,15 +42,24 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 .portal .sub{margin-top:11px;font-size:13px;color:var(--ink-soft);max-width:52ch;line-height:1.6}
 .portal .rule{width:40px;height:2px;background:var(--rose);border-radius:2px;margin:clamp(16px,2.6vh,26px) 0 clamp(18px,2.8vh,28px)}
 .portal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;width:100%;max-width:880px;text-align:left}
-.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 18px 18px;display:flex;flex-direction:column;gap:7px;
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 18px 18px;display:flex;flex-direction:column;gap:7px;text-align:center;
   transition:transform .28s cubic-bezier(.4,0,.2,1), box-shadow .28s, border-color .28s;box-shadow:var(--shadow)}
 .pcard:hover{transform:translateY(-4px);border-color:var(--blush-deep);box-shadow:0 1px 2px rgba(26,21,18,.04),0 20px 40px -22px rgba(178,62,88,.34)}
-.pcard .chip{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;margin-bottom:4px}
+.pcard .chip{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;margin-bottom:4px;align-self:center}
 .pcard h3{font-size:12.5px;font-weight:600;letter-spacing:.01em}
 .pcard p{font-size:11.5px;color:var(--ink-mute);line-height:1.5}
 .pcard .go{margin-top:auto;padding-top:10px;font-size:10.5px;font-weight:600;color:var(--rose);letter-spacing:.04em}
 .portal-foot{margin-top:clamp(20px,3.4vh,34px);font-size:10.5px;color:var(--ink-mute);letter-spacing:.04em}
 .portal-foot a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line)}
+@media(min-width:1100px){
+  .portal-grid{max-width:min(1240px,90vw);gap:20px}
+  .pcard{padding:34px 28px 28px;gap:10px;min-height:clamp(220px,30vh,300px)}
+  .pcard .chip{width:50px;height:50px;border-radius:15px;margin-bottom:8px}
+  .pcard .chip svg{width:22px;height:22px}
+  .pcard h3{font-size:17px}
+  .pcard p{font-size:13.5px;line-height:1.55;max-width:26ch;margin:0 auto}
+  .pcard .go{font-size:12px;padding-top:14px}
+}
 @media(max-width:760px){.portal{min-height:0;padding:44px 20px}.portal-grid{grid-template-columns:repeat(2,1fr);max-width:460px}}
 
 /* ====== APP SHELL ====== */
@@ -218,6 +227,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
 .road{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
 .road-row{display:grid;grid-template-columns:118px 230px 1fr;gap:18px;padding:15px 22px;border-top:1px solid var(--line-soft);align-items:baseline}
 .road-row:first-child{border-top:none}
+.road-head{padding-top:13px;padding-bottom:11px;background:var(--cream)}
+.road-head div{font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
 .road-row .when{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-variant-numeric:tabular-nums}
 .road-row .ph{font-size:12.5px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .road-row .what{font-size:12px;color:var(--ink-soft);line-height:1.7}
@@ -331,6 +342,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
 
   /* 16px stops iOS zooming the page in when a field is focused */
   .road-row{grid-template-columns:1fr;gap:4px;padding:14px 18px}
+  .road-head{display:none}
   .g-prop{display:none}
   .compose{padding:18px}
   .compose input,.compose textarea{font-size:16px;padding:11px 12px}
@@ -447,9 +459,9 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>Final creative and campaign approval is due Saturday 12 September, and Meta goes live Tuesday 15 September on your in-stock styles and kits. Brown Sugar, your best seller, is restocking &#8212; its ad set is built and switches on the day stock lands, so nobody clicks through to a sold-out page. Google follows on 1 November. We&#8217;re also recommending Pinterest for mid-October: it isn&#8217;t in your current plan, and the case for it is under Campaigns.</p>
+          <p>We walk you through everything on Monday 14 September &#8212; dashboard, campaign strategy, creative and reporting &#8212; and Meta goes live Tuesday 15 September on your in-stock styles and kits. Brown Sugar, your best seller, is restocking: its ad set is built and switches on the day stock lands, so nobody clicks through to a sold-out page. Google follows on 1 November. We&#8217;re also recommending Pinterest for mid-October &#8212; it isn&#8217;t in your current plan, and the case for it is under Campaigns.</p>
           <div class="hero-phases">
-            <span class="phase now">12 Sep &#183; Approval</span>
+            <span class="phase now">14 Sep &#183; Walkthrough</span>
             <span class="phase">15 Sep &#183; Meta live</span>
             <span class="phase">Mid-Oct &#183; Pinterest (proposed)</span>
             <span class="phase">1 Nov &#183; Google live</span>
@@ -465,7 +477,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
             <p class="eyebrow">Waiting on Pink Rabbit</p>
             <ul>
               <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Meta partner access</b> &#8212; ad account, Page, Instagram and Pixel. The one true blocker.</span></li>
-              <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Final creative + campaign approval</b> &#8212; by Saturday 12 September, so approval and launch never share a day</span></li>
+              <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Client walkthrough + final approval</b> &#8212; Monday 14 September, the day before launch</span></li>
               <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Shopify collaborator request</b> &#8212; Settings &#8594; Users &#8594; Collaborators</span></li>
               <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Google Analytics access</b> &#8212; so revenue is attributed by channel from day one</span></li>
             </ul>
@@ -474,7 +486,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>Meta performance</h3><p class="hint" id="perfHint">First numbers land Wednesday 16 September, one full day after launch</p></div>
+        <div class="sec-head"><h3>Meta performance</h3><p class="hint" id="perfHint">First numbers land Wednesday 16 September, the day after launch</p></div>
         <div class="grid g4">
           <div class="tile empty" data-tile="spend"><p class="lab">Ad spend</p><p class="val num">&mdash;</p><p class="foot">Starts 15 Sep</p></div>
           <div class="tile empty" data-tile="revenue"><p class="lab">Attributed revenue</p><p class="val num">&mdash;</p><p class="foot">Starts 15 Sep</p></div>
@@ -495,12 +507,12 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>The first six weeks</h3><p class="hint">So nothing about the early numbers comes as a surprise</p></div>
+        <div class="sec-head"><h3>The first three weeks</h3><p class="hint">So nothing about the early numbers comes as a surprise</p></div>
         <div class="grid g4">
-          <div class="card tint-blush"><p class="eyebrow">12&#8211;14 Sep</p><h4>Approve &amp; build</h4><p style="font-size:12px;line-height:1.65;color:#7A3A4A">Final creative and campaign approval by Saturday 12 September. Then campaigns are built, audiences and budget confirmed, landing pages connected and purchase tracking tested.</p></div>
-          <div class="card tint-cloud"><p class="eyebrow">15&#8211;30 Sep</p><h4>Learning phase</h4><p style="font-size:12px;line-height:1.65;color:#3E5A85">Meta gathers data while we monitor delivery, spend, clicks, add-to-cart and purchases. Early spend looks lumpy &#8212; that&#8217;s normal. We avoid unnecessary changes, because editing restarts Meta&#8217;s learning.</p></div>
-          <div class="card tint-honey"><p class="eyebrow">1&#8211;10 Oct</p><h4>First optimization</h4><p style="font-size:12px;line-height:1.65;color:#7A5E1E">We review September, compare the Product and Lifestyle campaigns, pause weak variations and build Round 2 creative from real customer behavior.</p></div>
-          <div class="card tint-sugar"><p class="eyebrow">15&#8211;31 Oct</p><h4>Scale &amp; retarget</h4><p style="font-size:12px;line-height:1.65;color:#6E5236">Spend shifts toward what&#8217;s working, retargeting audiences build, and Brown Sugar&#8217;s ad set switches on once it&#8217;s back in stock. Q4 messaging gets ready.</p></div>
+          <div class="card tint-blush"><p class="eyebrow">Mon 14 Sep</p><h4>Walkthrough &amp; QA</h4><p style="font-size:12px;line-height:1.65;color:#7A3A4A">We walk you through the dashboard, campaign strategy, creative and reporting, and answer final launch questions. Pre-launch QA confirms product availability, access and purchase tracking.</p></div>
+          <div class="card tint-cloud"><p class="eyebrow">15&#8211;17 Sep</p><h4>Meta review</h4><p style="font-size:12px;line-height:1.65;color:#3E5A85">Ads enter Meta&#8217;s review while we monitor approvals and delivery. Expect early spend and performance to be uneven &#8212; that&#8217;s normal for the first days.</p></div>
+          <div class="card tint-honey"><p class="eyebrow">18&#8211;24 Sep</p><h4>Learning phase</h4><p style="font-size:12px;line-height:1.65;color:#7A5E1E">Campaigns gather data with minimal intervention while we monitor spend, clicks, add-to-cart and purchases and establish a baseline.</p></div>
+          <div class="card tint-sugar"><p class="eyebrow">25 Sep &#8211; 5 Oct</p><h4>First optimization</h4><p style="font-size:12px;line-height:1.65;color:#6E5236">The first meaningful performance read. We identify winning creative and audiences, cut weak performers and shift budget toward stronger ads.</p></div>
         </div>
       </div>
     </section>
@@ -629,21 +641,22 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
 // Notes from the client are emailed to both of us.
 const EMAILS = ['abigail@howellnmedia.com', 'brooke@howellnmedia.com'];
 
-// Campaigns. Move one to status:'live' when it goes live in Ads Manager.
+// Campaigns. Move one to status:'live' when it goes live in Ads Manager, and add
+// liveSince:'2026-09-15' (its real go-live date). The Live badge and day count read from this.
 // creative: add artwork by dropping image files into a /creative folder next to
 // this file, then listing them here, e.g. ['creative/brown-sugar-01.jpg'].
 const CAMPAIGNS = [
   { name:'Product Campaign', platform:'Meta', status:'ready',
     direction:'Product-led \u2014 styles, application and results',
     audiences:'Confirmed at build, 12\u201314 Sep', budget:'Confirmed at build, 12\u201314 Sep',
-    approval:'Sat 12 Sep', launch:'Tue 15 Sep', creative:[] },
+    approval:'Mon 14 Sep', launch:'Tue 15 Sep', creative:[] },
   { name:'Lifestyle / Messaging Campaign', platform:'Meta', status:'ready',
     direction:'Brand-led \u2014 the ease, the feeling, the Pink Rabbit voice',
     audiences:'Confirmed at build, 12\u201314 Sep', budget:'Confirmed at build, 12\u201314 Sep',
-    approval:'Sat 12 Sep', launch:'Tue 15 Sep', creative:[] }
+    approval:'Mon 14 Sep', launch:'Tue 15 Sep', creative:[] }
 ];
 
-const LAUNCH = new Date(2026, 8, 15);   // 15 Sep 2026 -- Meta go-live
+const LAUNCH = new Date(2026, 8, 15);   // Meta go-live, Tue 15 Sep
 
 /* ========================== end of CONFIG ================================ */
 
@@ -690,13 +703,28 @@ $$('[data-go]').forEach(b => b.addEventListener('click', () => go(b.dataset.go))
 apply(routeNow());
 
 /* ---------- countdown ---------- */
+/* "Live" comes from the campaigns, never from the calendar -- if launch slips a day,
+   the portal keeps saying pre-launch until a campaign is actually marked live. */
+const IS_LIVE = CAMPAIGNS.some(c => c.status === 'live');
 (function(){
   const days = Math.ceil((LAUNCH - new Date()) / 86400000);
-  const v = Math.abs(days) || 0;
-  $('#cdNum').textContent = v; $('#cdBig').textContent = v;
-  $('#cdLabel').textContent = days > 1 ? 'Days to launch' : days === 1 ? 'Day to launch' : days === 0 ? 'Launch day' : 'Days live';
-  $('#cdBigLabel').textContent = days > 0 ? 'Days until Meta goes live' : days === 0 ? 'Meta goes live today' : 'Days since Meta went live';
-  if(days <= 0){ const p = $('#statusPill'); p.className = 'pill live'; p.innerHTML = '<span class="dot"></span>Live'; }
+  let n, small, big;
+  if(IS_LIVE){
+    const since = CAMPAIGNS.filter(c => c.status === 'live' && c.liveSince).map(c => c.liveSince).sort()[0];
+    const start = since ? toDate(since) : LAUNCH;
+    n = Math.max(1, Math.floor((new Date() - start) / 86400000) + 1);
+    small = n === 1 ? 'Day live' : 'Days live';
+    big = n === 1 ? 'Day since Meta went live' : 'Days since Meta went live';
+    const p = $('#statusPill'); p.className = 'pill live'; p.innerHTML = '<span class="dot"></span>Live';
+  } else if(days > 0){
+    n = days;
+    small = days === 1 ? 'Day to launch' : 'Days to launch';
+    big = days === 1 ? 'Day until Meta goes live' : 'Days until Meta goes live';
+  } else {
+    n = 'Today'; small = 'Launch day'; big = 'Meta goes live today';
+  }
+  $('#cdNum').textContent = n; $('#cdBig').textContent = n;
+  $('#cdLabel').textContent = small; $('#cdBigLabel').textContent = big;
 })();
 
 /* ---------- launch readiness ---------- */
@@ -704,11 +732,11 @@ apply(routeNow());
    The header counts are computed from these, so they always add up. */
 const READY = [
   ['Meta partner access','Ad account, Page, Instagram and Pixel. Pink Rabbit keeps ownership of all of it \u2014 we take access only.','Pink Rabbit','wait','Needs you','you'],
-  ['Final creative + campaign approval','Due Saturday 12 September \u2014 a hard deadline before launch, so approval and launch never share a day.','Pink Rabbit','wait','Due 12 Sep','you'],
+  ['Client walkthrough + final approval','Monday 14 September, the day before launch: we walk you through the dashboard, campaign strategy, creative and reporting, and answer final launch questions.','Pink Rabbit','wait','Mon 14 Sep','you'],
   ['Shopify collaborator access','Request sent 10 Sep. Approve under Settings \u2192 Users and permissions \u2192 Collaborators.','Pink Rabbit','wait','Needs you','you'],
   ['Google Analytics 4 access','Admin access so revenue is attributed by channel rather than guessed at.','Pink Rabbit','wait','Needs you','you'],
   ['Meta Pixel + Conversions API','Shopify app install and domain verification. Needs 48 hours of traffic to validate before launch.','Howell\u2019n','prep','In progress','motion'],
-  ['Product + Lifestyle campaign build','Both campaigns being built in Ads Manager for approval on the 12th.','Howell\u2019n','prep','In progress','motion'],
+  ['Product + Lifestyle campaign build','Both campaigns being built in Ads Manager for your walkthrough on Monday 14th.','Howell\u2019n','prep','In progress','motion'],
   ['Competitor &amp; audience research','DIY and cluster-lash category \u2014 positioning, offers, creative angles and price laddering.','Howell\u2019n','prep','In progress','motion'],
   ['Product samples to Brooke','Ships as soon as the rushed Brown Sugar boxes arrive, so every style is covered. Tracking to follow.','Pink Rabbit','prep','Ships soon','motion'],
   ['Google Ads &amp; Merchant Center','In your plan, not needed for launch. Set up 20\u201331 October, ahead of the 1 November go-live.','Howell\u2019n','hold','Scheduled','motion'],
@@ -757,7 +785,7 @@ function campCard(c){
 const liveOnes = CAMPAIGNS.filter(c => c.status === 'live');
 $('#liveCampaigns').innerHTML = liveOnes.length
   ? '<div class="grid g2">' + liveOnes.map(campCard).join('') + '</div>'
-  : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>The Product and Lifestyle campaigns below are being built for approval on Saturday 12 September. They go live Tuesday 15 September, and this section then fills with what is actually serving \u2014 including the artwork behind each one.</div>';
+  : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>The Product and Lifestyle campaigns below are being built for your walkthrough on Monday 14 September. They go live Tuesday 15 September, and this section then fills with what is actually serving \u2014 including the artwork behind each one.</div>';
 if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') + ' live on Meta';
 $('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status !== 'live').map(campCard).join('');
 
@@ -781,12 +809,12 @@ $('#whyBox').innerHTML = PHASES.map(function(ph){
 /* ---------- lash styles ---------- */
 const STYLES = [
   ['Brown Sugar','#C89B72','Delayed \u2014 back soon','wait','When stock lands','Best seller. Its own ad set is built and switches on the day stock lands.'],
-  ['Honey Bunny','#F0D48A','In stock','live','15 Sep','Salon-extension lookalike. Leads the before/after creative.'],
-  ['In The Clouds','#CBD8EC','In stock','live','15 Sep','Soft, wispy, everyday. Broad prospecting.'],
-  ['Sugar Kissed','#EFC9CF','In stock','live','15 Sep','Featured in the site slider \u2014 creative already exists.'],
-  ['Playdate','#E3B9C6','In stock','live','15 Sep','In prospecting from launch.'],
-  ['Lola','#D7C3B0','In stock','live','15 Sep','Wispy \u2014 reviewers call it out by name. In prospecting from launch.'],
-  ['Kits &amp; accessories','#E8DED4','In stock','live','15 Sep','Bond &amp; seal upsell. Retargeting and post-purchase.']
+  ['Honey Bunny','#F0D48A','In stock','live','At launch','Salon-extension lookalike. Leads the before/after creative.'],
+  ['In The Clouds','#CBD8EC','In stock','live','At launch','Soft, wispy, everyday. Broad prospecting.'],
+  ['Sugar Kissed','#EFC9CF','In stock','live','At launch','Featured in the site slider \u2014 creative already exists.'],
+  ['Playdate','#E3B9C6','In stock','live','At launch','In prospecting from launch.'],
+  ['Lola','#D7C3B0','In stock','live','At launch','Wispy \u2014 reviewers call it out by name. In prospecting from launch.'],
+  ['Kits &amp; accessories','#E8DED4','In stock','live','At launch','Bond &amp; seal upsell. Retargeting and post-purchase.']
 ];
 $('#styleRows').innerHTML = STYLES.map(s =>
   '<tr><td><span class="style-nm"><span class="swatch" style="background:' + s[1] + '"></span>' + s[0] + '</span></td>' +
@@ -803,101 +831,108 @@ const mid = d => pct(d) + DAY / 2;              // centre of a day, for dots and
 /* Bars are phases of work -- hovering one lists what happens in it.
    dots = dated deliverables. proposed:true = not in the signed plan (Pinterest), drawn dashed. */
 const LANES = [
-  {name:'Strategy + research', color:'#F2C3CE', sub:'Competitor analysis \u00b7 audience research \u00b7 targeting \u00b7 reporting', bars:[
-    {n:'Research + foundation', s:'2026-09-01', e:'2026-09-11', tone:'blush',
-      items:['Competitor analysis + reporting','Audience research','Initial targeting strategy']},
-    {n:'Q4 messaging', s:'2026-10-15', e:'2026-10-31', tone:'blush',
-      items:['Prepare Q4 messaging','Holiday and BFCM angles']},
+  {name:'Strategy + research', color:'#F2C3CE', sub:'Competitor analysis \u00b7 positioning \u00b7 audiences \u00b7 rollout planning', bars:[
+    {n:'Research + strategy', s:'2026-09-01', e:'2026-09-11', tone:'blush',
+      items:['Competitor analysis','Market positioning','Audience research','Initial targeting','Product + lifestyle campaign strategy','Channel rollout planning']},
     {n:'Keyword research', s:'2026-10-20', e:'2026-10-31', tone:'blush',
-      items:['Keyword research for Search + Shopping','Branded search plan']},
-    {n:'December strategy', s:'2026-11-23', e:'2026-11-30', tone:'blush',
-      items:['Winning products, creative and audiences','Recommendations + December strategy']}
+      items:['Keyword research for Search + Shopping']},
+    {n:'December recommendations', s:'2026-11-23', e:'2026-11-30', when:'End of November', tone:'blush',
+      items:['Winning creative, products + audiences','December recommendations']}
   ]},
   {name:'Creative', color:'#F6E6B4', sub:'Concepts \u00b7 production \u00b7 refreshes \u00b7 seasonal', bars:[
-    {n:'Creative development', s:'2026-09-08', e:'2026-09-14', tone:'honey',
-      items:['First two campaign directions: Product + Lifestyle/Messaging','Ad copy + messaging','Creative variations','Product prioritization'],
-      dots:[{d:'2026-09-12', t:'Final creative + campaign approval', w:'Pink Rabbit approves'}]},
-    {n:'Pinterest creative', s:'2026-09-22', e:'2026-09-30', tone:'proposed', proposed:true,
-      items:['Adapt the strongest visual concepts for Pinterest']},
-    {n:'Round 2 creative refresh', s:'2026-10-01', e:'2026-10-15', tone:'honey',
-      items:['Round 2 built on actual customer behavior','New Product + Lifestyle executions','Retargeting creative','Best-seller and product-specific concepts','A recognizable Pink Rabbit ad system']},
-    {n:'Seasonal creative', s:'2026-11-01', e:'2026-11-15', tone:'honey',
-      items:['Seasonal creative testing']},
-    {n:'BFCM creative', s:'2026-11-15', e:'2026-11-30', tone:'honey',
-      items:['Black Friday / Cyber Monday messaging','Gift-focused and product creative']}
+    {n:'Campaign creative', s:'2026-09-08', e:'2026-09-14', tone:'honey',
+      items:['Product Campaign + Lifestyle/Messaging Campaign','Ad copy','Creative variations'],
+      dots:[{d:'2026-09-14', t:'Creative + campaigns approved at the client walkthrough', w:'Pink Rabbit approves'}]},
+    {n:'Pinterest visual assets', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
+      items:['Adapt visual assets for Pinterest']},
+    {n:'Creative round 2', s:'2026-10-01', e:'2026-10-15', tone:'honey',
+      items:['New creative built on September data','Product-specific variations','Lifestyle iterations','Retargeting creative']},
+    {n:'Additional product creative', s:'2026-10-01', e:'2026-10-09', when:'Early October', tone:'honey',
+      items:['Creative for Brown Sugar as it returns to stock']},
+    {n:'Holiday creative', s:'2026-11-15', e:'2026-11-30', tone:'honey',
+      items:['Holiday creative','Gift + product messaging']}
   ]},
   {name:'Media + channels', color:'#D9536F', sub:'Meta \u2192 Pinterest \u2192 Google', bars:[
-    {n:'Meta setup + tracking', s:'2026-09-01', e:'2026-09-11', tone:'blush',
-      items:['Meta Ads account setup','Pixel / CAPI + conversion tracking']},
-    {n:'Campaign build + QA', s:'2026-09-12', e:'2026-09-14', tone:'blush',
-      items:['Build Meta campaigns','Confirm audiences','Confirm budget','Connect landing pages','Test purchase tracking','Final creative + campaign QA']},
+    {n:'Backend foundation', s:'2026-09-01', e:'2026-09-11', tone:'blush',
+      items:['Meta account setup','Partner access','Pixel / CAPI setup','Conversion tracking']},
+    {n:'Meta campaign build', s:'2026-09-08', e:'2026-09-14', tone:'blush',
+      items:['Build Meta campaigns','Confirm launch inventory']},
+    {n:'Pre-launch QA', s:'2026-09-14', e:'2026-09-14', tone:'blush',
+      items:['Confirm product availability','Final campaign QA','Verify Meta access','Google Analytics admin access','Purchase + revenue tracking verification']},
     {n:'Meta live', s:'2026-09-15', e:'2026-11-30', tone:'rose',
-      items:['Product + Lifestyle campaigns','Ongoing Meta optimization','Brown Sugar ad set switches on when stock lands'],
+      items:['Product + Lifestyle/Messaging campaigns','Ongoing optimization','Catalog expands as Brown Sugar returns'],
       dots:[
-        {d:'2026-09-15', t:'Campaigns live \u2014 Product + Lifestyle', w:'Howell\u2019n'},
-        {d:'2026-10-06', label:'Early October (estimate)', t:'Brown Sugar back in stock \u2014 its ad set switches on', w:'Pink Rabbit confirms the date'}]},
-    {n:'Pinterest foundation', s:'2026-09-22', e:'2026-09-30', tone:'proposed', proposed:true,
-      items:['Install Pinterest tag','Begin collecting site activity','Set up account + catalog'],
+        {d:'2026-09-15', t:'Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'},
+        {d:'2026-10-05', label:'Early October (expected)', t:'Brown Sugar restock expected \u2014 advertised catalog expands', w:'Pink Rabbit confirms the date'}]},
+    {n:'Pinterest foundation', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
+      items:['Install Pinterest tag','Begin building site data','Prepare catalog + Pinterest account'],
       dots:[{d:'2026-09-18', t:'Your call on Pinterest \u2014 a yes by today keeps mid-October on track', w:'Pink Rabbit decides'}]},
     {n:'Pinterest live', s:'2026-10-15', e:'2026-11-30', tone:'proposed', proposed:true,
-      items:['First Pinterest campaigns','Visual discovery + product content','Cross-channel testing'],
-      dots:[{d:'2026-10-15', label:'Mid-October', t:'Pinterest campaigns launch \u2014 if approved', w:'Howell\u2019n'}]},
+      items:['Visual discovery campaigns','Pinterest testing alongside Meta'],
+      dots:[{d:'2026-10-15', label:'Mid-October', t:'Pinterest launch \u2014 if approved', w:'Howell\u2019n'}]},
     {n:'Google preparation', s:'2026-10-20', e:'2026-10-31', tone:'cloud',
-      items:['Merchant Center + catalog setup','Google Ads conversion tracking','Search / Shopping structure','Branded search setup','Product feed QA']},
+      items:['Google Ads setup','Merchant Center + catalog','Product feed QA','Search / Shopping structure','Conversion tracking']},
     {n:'Google live', s:'2026-11-01', e:'2026-11-30', tone:'cloud',
-      items:['Search + Shopping live','Capturing active search demand'],
-      dots:[{d:'2026-11-01', t:'Google Search + Shopping go live', w:'Howell\u2019n'}]}
+      items:['Search + Shopping campaigns','Capturing active purchase + search intent'],
+      dots:[{d:'2026-11-01', t:'Search + Shopping campaigns begin', w:'Howell\u2019n'}]}
   ]},
-  {name:'Reporting + optimization', color:'#EADACA', sub:'Dashboard \u00b7 learning \u00b7 optimization \u00b7 scaling', bars:[
-    {n:'Reporting dashboard', s:'2026-09-01', e:'2026-09-11', tone:'sugar',
-      items:['Digital reporting dashboard setup'],
+  {name:'Reporting + optimization', color:'#EADACA', sub:'Dashboard \u00b7 review \u00b7 learning \u00b7 optimization \u00b7 scaling', bars:[
+    {n:'Dashboard + reporting', s:'2026-09-01', e:'2026-09-11', tone:'sugar',
+      items:['Digital client dashboard','Analytics + reporting framework'],
       dots:[{d:'2026-09-10', t:'Client portal live', w:'Howell\u2019n'}]},
-    {n:'Learning phase', s:'2026-09-15', e:'2026-09-30', tone:'hatch',
-      items:['Let campaigns gather data','Monitor delivery + spend','Track clicks, add-to-cart + purchases','Spot early creative and audience signals','No unnecessary changes while Meta learns'],
+    {n:'Client walkthrough', s:'2026-09-14', e:'2026-09-14', tone:'sugar',
+      items:['Walk through the dashboard','Campaign strategy','Creative + assets','Reporting process','Final launch questions']},
+    {n:'Meta review period', s:'2026-09-15', e:'2026-09-17', tone:'sugar',
+      items:['Ads enter Meta review','Monitor approvals + delivery','Expect early spend + performance volatility']},
+    {n:'Learning phase', s:'2026-09-18', e:'2026-09-24', tone:'hatch',
+      items:['Campaigns gather data','Minimal intervention','Monitor spend, clicks, add-to-cart + purchases','Establish baseline performance'],
       dots:[{d:'2026-09-18', t:'First Friday recap', w:'Abby'}]},
-    {n:'First optimization', s:'2026-10-01', e:'2026-10-10', tone:'sugar',
-      items:['Review September performance','Compare Product vs. Lifestyle','Identify strongest messaging + products','Pause weak variations'],
+    {n:'First optimization', s:'2026-09-25', e:'2026-10-05', tone:'sugar',
+      items:['First meaningful performance read','Identify winning creative + audiences','Cut weak performers','Shift budget toward stronger ads'],
       dots:[{d:'2026-10-05', t:'September report + strategy call', w:'Brooke &amp; Abby'}]},
-    {n:'Scale + retarget', s:'2026-10-15', e:'2026-10-31', tone:'sugar',
-      items:['Build retargeting audiences','Test winning creative across channels','Shift spend toward stronger performers']},
-    {n:'Q4 expansion', s:'2026-11-01', e:'2026-11-15', tone:'sugar',
-      items:['Meta + Google running together, plus Pinterest if approved','Discovery + retargeting + active search demand'],
+    {n:'Optimize + scale', s:'2026-10-15', e:'2026-10-31', tone:'sugar',
+      items:['Meta optimization, plus Pinterest if approved','Retarget site visitors','Scale winning creative','Keep testing products + messages']},
+    {n:'Cross-channel growth', s:'2026-11-01', e:'2026-11-15', tone:'sugar',
+      items:['Meta + Google working together, plus Pinterest if approved','Prospecting + discovery + retargeting + search capture'],
       dots:[{d:'2026-11-05', t:'October report + strategy call', w:'Brooke &amp; Abby'}]},
     {n:'Holiday / BFCM push', s:'2026-11-15', e:'2026-11-30', tone:'sugar',
-      items:['Retarget high-intent visitors','Increase spend strategically around proven campaigns']},
-    {n:'90-day review', s:'2026-11-23', e:'2026-11-30', tone:'sugar',
-      items:['Full channel performance report','ROAS + CPA analysis','Winning products, creative and audiences'],
+      items:['Retargeting','Scale proven campaigns based on performance']},
+    {n:'90-day review', s:'2026-11-23', e:'2026-11-30', when:'End of November', tone:'sugar',
+      items:['Full performance analysis','Channel comparison','CPA + ROAS','Winning creative, products + audiences'],
       dots:[{d:'2026-11-30', label:'End of November', t:'90-day review delivered', w:'Brooke &amp; Abby'}]}
   ]}
 ];
 
 const MILES = [
-  {d:'2026-09-12', l:'09.12 Approval', t:'Final creative + campaign approval', w:'A hard deadline before launch, so approval and launch never share a day'},
-  {d:'2026-09-15', l:'09.15 Meta live', t:'Campaigns live \u2014 Product + Lifestyle on Meta', w:'Howell\u2019n'},
-  {d:'2026-10-15', l:'Mid-Oct Pinterest', label:'Mid-October', t:'Pinterest live \u2014 recommended', w:'Not in your current plan; launches only with your go-ahead'},
-  {d:'2026-11-01', l:'11.01 Google live', t:'Google Search + Shopping live', w:'Howell\u2019n'},
+  {d:'2026-09-14', l:'09.14 Walkthrough', t:'Client walkthrough + final approval', w:'Dashboard, campaign strategy, creative and reporting \u2014 the day before launch'},
+  {d:'2026-09-15', l:'09.15 Meta live', t:'Meta launch \u2014 Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'},
+  {d:'2026-10-15', l:'Mid-Oct Pinterest', label:'Mid-October', t:'Pinterest launch \u2014 recommended', w:'Not in your current plan; launches only with your go-ahead'},
+  {d:'2026-11-01', l:'11.01 Google live', t:'Google launch \u2014 Search + Shopping', w:'Howell\u2019n'},
   {d:'2026-11-27', l:'BFCM', t:'Black Friday 27 Nov \u2192 Cyber Monday 30 Nov', w:'Holiday push'},
-  {d:'2026-11-30', l:'90-day review', label:'End of November', t:'90-day review', w:'Full report, ROAS + CPA, winners, December strategy'}
+  {d:'2026-11-30', l:'90-day review', label:'End of November', t:'90-day review', w:'Full performance analysis, channel comparison, CPA/ROAS, December recommendations'}
 ];
 
-/* Phase-by-phase table -- mirrors the roadmap document word for word. */
+/* Phase-by-phase table -- mirrors the roadmap document. */
 const ROADMAP = [
-  {when:'Sept 1\u201311', phase:'Research + Foundation', what:['Competitor analysis + reporting','Audience research','Initial targeting strategy','Meta Ads account setup','Pixel/CAPI + conversion tracking','Digital reporting dashboard setup']},
-  {when:'Sept 8\u201314', phase:'Creative Development', what:['Develop first two campaign directions','<b>Product Campaign + Lifestyle/Messaging Campaign</b>','Ad copy + messaging','Creative variations','Product prioritization']},
-  {when:'Sept 12', phase:'Final Creative + Campaign Approval', ms:true, what:['Hard approval deadline before launch']},
-  {when:'Sept 12\u201314', phase:'Campaign Build + QA', what:['Build Meta campaigns','Confirm audiences','Confirm budget','Connect landing pages','Test purchase tracking','Final creative + campaign QA']},
-  {when:'Sept 15', phase:'Campaigns Live', ms:true, what:['Product + Lifestyle campaigns go live on Meta']},
-  {when:'Sept 15\u201330', phase:'Learning Phase', what:['Allow campaigns to gather data','Monitor delivery + spend','Track clicks, add-to-cart + purchases','Identify early creative/audience signals','Avoid unnecessary changes while Meta learns']},
-  {when:'Sept 22\u201330', phase:'Pinterest Foundation', prop:true, what:['Install Pinterest Tag','Begin collecting site activity','Set up account/catalog','Adapt strongest visual concepts for Pinterest']},
-  {when:'Oct 1\u201310', phase:'First Optimization', what:['Review September performance','Compare Product vs. Lifestyle','Identify strongest messaging/products','Pause weak variations','Develop Round 2 creative based on actual customer behavior']},
-  {when:'Oct 1\u201315', phase:'Creative Refresh', what:['New Product + Lifestyle executions','Retargeting creative','Best-seller/product-specific concepts','Continue building recognizable Pink Rabbit ad system']},
-  {when:'Mid-Oct', phase:'Pinterest Launch', ms:true, prop:true, what:['Launch first Pinterest campaigns','Visual discovery/product content','Begin cross-channel testing']},
-  {when:'Oct 15\u201331', phase:'Scale + Retarget', what:['Continue Meta optimization','Build retargeting audiences','Test winning creative across channels','Shift spend toward stronger performers','Prepare Q4 messaging']},
-  {when:'Oct 20\u201331', phase:'Google Preparation', what:['Merchant Center/catalog setup','Google Ads conversion tracking','Search/Shopping structure','Keyword research','Branded search setup','Product feed QA']},
-  {when:'Nov 1', phase:'Google Launch', ms:true, what:['Google Search/Shopping goes live']},
-  {when:'Nov 1\u201315', phase:'Q4 Expansion', what:['Meta + Google running together, plus Pinterest if approved','Capture discovery + retargeting + active search demand','Seasonal creative testing']},
-  {when:'Nov 15\u201330', phase:'Holiday / BFCM Push', what:['Black Friday/Cyber Monday messaging','Gift-focused/product creative','Retarget high-intent visitors','Increase spend strategically around proven campaigns']},
-  {when:'End of Nov', phase:'90-Day Review', what:['Full channel performance report','ROAS + CPA analysis','Winning products/creative/audiences','Recommendations + December strategy']}
+  {when:'Sept 1\u201311', phase:'Research + Strategy', what:['Competitor analysis','Market positioning','Audience research','Initial targeting','Product + lifestyle campaign strategy','Channel rollout planning']},
+  {when:'Sept 1\u201311', phase:'Backend Foundation', what:['Meta account setup','Partner access','Pixel/CAPI setup','Conversion tracking','Digital client dashboard','Analytics/reporting framework']},
+  {when:'Sept 8\u201314', phase:'Campaign Creative', what:['Develop <b>Product Campaign + Lifestyle/Messaging Campaign</b>','Ad copy','Creative variations','Confirm launch inventory','Build Meta campaigns']},
+  {when:'Sept 14', phase:'Pre-Launch QA', what:['Confirm product availability','Final campaign QA','Verify Meta access','Google Analytics admin access','Purchase/revenue tracking verification']},
+  {when:'Sept 14', phase:'Client Walkthrough', ms:true, what:['Walk through dashboard','Campaign strategy','Creative/assets','Reporting process','Final launch questions']},
+  {when:'Sept 15', phase:'Meta Launch', ms:true, what:['<b>Product + Lifestyle/Messaging campaigns LIVE</b>']},
+  {when:'Sept 15\u201317', phase:'Meta Review Period', what:['Ads enter Meta review','Monitor approvals + delivery','Expect early spend/performance volatility']},
+  {when:'Sept 18\u201324', phase:'Learning Phase', what:['Allow campaigns to gather data','Minimal intervention','Monitor spend, clicks, ATC + purchases','Establish baseline performance']},
+  {when:'Sept 25\u2013Oct 5', phase:'First Optimization', what:['First meaningful performance read','Identify winning creative/audiences','Cut weak performers','Shift budget toward stronger ads']},
+  {when:'Late Sept', phase:'Pinterest Foundation', prop:true, what:['Install Pinterest Tag','Begin building site data','Prepare catalog + Pinterest account','Adapt visual assets']},
+  {when:'Early Oct', phase:'Inventory Expansion', what:['Brown Sugar restock expected to arrive','Expand advertised product catalog','Introduce additional product creative']},
+  {when:'Oct 1\u201315', phase:'Creative Round 2', what:['Use September data to develop new creative','Product-specific variations','Lifestyle iterations','Retargeting creative']},
+  {when:'Mid-Oct', phase:'Pinterest Launch', ms:true, prop:true, what:['Launch visual discovery campaigns','Begin Pinterest testing alongside Meta']},
+  {when:'Oct 15\u201331', phase:'Optimize + Scale', what:['Meta + Pinterest (if approved) optimization','Retarget site visitors','Scale winning creative','Continue testing products/messages']},
+  {when:'Oct 20\u201331', phase:'Google Preparation', what:['Google Ads setup','Merchant Center/catalog','Product feed QA','Keyword research','Search/Shopping structure','Conversion tracking']},
+  {when:'Nov 1', phase:'Google Launch', ms:true, what:['Search + Shopping campaigns begin','Capture active purchase/search intent']},
+  {when:'Nov 1\u201315', phase:'Cross-Channel Growth', what:['Meta + Pinterest (if approved) + Google working together','Prospecting + discovery + retargeting + search capture']},
+  {when:'Nov 15\u201330', phase:'Holiday / BFCM Push', what:['Holiday creative','Gift/product messaging','Retargeting','Scale proven campaigns based on performance']},
+  {when:'End of Nov', phase:'90-Day Review', ms:true, what:['Full performance analysis','Channel comparison','CPA/ROAS','Winning creative/products/audiences','December recommendations']}
 ];
 
 const fmtDate = d => toDate(d).toLocaleDateString('en-US',{weekday:'short',month:'long',day:'numeric',year:'numeric'});
@@ -940,7 +975,7 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
         }).join('');
         return '<div class="g-row"><div class="lbl">' + b.n + (b.proposed ? '<span class="g-prop">proposed</span>' : '') + '</div><div class="g-track">' +
           '<div class="g-bar t-' + b.tone + '" tabindex="0" style="left:' + L.toFixed(2) + '%;width:' + W.toFixed(2) + '%"' +
-          tipAttr({d: fmtRange(b.s, b.e), t: b.n + (b.proposed ? ' \u2014 recommended' : ''), list: b.items,
+          tipAttr({d: b.when || fmtRange(b.s, b.e), t: b.n + (b.proposed ? ' \u2014 recommended' : ''), list: b.items,
                    w: b.proposed ? 'Not in your current plan \u2014 only with your go-ahead' : ''}) + '>' + (W > 22 ? b.n : '') + '</div>' + dots +
         '</div></div>';
       }).join('') + '</div>';
@@ -948,7 +983,7 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 
   $('#gantt').innerHTML = h + '<div class="g-body">' + body + '</div>';
 
-  $('#roadmap').innerHTML = ROADMAP.map(r =>
+  $('#roadmap').innerHTML = '<div class="road-row road-head"><div>Date</div><div>Phase</div><div>Deliverables / activity</div></div>' + ROADMAP.map(r =>
     '<div class="road-row' + (r.ms ? ' ms' : '') + (r.prop ? ' prop' : '') + '">' +
       '<div class="when">' + r.when + '</div>' +
       '<div class="ph">' + (r.ms ? '<i></i>' : '') + r.phase + (r.prop ? '<span class="pill prop">Recommended</span>' : '') + '</div>' +
@@ -1036,11 +1071,11 @@ $('#sampleToggle').addEventListener('change', function(){
     }
   });
   const p = $('#statusPill');
-  p.className = on ? 'pill live' : 'pill prep';
-  p.innerHTML = '<span class="dot"></span>' + (on ? 'Sample' : 'Pre-launch');
+  p.className = (on || IS_LIVE) ? 'pill live' : 'pill prep';
+  p.innerHTML = '<span class="dot"></span>' + (on ? 'Sample' : IS_LIVE ? 'Live' : 'Pre-launch');
   $('#perfHint').textContent = on
     ? 'Illustrative seven-day view \u2014 the shape of the weekly report'
-    : 'First numbers land Wednesday 16 September, one full day after launch';
+    : 'First numbers land Wednesday 16 September, the day after launch';
 });
 
 /* ---------- notes: email both, keep a local copy ---------- */
