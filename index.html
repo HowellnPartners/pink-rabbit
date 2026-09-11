@@ -459,7 +459,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>We walk you through everything on Monday 14 September &#8212; dashboard, campaign strategy, creative and reporting &#8212; and Meta goes live Tuesday 15 September on your in-stock styles and kits. Brown Sugar, your best seller, is restocking: its ad set is built and switches on the day stock lands, so nobody clicks through to a sold-out page. Google follows on 1 November. We&#8217;re also recommending Pinterest for mid-October &#8212; it isn&#8217;t in your current plan, and the case for it is under Campaigns.</p>
+          <p>We walk you through everything on Monday 14 September &#8212; dashboard, campaign strategy, creative and reporting &#8212; and Meta goes live Tuesday 15 September across your full range. Brown Sugar, your best seller, has been rushed to land in time and launches with its own ad set. Google follows on 1 November. We&#8217;re also recommending Pinterest for mid-October &#8212; it isn&#8217;t in your current plan, and the case for it is under Campaigns.</p>
           <div class="hero-phases">
             <span class="phase now">14 Sep &#183; Walkthrough</span>
             <span class="phase">15 Sep &#183; Meta live</span>
@@ -540,8 +540,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
               <span class="from" style="color:#A15367">Strategy note &#183; Brooke</span>
             </div>
             <div class="insight card tint-cloud">
-              <h4 style="color:#2F4A70">Brown Sugar gets its own ad set &#8212; the day it&#8217;s back.</h4>
-              <p style="color:#3E5A85">It&#8217;s the best seller across every point of sale, so it gets its own ad set and the largest single share of budget. Until the restock lands we lead with the in-stock styles: paid traffic to a sold-out page burns spend and teaches Meta the ad doesn&#8217;t convert. Holding the whole launch for it would cost weeks of learning we can&#8217;t get back.</p>
+              <h4 style="color:#2F4A70">Brown Sugar leads the launch.</h4>
+              <p style="color:#3E5A85">It&#8217;s the best seller across every point of sale, so it gets its own ad set and the largest single share of budget. It&#8217;s been rushed to land for launch, and we confirm stock at pre-launch QA on the 14th before any budget goes behind it.</p>
               <span class="from" style="color:#5A76A0">Strategy note &#183; Abby</span>
             </div>
           </div>
@@ -808,7 +808,7 @@ $('#whyBox').innerHTML = PHASES.map(function(ph){
 
 /* ---------- lash styles ---------- */
 const STYLES = [
-  ['Brown Sugar','#C89B72','Delayed \u2014 back soon','wait','When stock lands','Best seller. Its own ad set is built and switches on the day stock lands.'],
+  ['Brown Sugar','#C89B72','Rushed \u2014 landing for launch','prep','At launch','Best seller. Own ad set and the largest share of budget. Stock confirmed at pre-launch QA, 14 Sep.'],
   ['Honey Bunny','#F0D48A','In stock','live','At launch','Salon-extension lookalike. Leads the before/after creative.'],
   ['In The Clouds','#CBD8EC','In stock','live','At launch','Soft, wispy, everyday. Broad prospecting.'],
   ['Sugar Kissed','#EFC9CF','In stock','live','At launch','Featured in the site slider \u2014 creative already exists.'],
@@ -847,8 +847,6 @@ const LANES = [
       items:['Adapt visual assets for Pinterest']},
     {n:'Creative round 2', s:'2026-10-01', e:'2026-10-15', tone:'honey',
       items:['New creative built on September data','Product-specific variations','Lifestyle iterations','Retargeting creative']},
-    {n:'Additional product creative', s:'2026-10-01', e:'2026-10-09', when:'Early October', tone:'honey',
-      items:['Creative for Brown Sugar as it returns to stock']},
     {n:'Holiday creative', s:'2026-11-15', e:'2026-11-30', tone:'honey',
       items:['Holiday creative','Gift + product messaging']}
   ]},
@@ -858,12 +856,11 @@ const LANES = [
     {n:'Meta campaign build', s:'2026-09-08', e:'2026-09-14', tone:'blush',
       items:['Build Meta campaigns','Confirm launch inventory']},
     {n:'Pre-launch QA', s:'2026-09-14', e:'2026-09-14', tone:'blush',
-      items:['Confirm product availability','Final campaign QA','Verify Meta access','Google Analytics admin access','Purchase + revenue tracking verification']},
+      items:['Confirm product availability, Brown Sugar included','Final campaign QA','Verify Meta access','Google Analytics admin access','Purchase + revenue tracking verification']},
     {n:'Meta live', s:'2026-09-15', e:'2026-11-30', tone:'rose',
-      items:['Product + Lifestyle/Messaging campaigns','Ongoing optimization','Catalog expands as Brown Sugar returns'],
+      items:['Product + Lifestyle/Messaging campaigns','Brown Sugar in its own ad set','Ongoing optimization'],
       dots:[
-        {d:'2026-09-15', t:'Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'},
-        {d:'2026-10-05', label:'Early October (expected)', t:'Brown Sugar restock expected \u2014 advertised catalog expands', w:'Pink Rabbit confirms the date'}]},
+        {d:'2026-09-15', t:'Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'}]},
     {n:'Pinterest foundation', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
       items:['Install Pinterest tag','Begin building site data','Prepare catalog + Pinterest account'],
       dots:[{d:'2026-09-18', t:'Your call on Pinterest \u2014 a yes by today keeps mid-October on track', w:'Pink Rabbit decides'}]},
@@ -924,7 +921,6 @@ const ROADMAP = [
   {when:'Sept 18\u201324', phase:'Learning Phase', what:['Allow campaigns to gather data','Minimal intervention','Monitor spend, clicks, ATC + purchases','Establish baseline performance']},
   {when:'Sept 25\u2013Oct 5', phase:'First Optimization', what:['First meaningful performance read','Identify winning creative/audiences','Cut weak performers','Shift budget toward stronger ads']},
   {when:'Late Sept', phase:'Pinterest Foundation', prop:true, what:['Install Pinterest Tag','Begin building site data','Prepare catalog + Pinterest account','Adapt visual assets']},
-  {when:'Early Oct', phase:'Inventory Expansion', what:['Brown Sugar restock expected to arrive','Expand advertised product catalog','Introduce additional product creative']},
   {when:'Oct 1\u201315', phase:'Creative Round 2', what:['Use September data to develop new creative','Product-specific variations','Lifestyle iterations','Retargeting creative']},
   {when:'Mid-Oct', phase:'Pinterest Launch', ms:true, prop:true, what:['Launch visual discovery campaigns','Begin Pinterest testing alongside Meta']},
   {when:'Oct 15\u201331', phase:'Optimize + Scale', what:['Meta + Pinterest (if approved) optimization','Retarget site visitors','Scale winning creative','Continue testing products/messages']},
