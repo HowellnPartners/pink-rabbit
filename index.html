@@ -688,7 +688,8 @@ const CAMPAIGNS = [
     role:'Lifestyle / brand discovery \u2192 product consideration',
     objective:'Sales \u00b7 Purchase, website',
     audience:'US, 18+ \u00b7 women 18\u201345 interested in cosmetics, lash extensions, beauty, fashion and makeup \u00b7 Advantage+ Audience on',
-    budget:'$16 / day',
+    budget:'$16 / day \u00b7 $240 over the flight',
+    flight:'15 days \u00b7 15\u201329 Sep',
     format:'3-card carousel \u00b7 4:5 feed, custom 9:16 for Stories',
     destination:'Lashes collection \u00b7 Shop Now',
     launch:'Tue 15 Sep',
@@ -703,7 +704,7 @@ const CAMPAIGNS = [
     budget:'Confirmed at build',
     format:'Confirmed at build',
     destination:'Lashes collection \u00b7 Shop Now',
-    launch:'Once Ad Base #1 has a benchmark',
+    launch:'After the 15-day test',
     testing:'The direct-response counterpart to the lifestyle test \u2014 same objective, different creative direction.',
     creative:[] }
 ];
@@ -875,7 +876,7 @@ function campCard(c){
     (c.campaign ? '<p class="camp-sub">' + esc(c.campaign) + '</p>' : '') +
     '<div class="camp-body">' +
       row('Role', c.role) + row('Objective', c.objective) + row('Audience', c.audience) +
-      row('Budget', c.budget) + row('Format', c.format) + row('Destination', c.destination) +
+      row('Budget', c.budget) + row('Flight', c.flight) + row('Format', c.format) + row('Destination', c.destination) +
       row('Goes live', c.launch) +
     '</div>' +
     (c.primary ? '<div class="camp-block"><p class="lab">Primary text</p><p class="camp-copy">' + esc(c.primary) + '</p></div>' : '') +
@@ -993,9 +994,10 @@ const LANES = [
     {n:'Pre-launch QA', s:'2026-09-14', e:'2026-09-14', tone:'blush',
       items:['Confirm product availability, Brown Sugar included','Final campaign QA','Verify Meta access','Google Analytics admin access','Purchase + revenue tracking verification']},
     {n:'Meta live', s:'2026-09-15', e:'2026-11-30', tone:'rose',
-      items:['Product + Lifestyle/Messaging campaigns','Brown Sugar in its own ad set','Ongoing optimization'],
+      items:['Love at First Lash carousel, 15-day test at $16/day','Brown Sugar in its own ad set','Product ad base follows the first read'],
       dots:[
-        {d:'2026-09-15', t:'Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'}]},
+        {d:'2026-09-15', t:'Love at First Lash carousel live \u00b7 $16/day', w:'Howell\u2019n'},
+        {d:'2026-09-29', t:'15-day test ends \u2014 first read on the lifestyle creative', w:'Brooke &amp; Abby'}]},
     {n:'Pinterest foundation', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
       items:['Install Pinterest tag','Begin building site data','Prepare catalog + Pinterest account'],
       dots:[{d:'2026-09-18', t:'Your call on Pinterest \u2014 a yes by today keeps mid-October on track', w:'Pink Rabbit decides'}]},
