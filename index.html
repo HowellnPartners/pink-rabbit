@@ -170,6 +170,16 @@ body.sample .sample-banner{display:flex}
 .camp-row{display:flex;justify-content:space-between;gap:14px;font-size:12px}
 .camp-row dt{color:var(--ink-mute)}
 .camp-row dd{text-align:right;font-weight:500}
+.camp-sub{font-size:10.5px;color:var(--ink-mute);letter-spacing:.04em;padding:0 22px 14px;margin-top:-8px;font-variant-numeric:tabular-nums}
+.camp-block{padding:16px 22px 0;border-top:1px solid var(--line-soft);margin-top:4px}
+.camp-block .lab{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:8px}
+.camp-copy{font-size:12px;line-height:1.7;color:var(--ink-soft);background:var(--cream);border-radius:12px;padding:13px 15px}
+.camp-cards{display:flex;flex-direction:column;gap:9px}
+.camp-cards div{display:flex;gap:10px;align-items:baseline;font-size:12px}
+.camp-cards b{font-family:var(--display);font-size:17px;line-height:1;color:var(--blush-deep);flex:none;width:16px}
+.camp-cards span{color:var(--ink);font-weight:500}
+.camp-cards em{font-style:normal;color:var(--ink-mute);font-size:10.5px;margin-left:auto;flex:none}
+.camp-test{font-size:11.5px;line-height:1.6;color:var(--ink-mute)}
 .creative{padding:0 22px 20px}
 .creative .lab{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:9px}
 .creative-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
@@ -545,7 +555,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>Built and ready for launch</h3><p class="hint">Creative fills in as it is approved and uploaded</p></div>
+        <div class="sec-head"><h3>The creative test</h3><p class="hint">Two ad bases, same objective, different creative direction</p></div>
         <div class="grid g2" id="plannedCampaigns"></div>
       </div>
 
@@ -673,17 +683,31 @@ const EMAILS = ['abigail@howellnmedia.com', 'brooke@howellnmedia.com'];
 // creative: add artwork by dropping image files into a /creative folder next to
 // this file, then listing them here, e.g. ['creative/brown-sugar-01.jpg'].
 const CAMPAIGNS = [
-  { name:'Product Campaign', platform:'Meta', status:'ready',
-    direction:'Product-led \u2014 styles, application and results',
-    audiences:'Confirmed at build, 12\u201314 Sep', budget:'Confirmed at build, 12\u201314 Sep',
-    approval:'Mon 14 Sep', launch:'Tue 15 Sep', creative:[] },
-  { name:'Lifestyle / Messaging Campaign', platform:'Meta', status:'ready',
-    direction:'Brand-led \u2014 the ease, the feeling, the Pink Rabbit voice',
-    audiences:'Confirmed at build, 12\u201314 Sep', budget:'Confirmed at build, 12\u201314 Sep',
-    approval:'Mon 14 Sep', launch:'Tue 15 Sep', creative:[] }
+  { name:'Love at First Lash', base:'Ad Base #1', platform:'Meta', status:'ready',
+    campaign:'PR | Sales | Lifestyle Sept.15',
+    role:'Lifestyle / brand discovery \u2192 product consideration',
+    objective:'Sales \u00b7 Purchase, website',
+    audience:'US, 18+ \u00b7 women 18\u201345 interested in cosmetics, lash extensions, beauty, fashion and makeup \u00b7 Advantage+ Audience on',
+    budget:'$16 / day',
+    format:'3-card carousel \u00b7 4:5 feed, custom 9:16 for Stories',
+    destination:'Lashes collection \u00b7 Shop Now',
+    launch:'Tue 15 Sep',
+    primary:'Love at first lash. Meet Pink Rabbit, 100% handmade lashes designed with the softness, dimension + look of professional lash extensions. Pre-glued for an easier, cleaner application, so getting the lash look you love feels effortless. Find your perfect lash.',
+    cards:[['Find Your Perfect Lash','Introduce'],['The Lash Extension Look, Made Easy','Differentiate'],['Meet Your New Favorite Lashes','Convert']],
+    testing:'Whether lifestyle-led, editorial creative attracts qualified new customers and converts them \u2014 measured against the product-led direction in Ad Base #2.',
+    creative:[] },
+  { name:'Product', base:'Ad Base #2', platform:'Meta', status:'build',
+    role:'Product-led / direct response',
+    objective:'Sales \u00b7 Purchase, website',
+    audience:'Confirmed at build',
+    budget:'Confirmed at build',
+    format:'Confirmed at build',
+    destination:'Lashes collection \u00b7 Shop Now',
+    launch:'Once Ad Base #1 has a benchmark',
+    testing:'The direct-response counterpart to the lifestyle test \u2014 same objective, different creative direction.',
+    creative:[] }
 ];
 
-// September ad creative. Set live:true on the ones actually pushed to Meta.
 const CREATIVE = [
   {c:'Find Your Lash', f:'creative/web/fyl-01.jpg', r:'1:1', live:false},
   {c:'Find Your Lash', f:'creative/web/fyl-02.jpg', r:'1:1', live:false},
@@ -847,28 +871,35 @@ function campCard(c){
       ? '<div class="slot filled"><img src="' + esc(src) + '" alt="' + esc(c.name) + ' creative ' + (i+1) + '" loading="lazy"></div>'
       : '<div class="slot"><span>Artwork<br>pending</span></div>';
   }).join('');
-  const pill = c.status === 'live'
-    ? '<span class="pill live"><span class="dot"></span>Live</span>'
-    : '<span class="pill prep"><span class="dot"></span>Ready</span>';
+  const pill = c.status === 'live' ? '<span class="pill live"><span class="dot"></span>Live</span>'
+             : c.status === 'build' ? '<span class="pill hold"><span class="dot"></span>In build</span>'
+             : '<span class="pill prep"><span class="dot"></span>Ready</span>';
+  const row = (k,v) => v ? '<dl class="camp-row"><dt>' + k + '</dt><dd>' + esc(v) + '</dd></dl>' : '';
   return '<div class="camp">' +
     '<div class="camp-head"><span class="sq" style="background:' + (PLATFORM_COLOR[c.platform]||'#888') + '">' + esc(c.platform[0]) + '</span>' +
-      '<b>' + esc(c.name) + '</b>' + pill + '</div>' +
+      '<b>' + esc(c.base ? c.base + '  \u00b7  ' + c.name : c.name) + '</b>' + pill + '</div>' +
+    (c.campaign ? '<p class="camp-sub">' + esc(c.campaign) + '</p>' : '') +
     '<div class="camp-body">' +
-      '<dl class="camp-row"><dt>Direction</dt><dd>' + esc(c.direction) + '</dd></dl>' +
-      '<dl class="camp-row"><dt>Audiences</dt><dd>' + esc(c.audiences) + '</dd></dl>' +
-      '<dl class="camp-row"><dt>Budget</dt><dd>' + esc(c.budget) + '</dd></dl>' +
-      '<dl class="camp-row"><dt>Approval</dt><dd>' + esc(c.approval) + '</dd></dl>' +
-      '<dl class="camp-row"><dt>Goes live</dt><dd>' + esc(c.launch) + '</dd></dl>' +
+      row('Role', c.role) + row('Objective', c.objective) + row('Audience', c.audience) +
+      row('Budget', c.budget) + row('Format', c.format) + row('Destination', c.destination) +
+      row('Goes live', c.launch) +
     '</div>' +
-    '<div class="creative"><p class="lab">Creative</p><div class="creative-strip">' + slots + '</div></div>' +
+    (c.primary ? '<div class="camp-block"><p class="lab">Primary text</p><p class="camp-copy">' + esc(c.primary) + '</p></div>' : '') +
+    (c.cards ? '<div class="camp-block"><p class="lab">Carousel</p><div class="camp-cards">' +
+      c.cards.map(function(x,i){ return '<div><b>' + (i+1) + '</b><span>' + esc(x[0]) + '</span><em>' + esc(x[1]) + '</em></div>'; }).join('') +
+      '</div></div>' : '') +
+    (c.testing ? '<div class="camp-block"><p class="lab">What we\u2019re testing</p><p class="camp-test">' + esc(c.testing) + '</p></div>' : '') +
+    '<div class="camp-block"><p class="lab">Creative</p><div class="creative-strip">' + slots + '</div></div>' +
   '</div>';
 }
+
 const liveOnes = CAMPAIGNS.filter(c => c.status === 'live');
 $('#liveCampaigns').innerHTML = liveOnes.length
   ? '<div class="grid g2">' + liveOnes.map(campCard).join('') + '</div>'
-  : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>The Product and Lifestyle campaigns below are being built for your walkthrough on Monday 14 September. They go live Tuesday 15 September, and this section then fills with what is actually serving \u2014 including the artwork behind each one.</div>';
+  : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>Love at First Lash is built and ready to publish. Once it is running, this section fills with what is actually serving \u2014 including the artwork behind each card.</div>';
 if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') + ' live on Meta';
 $('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status !== 'live').map(campCard).join('');
+$('#plannedCampaigns').className = 'grid g2';
 
 /* ---------- creative library ---------- */
 (function(){
