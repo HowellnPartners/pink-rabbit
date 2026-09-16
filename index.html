@@ -178,6 +178,27 @@ body.sample .sample-banner{display:flex}
 .slot span{font-size:9.5px;color:#C3B8B0;letter-spacing:.05em;text-align:center;padding:6px}
 .slot.filled{border-style:solid;border-color:var(--line)}
 
+.clib-group{margin-bottom:22px}
+.clib-group:last-child{margin-bottom:0}
+.clib-head{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.clib-head h4{font-size:12.5px;font-weight:600;margin:0}
+.clib-head span{font-size:11px;color:var(--ink-mute)}
+.clib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px}
+.clib-item{position:relative;display:block;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:var(--cream);aspect-ratio:1;cursor:zoom-in;transition:border-color .2s,transform .2s}
+.clib-item:hover{border-color:var(--blush-deep);transform:translateY(-2px)}
+.clib-item.live{border-color:var(--good);border-width:2px}
+.clib-item img{width:100%;height:100%;object-fit:contain;display:block}
+.clib-meta{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;
+  gap:6px;padding:14px 8px 6px;background:linear-gradient(transparent,rgba(26,21,18,.6))}
+.clib-meta em{font-style:normal;font-size:9.5px;font-weight:600;color:#fff;letter-spacing:.06em}
+.clib-meta i{font-style:normal;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  background:var(--good);color:#fff;padding:2px 7px;border-radius:999px}
+.lb{position:fixed;inset:0;background:rgba(26,21,18,.88);display:none;place-items:center;z-index:900;padding:20px;cursor:zoom-out}
+.lb.on{display:grid}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.lb img{max-width:min(92vw,860px);max-height:84vh;border-radius:12px;display:block}
+.lb figcaption{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,244,246,.75)}
 .tblwrap{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg)}
 table{width:100%;border-collapse:collapse;min-width:640px}
 th{text-align:left;font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);padding:15px 20px;border-bottom:1px solid var(--line)}
@@ -529,6 +550,11 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
+        <div class="sec-head"><h3>Creative library</h3><p class="hint" id="clibHint"></p></div>
+        <div id="creativeLib"></div>
+      </div>
+
+      <div class="sec">
         <div class="sec-head"><h3>Why we&#8217;re rolling out channels in phases</h3><p class="hint">Meta and Google are in your plan &#183; Pinterest is our recommendation</p></div>
         <div class="grid g2">
           <div class="card" id="whyBox"></div>
@@ -629,6 +655,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
   </div>
 </div>
 
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Creative preview"><figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure></div>
+
 <script>
 (function(){
 "use strict";
@@ -653,6 +681,51 @@ const CAMPAIGNS = [
     direction:'Brand-led \u2014 the ease, the feeling, the Pink Rabbit voice',
     audiences:'Confirmed at build, 12\u201314 Sep', budget:'Confirmed at build, 12\u201314 Sep',
     approval:'Mon 14 Sep', launch:'Tue 15 Sep', creative:[] }
+];
+
+// September ad creative. Set live:true on the ones actually pushed to Meta.
+const CREATIVE = [
+  {c:'Find Your Lash', f:'creative/web/fyl-01.jpg', r:'1:1', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-02.jpg', r:'1:1', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-03.jpg', r:'1:1', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-04.jpg', r:'1:1', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-05.jpg', r:'4:5', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-06.jpg', r:'4:5', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-07.jpg', r:'4:5', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-08.jpg', r:'4:5', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-09.jpg', r:'9:16', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-10.jpg', r:'9:16', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-11.jpg', r:'9:16', live:false},
+  {c:'Find Your Lash', f:'creative/web/fyl-12.jpg', r:'9:16', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-01.jpg', r:'1:1', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-02.jpg', r:'9:16', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-03.jpg', r:'4:5', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-04.jpg', r:'1:1', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-05.jpg', r:'1:1', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-06.jpg', r:'1:1', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-07.jpg', r:'4:5', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-08.jpg', r:'4:5', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-09.jpg', r:'4:5', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-10.jpg', r:'9:16', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-11.jpg', r:'9:16', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-12.jpg', r:'9:16', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-13.jpg', r:'1:1', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-14.jpg', r:'9:16', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-15.jpg', r:'4:5', live:false},
+  {c:'Main Character', f:'creative/web/mc-01.jpg', r:'4:5', live:false},
+  {c:'Main Character', f:'creative/web/mc-02.jpg', r:'4:5', live:false},
+  {c:'Main Character', f:'creative/web/mc-03.jpg', r:'4:5', live:false},
+  {c:'Main Character', f:'creative/web/mc-04.jpg', r:'4:5', live:false},
+  {c:'Main Character', f:'creative/web/mc-05.jpg', r:'1:1', live:false},
+  {c:'Main Character', f:'creative/web/mc-06.jpg', r:'1:1', live:false},
+  {c:'Main Character', f:'creative/web/mc-07.jpg', r:'1:1', live:false},
+  {c:'Main Character', f:'creative/web/mc-08.jpg', r:'1:1', live:false},
+  {c:'Main Character', f:'creative/web/mc-09.jpg', r:'9:16', live:false},
+  {c:'Main Character', f:'creative/web/mc-10.jpg', r:'9:16', live:false},
+  {c:'Main Character', f:'creative/web/mc-11.jpg', r:'9:16', live:false},
+  {c:'Main Character', f:'creative/web/mc-12.jpg', r:'9:16', live:false},
+  {c:'Main Character', f:'creative/web/mc-13.jpg', r:'4:5', live:false},
+  {c:'Main Character', f:'creative/web/mc-14.jpg', r:'9:16', live:false}
 ];
 
 const LAUNCH = new Date(2026, 8, 15);   // Meta go-live, Tue 15 Sep
@@ -787,6 +860,35 @@ $('#liveCampaigns').innerHTML = liveOnes.length
   : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>The Product and Lifestyle campaigns below are being built for your walkthrough on Monday 14 September. They go live Tuesday 15 September, and this section then fills with what is actually serving \u2014 including the artwork behind each one.</div>';
 if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') + ' live on Meta';
 $('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status !== 'live').map(campCard).join('');
+
+/* ---------- creative library ---------- */
+(function(){
+  const groups = {};
+  CREATIVE.forEach(x => (groups[x.c] = groups[x.c] || []).push(x));
+  const liveN = CREATIVE.filter(x => x.live).length;
+  $('#clibHint').textContent = CREATIVE.length + ' assets across ' + Object.keys(groups).length + ' concepts \u00b7 ' +
+    (liveN ? liveN + ' live on Meta' : 'none pushed live yet');
+  $('#creativeLib').innerHTML = Object.keys(groups).map(function(c){
+    const arr = groups[c], n = arr.filter(x => x.live).length;
+    return '<div class="clib-group"><div class="clib-head"><h4>' + c + '</h4>' +
+      '<span>' + arr.length + ' assets' + (n ? ' \u00b7 ' + n + ' live' : '') + '</span></div>' +
+      '<div class="clib-grid">' + arr.map(function(x){
+        return '<button type="button" class="clib-item' + (x.live ? ' live' : '') + '" data-src="' + x.f + '"' +
+          ' data-cap="' + esc(c) + ' \u00b7 ' + x.r + '" aria-label="' + esc(c) + ' ad, ' + x.r + '">' +
+          '<img src="' + x.f + '" alt="' + esc(c) + ' ad, ' + x.r + '" loading="lazy">' +
+          '<span class="clib-meta"><em>' + x.r + '</em>' + (x.live ? '<i>Live</i>' : '') + '</span></button>';
+      }).join('') + '</div></div>';
+  }).join('');
+
+  const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
+  $('#creativeLib').addEventListener('click', function(e){
+    const b = e.target.closest('.clib-item'); if(!b) return;
+    lbImg.src = b.dataset.src; lbImg.alt = b.getAttribute('aria-label');
+    lbCap.textContent = b.dataset.cap; lb.classList.add('on');
+  });
+  lb.addEventListener('click', () => lb.classList.remove('on'));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') lb.classList.remove('on'); });
+})();
 
 /* ---------- why we roll out channels in phases ---------- */
 const PHASES = [
