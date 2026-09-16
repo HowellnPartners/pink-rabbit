@@ -555,7 +555,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>The creative test</h3><p class="hint">Two ad bases, same objective, different creative direction</p></div>
+        <div class="sec-head"><h3>The creative test</h3><p class="hint">Funnel stage describes who the creative speaks to &#8212; both campaigns are optimized for website purchases</p></div>
         <div class="grid g2" id="plannedCampaigns"></div>
       </div>
 
@@ -683,27 +683,33 @@ const EMAILS = ['abigail@howellnmedia.com', 'brooke@howellnmedia.com'];
 // creative: add artwork by dropping image files into a /creative folder next to
 // this file, then listing them here, e.g. ['creative/brown-sugar-01.jpg'].
 const CAMPAIGNS = [
-  { name:'Love at First Lash', base:'Ad Base #1', platform:'Meta', status:'ready',
+  { name:'Love at First Lash', base:'Campaign 01', platform:'Meta', status:'live', liveSince:'2026-09-15',
     campaign:'PR | Sales | Lifestyle Sept.15',
-    role:'Lifestyle / brand discovery \u2192 product consideration',
-    objective:'Sales \u00b7 Purchase, website',
+    objective:'Website Sales',
+    funnel:'TOF \u2192 MOF (Discovery + Product Education)',
+    goal:'Introduce Pink Rabbit, establish the visual world, and give a cold customer an immediate reason the product is different',
+    conversion:'Purchase',
+    message:'Handmade, professional lash-extension look + pre-glued ease',
+    creativeFmt:'Lifestyle carousel \u00b7 4:5 feed, custom 9:16 for Stories',
+    destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     audience:'US, 18+ \u00b7 women 18\u201345 interested in cosmetics, lash extensions, beauty, fashion and makeup \u00b7 Advantage+ Audience on',
     budget:'$16 / day \u00b7 $240 over the flight',
     flight:'15 days \u00b7 15\u201329 Sep',
-    format:'3-card carousel \u00b7 4:5 feed, custom 9:16 for Stories',
-    destination:'Lashes collection \u00b7 Shop Now',
     launch:'Tue 15 Sep',
     primary:'Love at first lash. Meet Pink Rabbit, 100% handmade lashes designed with the softness, dimension + look of professional lash extensions. Pre-glued for an easier, cleaner application, so getting the lash look you love feels effortless. Find your perfect lash.',
     cards:[['Find Your Perfect Lash','Introduce'],['The Lash Extension Look, Made Easy','Differentiate'],['Meet Your New Favorite Lashes','Convert']],
-    testing:'Whether lifestyle-led, editorial creative attracts qualified new customers and converts them \u2014 measured against the product-led direction in Ad Base #2.',
+    testing:'Whether lifestyle-led, editorial creative attracts qualified new customers and converts them \u2014 measured against the product-led direction in Campaign 02.',
+    note:'This campaign does not need to communicate every Pink Rabbit differentiator. It establishes the first few.',
     creative:[] },
-  { name:'Product', base:'Ad Base #2', platform:'Meta', status:'build',
-    role:'Product-led / direct response',
-    objective:'Sales \u00b7 Purchase, website',
+  { name:'Product', base:'Campaign 02', platform:'Meta', status:'build',
+    objective:'Website Sales',
+    funnel:'MOF \u2192 BOF (Product-led direct response)',
+    conversion:'Purchase',
+    message:'Picks up the differentiators Campaign 01 does not carry',
+    creativeFmt:'Confirmed at build',
+    destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     audience:'Confirmed at build',
     budget:'Confirmed at build',
-    format:'Confirmed at build',
-    destination:'Lashes collection \u00b7 Shop Now',
     launch:'After the 15-day test',
     testing:'The direct-response counterpart to the lifestyle test \u2014 same objective, different creative direction.',
     creative:[] }
@@ -875,15 +881,18 @@ function campCard(c){
       '<b>' + esc(c.base ? c.base + '  \u00b7  ' + c.name : c.name) + '</b>' + pill + '</div>' +
     (c.campaign ? '<p class="camp-sub">' + esc(c.campaign) + '</p>' : '') +
     '<div class="camp-body">' +
-      row('Role', c.role) + row('Objective', c.objective) + row('Audience', c.audience) +
-      row('Budget', c.budget) + row('Flight', c.flight) + row('Format', c.format) + row('Destination', c.destination) +
-      row('Goes live', c.launch) +
+      row('Objective', c.objective) + row('Funnel stage', c.funnel) + row('Goal', c.goal) +
+      row('Conversion goal', c.conversion) + row('Core message', c.message) +
+      row('Creative', c.creativeFmt) + row('Destination', c.destination) +
+      row('Audience', c.audience) + row('Budget', c.budget) + row('Flight', c.flight) +
+      row(c.status === 'live' ? 'Live since' : 'Goes live', c.status === 'live' ? 'Tue 15 Sep' : c.launch) +
     '</div>' +
     (c.primary ? '<div class="camp-block"><p class="lab">Primary text</p><p class="camp-copy">' + esc(c.primary) + '</p></div>' : '') +
     (c.cards ? '<div class="camp-block"><p class="lab">Carousel</p><div class="camp-cards">' +
       c.cards.map(function(x,i){ return '<div><b>' + (i+1) + '</b><span>' + esc(x[0]) + '</span><em>' + esc(x[1]) + '</em></div>'; }).join('') +
       '</div></div>' : '') +
-    (c.testing ? '<div class="camp-block"><p class="lab">What we\u2019re testing</p><p class="camp-test">' + esc(c.testing) + '</p></div>' : '') +
+    (c.testing ? '<div class="camp-block"><p class="lab">What we\u2019re testing</p><p class="camp-test">' + esc(c.testing) +
+      (c.note ? '<br><br>' + esc(c.note) : '') + '</p></div>' : '') +
     '<div class="camp-block"><p class="lab">Creative</p><div class="creative-strip">' + slots + '</div></div>' +
   '</div>';
 }
