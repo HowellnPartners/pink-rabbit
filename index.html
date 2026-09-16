@@ -170,6 +170,11 @@ body.sample .sample-banner{display:flex}
 .camp-row{display:flex;justify-content:space-between;gap:14px;font-size:12px}
 .camp-row dt{color:var(--ink-mute)}
 .camp-row dd{text-align:right;font-weight:500}
+.camp-cols{display:grid;grid-template-columns:1fr}
+.camp.wide .camp-cols{grid-template-columns:1fr 1fr}
+.camp-col{min-width:0;display:flex;flex-direction:column}
+.camp.wide .camp-col + .camp-col{border-left:1px solid var(--line-soft)}
+.camp.wide .camp-col + .camp-col > .camp-block:first-child{border-top:none;margin-top:0;padding-top:18px}
 .camp-sub{font-size:10.5px;color:var(--ink-mute);letter-spacing:.04em;padding:0 22px 14px;margin-top:-8px;font-variant-numeric:tabular-nums}
 .camp-block{padding:16px 22px 0;border-top:1px solid var(--line-soft);margin-top:4px}
 .camp-block .lab{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);margin-bottom:8px}
@@ -370,6 +375,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
 
   .creative-strip{gap:6px}
   .camp-head,.camp-body,.creative{padding-left:18px;padding-right:18px}
+  .camp.wide .camp-cols{grid-template-columns:1fr}
+  .camp.wide .camp-col + .camp-col{border-left:none}
 
   /* 16px stops iOS zooming the page in when a field is focused */
   .road-row{grid-template-columns:1fr;gap:4px;padding:14px 18px}
@@ -700,7 +707,7 @@ const CAMPAIGNS = [
     cards:[['Find Your Perfect Lash','Introduce'],['The Lash Extension Look, Made Easy','Differentiate'],['Meet Your New Favorite Lashes','Convert']],
     testing:'Whether lifestyle-led, editorial creative attracts qualified new customers and converts them \u2014 measured against the product-led direction in Campaign 02.',
     note:'This campaign does not need to communicate every Pink Rabbit differentiator. It establishes the first few.',
-    creative:[] },
+    creative:['creative/web/lafl-07.jpg','creative/web/lafl-08.jpg','creative/web/lafl-09.jpg'] },
   { name:'Product', base:'Campaign 02', platform:'Meta', status:'build',
     objective:'Website Sales',
     funnel:'MOF \u2192 BOF (Product-led direct response)',
@@ -731,9 +738,9 @@ const CREATIVE = [
   {c:'Love At First Lash', f:'creative/web/lafl-04.jpg', r:'1:1', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-05.jpg', r:'1:1', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-06.jpg', r:'1:1', live:false},
-  {c:'Love At First Lash', f:'creative/web/lafl-07.jpg', r:'4:5', live:false},
-  {c:'Love At First Lash', f:'creative/web/lafl-08.jpg', r:'4:5', live:false},
-  {c:'Love At First Lash', f:'creative/web/lafl-09.jpg', r:'4:5', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-07.jpg', r:'4:5', live:true},
+  {c:'Love At First Lash', f:'creative/web/lafl-08.jpg', r:'4:5', live:true},
+  {c:'Love At First Lash', f:'creative/web/lafl-09.jpg', r:'4:5', live:true},
   {c:'Love At First Lash', f:'creative/web/lafl-10.jpg', r:'9:16', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-11.jpg', r:'9:16', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-12.jpg', r:'9:16', live:false},
@@ -865,7 +872,7 @@ $('#readyList').innerHTML = READY.map(r =>
 
 /* ---------- campaigns ---------- */
 const PLATFORM_COLOR = { Meta:'#1877F2', Pinterest:'#E60023', Google:'#34A853' };
-function campCard(c){
+function campCard(c, wide){
   const slots = [0,1,2].map(function(i){
     const src = c.creative[i];
     return src
@@ -876,10 +883,11 @@ function campCard(c){
              : c.status === 'build' ? '<span class="pill hold"><span class="dot"></span>In build</span>'
              : '<span class="pill prep"><span class="dot"></span>Ready</span>';
   const row = (k,v) => v ? '<dl class="camp-row"><dt>' + k + '</dt><dd>' + esc(v) + '</dd></dl>' : '';
-  return '<div class="camp">' +
+  return '<div class="camp' + (wide ? ' wide' : '') + '">' +
     '<div class="camp-head"><span class="sq" style="background:' + (PLATFORM_COLOR[c.platform]||'#888') + '">' + esc(c.platform[0]) + '</span>' +
       '<b>' + esc(c.base ? c.base + '  \u00b7  ' + c.name : c.name) + '</b>' + pill + '</div>' +
     (c.campaign ? '<p class="camp-sub">' + esc(c.campaign) + '</p>' : '') +
+    '<div class="camp-cols"><div class="camp-col">' +
     '<div class="camp-body">' +
       row('Objective', c.objective) + row('Funnel stage', c.funnel) + row('Goal', c.goal) +
       row('Conversion goal', c.conversion) + row('Core message', c.message) +
@@ -888,18 +896,20 @@ function campCard(c){
       row(c.status === 'live' ? 'Live since' : 'Goes live', c.status === 'live' ? 'Tue 15 Sep' : c.launch) +
     '</div>' +
     (c.primary ? '<div class="camp-block"><p class="lab">Primary text</p><p class="camp-copy">' + esc(c.primary) + '</p></div>' : '') +
+    '</div><div class="camp-col">' +
     (c.cards ? '<div class="camp-block"><p class="lab">Carousel</p><div class="camp-cards">' +
       c.cards.map(function(x,i){ return '<div><b>' + (i+1) + '</b><span>' + esc(x[0]) + '</span><em>' + esc(x[1]) + '</em></div>'; }).join('') +
       '</div></div>' : '') +
     (c.testing ? '<div class="camp-block"><p class="lab">What we\u2019re testing</p><p class="camp-test">' + esc(c.testing) +
       (c.note ? '<br><br>' + esc(c.note) : '') + '</p></div>' : '') +
     '<div class="camp-block"><p class="lab">Creative</p><div class="creative-strip">' + slots + '</div></div>' +
+    '</div></div>' +
   '</div>';
 }
 
 const liveOnes = CAMPAIGNS.filter(c => c.status === 'live');
 $('#liveCampaigns').innerHTML = liveOnes.length
-  ? '<div class="grid g2">' + liveOnes.map(campCard).join('') + '</div>'
+  ? '<div class="grid" style="grid-template-columns:1fr">' + liveOnes.map(function(c){ return campCard(c, true); }).join('') + '</div>'
   : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>Love at First Lash is built and ready to publish. Once it is running, this section fills with what is actually serving \u2014 including the artwork behind each card.</div>';
 if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') + ' live on Meta';
 $('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status !== 'live').map(campCard).join('');
