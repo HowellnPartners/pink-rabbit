@@ -151,7 +151,8 @@ body.sample .sample-banner{display:flex}
 .tile.empty .val{color:var(--line)}
 .tile .foot{font-size:11px;color:var(--ink-mute);margin-top:8px;display:flex;align-items:center;gap:6px}
 .tile .delta{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--good-bg);color:var(--good)}
-.spark{width:100%;height:32px;margin-top:12px;display:block}
+.readnote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 22px;margin-top:14px}
+.readnote p:last-child{font-size:12.5px;line-height:1.7;color:var(--ink-soft);margin-top:8px;max-width:88ch}
 
 .ready{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
 .ready-row{display:grid;grid-template-columns:1fr 124px 112px;gap:14px;align-items:center;padding:14px 22px;border-top:1px solid var(--line-soft)}
@@ -485,13 +486,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
       <div class="topbar-right">
         <span class="pill prep" id="statusPill"><span class="dot"></span>Pre-launch</span>
-        <label class="toggle" title="Preview what the dashboard looks like once Meta is running">
-          <input type="checkbox" id="sampleToggle"> Preview with sample data
-        </label>
       </div>
-    </div>
-    <div class="sample-banner">
-      <strong>Sample data.</strong>&nbsp;Illustrative numbers showing what this dashboard reports once Meta is live &#8212; not Pink Rabbit&#8217;s actual results.
     </div>
 
     <!-- ========== DASHBOARD ========== -->
@@ -527,17 +522,10 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
 
       <div class="sec">
         <div class="sec-head"><h3>Meta performance</h3><p class="hint" id="perfHint">First numbers land Wednesday 16 September, the day after launch</p></div>
-        <div class="grid g4">
-          <div class="tile empty" data-tile="spend"><p class="lab">Ad spend</p><p class="val num">&mdash;</p><p class="foot">Starts 15 Sep</p></div>
-          <div class="tile empty" data-tile="revenue"><p class="lab">Attributed revenue</p><p class="val num">&mdash;</p><p class="foot">Starts 15 Sep</p></div>
-          <div class="tile empty" data-tile="roas"><p class="lab">ROAS</p><p class="val num">&mdash;</p><p class="foot">Steering to 2.5&times; by day 45</p></div>
-          <div class="tile empty" data-tile="orders"><p class="lab">Orders from ads</p><p class="val num">&mdash;</p><p class="foot">Starts 15 Sep</p></div>
-        </div>
-        <div class="grid g4" style="margin-top:14px">
-          <div class="tile empty" data-tile="cpa"><p class="lab">Cost per purchase</p><p class="val num">&mdash;</p><p class="foot">Starts 15 Sep</p></div>
-          <div class="tile empty" data-tile="ctr"><p class="lab">Click-through rate</p><p class="val num">&mdash;</p><p class="foot">Creative health signal</p></div>
-          <div class="tile empty" data-tile="aov"><p class="lab">Average order value</p><p class="val num">&mdash;</p><p class="foot">Kits lift this</p></div>
-          <div class="tile empty" data-tile="reach"><p class="lab">People reached</p><p class="val num">&mdash;</p><p class="foot">Starts 15 Sep</p></div>
+        <div class="grid g4" id="metricTiles"></div>
+        <div class="readnote">
+          <p class="eyebrow">How to read these</p>
+          <p>The 29 September report won&#8217;t be a creative verdict. With 939 impressions and no delivery rankings yet, there isn&#8217;t enough data to say the lifestyle direction beat or lost to anything. Campaign 02 is meant to be measured against this one, and right now there&#8217;s no baseline to measure against &#8212; just a cold-start cost curve.</p>
         </div>
       </div>
 
@@ -1183,55 +1171,26 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
   window.addEventListener('resize', () => tip.classList.remove('on'));
 })();
 
-/* ---------- sample data ---------- */
-function spark(vals, color){
-  const w=100, hh=32, mn=Math.min.apply(null,vals), mx=Math.max.apply(null,vals), rg=(mx-mn)||1;
-  const pts = vals.map((v,i)=>[(i/(vals.length-1))*w, hh-4-((v-mn)/rg)*(hh-10)]);
-  const line = pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
-  const last = pts[pts.length-1];
-  return '<svg class="spark" viewBox="0 0 100 32" preserveAspectRatio="none" aria-hidden="true">' +
-    '<path d="' + line + ' L100 32 L0 32 Z" fill="' + color + '" opacity=".14"/>' +
-    '<path d="' + line + '" fill="none" stroke="' + color + '" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>' +
-    '<circle cx="' + last[0].toFixed(1) + '" cy="' + last[1].toFixed(1) + '" r="2.2" fill="' + color + '"/></svg>';
-}
-const SAMPLE = {
-  spend  :['$4,280','+18%',[310,340,395,420,455,470,510],'#D9536F'],
-  revenue:['$11,640','+31%',[620,700,910,1040,1180,1420,1610],'#3E8A68'],
-  roas   :['2.72&times;','+0.34',[1.9,2.1,2.3,2.4,2.55,2.6,2.72],'#3E8A68'],
-  orders :['318','+27%',[22,26,31,38,44,49,56],'#D9536F'],
-  cpa    :['$13.46','\u2212$2.10',[19,18,17,16,15,14,13.5],'#3E8A68'],
-  ctr    :['1.94%','+0.22',[1.3,1.4,1.55,1.6,1.75,1.82,1.94],'#D9536F'],
-  aov    :['$36.60','+$3.10',[31,32,33,34,35,36,36.6],'#3E8A68'],
-  reach  :['184,200','+22%',[92,104,118,131,148,166,184],'#D9536F']
+/* ---------- performance ----------
+   Latest pull from Ads Manager. Update these after each report. */
+const METRICS = {
+  window:'Sep 15\u201319 \u00b7 day 5 of the 15-day flight \u00b7 updated 19 Sep',
+  tiles:[
+    ['Ad spend','$65.17','of $240 across the flight'],
+    ['Purchases','1','first sale, day 5'],
+    ['Cost per purchase','$65.17','cold-start cost, first campaign'],
+    ['People reached','511','frequency 1.8'],
+    ['Impressions','939','Sep 15\u201319'],
+    ['CPM','$69.40','cost per 1,000 impressions'],
+    ['Attributed revenue','','awaiting purchase value'],
+    ['ROAS','','needs revenue']
+  ]
 };
-const EMPTY = {spend:'Starts 15 Sep',revenue:'Starts 15 Sep',roas:'Steering to 2.5&times; by day 45',orders:'Starts 15 Sep',
-  cpa:'Starts 15 Sep',ctr:'Creative health signal',aov:'Kits lift this',reach:'Starts 15 Sep'};
-
-$('#sampleToggle').addEventListener('change', function(){
-  const on = this.checked;
-  document.body.classList.toggle('sample', on);
-  $$('[data-tile]').forEach(function(t){
-    const k = t.dataset.tile, sp = t.querySelector('.spark');
-    if(sp) sp.remove();
-    if(on){
-      const s = SAMPLE[k];
-      t.classList.remove('empty');
-      t.querySelector('.val').innerHTML = s[0];
-      t.querySelector('.foot').innerHTML = '<span class="delta">' + s[1] + '</span> vs. previous 7 days';
-      t.insertAdjacentHTML('beforeend', spark(s[2], s[3]));
-    } else {
-      t.classList.add('empty');
-      t.querySelector('.val').innerHTML = '&mdash;';
-      t.querySelector('.foot').innerHTML = EMPTY[k];
-    }
-  });
-  const p = $('#statusPill');
-  p.className = (on || IS_LIVE) ? 'pill live' : 'pill prep';
-  p.innerHTML = '<span class="dot"></span>' + (on ? 'Sample' : IS_LIVE ? 'Live' : 'Pre-launch');
-  $('#perfHint').textContent = on
-    ? 'Illustrative seven-day view \u2014 the shape of the weekly report'
-    : 'First numbers land Wednesday 16 September, the day after launch';
-});
+$('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
+  return '<div class="tile' + (t[1] ? '' : ' empty') + '"><p class="lab">' + t[0] + '</p>' +
+    '<p class="val num">' + (t[1] || '\u2014') + '</p><p class="foot">' + t[2] + '</p></div>';
+}).join('');
+$('#perfHint').textContent = METRICS.window;
 
 /* ---------- notes: email both, keep a local copy ---------- */
 const LS = 'pr_notes_v2', LSNAME = 'pr_note_name';
