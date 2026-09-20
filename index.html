@@ -151,6 +151,14 @@ body.sample .sample-banner{display:flex}
 .tile.empty .val{color:var(--line)}
 .tile .foot{font-size:11px;color:var(--ink-mute);margin-top:8px;display:flex;align-items:center;gap:6px}
 .tile .delta{font-size:10.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--good-bg);color:var(--good)}
+.log{display:flex;flex-direction:column;gap:10px;margin-bottom:26px}
+.log-entry{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 22px}
+.log-entry .top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:7px}
+.log-entry time{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-deep);
+  background:var(--blush);border-radius:999px;padding:4px 10px}
+.log-entry h4{font-size:13px;font-weight:600;margin:0}
+.log-entry .by{font-size:10.5px;color:var(--ink-mute);margin-left:auto}
+.log-entry p{font-size:12.5px;line-height:1.7;color:var(--ink-soft);max-width:82ch}
 .readnote{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px 22px;margin-top:14px}
 .readnote p:last-child{font-size:12.5px;line-height:1.7;color:var(--ink-soft);margin-top:8px;max-width:88ch}
 
@@ -636,6 +644,11 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
 
     <!-- ========== NOTES ========== -->
     <section class="panel" id="p-notes">
+      <div class="sec">
+        <div class="sec-head"><h3>Updates from Brooke &amp; Abby</h3><p class="hint" id="logHint"></p></div>
+        <div class="log" id="noteLog"></div>
+      </div>
+
       <div class="sec">
         <div class="sec-head"><h3>Notes &amp; requests</h3><p class="hint">Opens an email addressed to Brooke and Abby together</p></div>
         <div class="notes-layout">
@@ -1191,6 +1204,26 @@ $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
     '<p class="val num">' + (t[1] || '\u2014') + '</p><p class="foot">' + t[2] + '</p></div>';
 }).join('');
 $('#perfHint').textContent = METRICS.window;
+
+/* ---------- running log ----------
+   Newest first. Add an entry each time there is something worth recording. */
+const LOG = [
+  {d:'20 Sep', by:'Brooke', t:'Video ad live',
+   b:'Added a video ad alongside the carousel to see how it delivers. Video and Reels placements typically earn cheaper impressions than static or carousel, so this is also a test of whether our delivery costs come down.'},
+  {d:'20 Sep', by:'Brooke', t:'First five days',
+   b:'$65.17 spent, 939 impressions, 511 people reached and one purchase. The important part: that purchase fired correctly through the Pixel, so tracking is confirmed end to end. Costs per impression are high while the account is new \u2014 Meta has no purchase history to learn from yet, so it bids cautiously and reaches a smaller group. We expect that to settle as data builds.'},
+  {d:'18 Sep', by:'Brooke', t:'Creative updated',
+   b:'Swapped the \u201creusable\u201d messaging out across the Love at First Lash set, per Paula. The three cards now lead with handmade, the professional lash-extension look, and pre-glued ease.'},
+  {d:'15 Sep', by:'Abby', t:'Campaign 01 live',
+   b:'Love at First Lash went live on Meta \u2014 a three-card lifestyle carousel at $16/day, running through 29 September, optimized for website purchases.'},
+  {d:'14 Sep', by:'Abby', t:'Walkthrough with Paula',
+   b:'Walked through the portal, campaign strategy, creative and the reporting process, and answered final questions before launch.'}
+];
+$('#noteLog').innerHTML = LOG.map(function(e){
+  return '<article class="log-entry"><div class="top"><time>' + e.d + '</time><h4>' + e.t + '</h4>' +
+    '<span class="by">' + e.by + '</span></div><p>' + e.b + '</p></article>';
+}).join('');
+$('#logHint').textContent = LOG.length + ' updates \u00b7 newest first';
 
 /* ---------- notes: email both, keep a local copy ---------- */
 const LS = 'pr_notes_v2', LSNAME = 'pr_note_name';
