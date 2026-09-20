@@ -215,6 +215,10 @@ body.sample .sample-banner{display:flex}
   background:var(--cream);aspect-ratio:1;cursor:zoom-in;transition:border-color .2s,transform .2s}
 .clib-item:hover{border-color:var(--blush-deep);transform:translateY(-2px)}
 .clib-item.live{border-color:var(--good);border-width:2px}
+.clib-play{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.clib-play i{width:44px;height:44px;border-radius:50%;background:rgba(26,21,18,.55);display:grid;place-items:center;border:1.5px solid rgba(255,255,255,.75)}
+.clib-play i::after{content:'';border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;margin-left:3px}
+.lb video{max-width:min(92vw,520px);max-height:84vh;border-radius:12px;display:block;background:#000}
 .clib-item img{width:100%;height:100%;object-fit:contain;display:block}
 .clib-meta{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;
   gap:6px;padding:14px 8px 6px;background:linear-gradient(transparent,rgba(26,21,18,.6))}
@@ -676,7 +680,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
   </div>
 </div>
 
-<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Creative preview"><figure><img id="lbImg" src="" alt=""><figcaption id="lbCap"></figcaption></figure></div>
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Creative preview"><figure><img id="lbImg" src="" alt=""><video id="lbVid" controls playsinline hidden></video><figcaption id="lbCap"></figcaption></figure></div>
 
 <script>
 (function(){
@@ -770,7 +774,8 @@ const CREATIVE = [
   {c:'Product', f:'creative/web/prod-06.jpg', r:'4:5', live:false},
   {c:'Product', f:'creative/web/prod-07.jpg', r:'9:16', live:false},
   {c:'Product', f:'creative/web/prod-08.jpg', r:'9:16', live:false},
-  {c:'Product', f:'creative/web/prod-09.jpg', r:'9:16', live:false}
+  {c:'Product', f:'creative/web/prod-09.jpg', r:'9:16', live:false},
+  {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:false}
 ];
 
 const LAUNCH = new Date(2026, 8, 15);   // Meta go-live, Tue 15 Sep
@@ -932,20 +937,29 @@ $('#plannedCampaigns').className = 'grid g2';
       '<span>' + arr.length + ' assets' + (n ? ' \u00b7 ' + n + ' live' : '') + '</span></div>' +
       '<div class="clib-grid">' + arr.map(function(x){
         return '<button type="button" class="clib-item' + (x.live ? ' live' : '') + '" data-src="' + x.f + '"' +
-          ' data-cap="' + esc(c) + ' \u00b7 ' + x.r + '" aria-label="' + esc(c) + ' ad, ' + x.r + '">' +
-          '<img src="' + x.f + '" alt="' + esc(c) + ' ad, ' + x.r + '" loading="lazy">' +
+          (x.v ? ' data-video="' + x.v + '"' : '') +
+          ' data-cap="' + esc(c) + ' \u00b7 ' + x.r + '" aria-label="' + esc(c) + (x.v ? ' video, ' : ' ad, ') + x.r + '">' +
+          '<img src="' + x.f + '" alt="' + esc(c) + (x.v ? ' video' : ' ad') + ', ' + x.r + '" loading="lazy">' +
+          (x.v ? '<span class="clib-play"><i></i></span>' : '') +
           '<span class="clib-meta"><em>' + x.r + '</em>' + (x.live ? '<i>Live</i>' : '') + '</span></button>';
       }).join('') + '</div></div>';
   }).join('');
 
-  const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
+  const lb = $('#lightbox'), lbImg = $('#lbImg'), lbVid = $('#lbVid'), lbCap = $('#lbCap');
+  function closeLb(){ lb.classList.remove('on'); lbVid.pause(); lbVid.removeAttribute('src'); lbVid.load(); }
   $('#creativeLib').addEventListener('click', function(e){
     const b = e.target.closest('.clib-item'); if(!b) return;
-    lbImg.src = b.dataset.src; lbImg.alt = b.getAttribute('aria-label');
+    if(b.dataset.video){
+      lbImg.hidden = true; lbVid.hidden = false;
+      lbVid.poster = b.dataset.src; lbVid.src = b.dataset.video; lbVid.play().catch(function(){});
+    } else {
+      lbVid.hidden = true; lbVid.removeAttribute('src'); lbImg.hidden = false;
+      lbImg.src = b.dataset.src; lbImg.alt = b.getAttribute('aria-label');
+    }
     lbCap.textContent = b.dataset.cap; lb.classList.add('on');
   });
-  lb.addEventListener('click', () => lb.classList.remove('on'));
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') lb.classList.remove('on'); });
+  lb.addEventListener('click', function(e){ if(!e.target.closest('video')) closeLb(); });
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLb(); });
 })();
 
 /* ---------- why we roll out channels in phases ---------- */
