@@ -560,7 +560,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
     <!-- ========== CAMPAIGNS ========== -->
     <section class="panel" id="p-campaigns">
       <div class="sec">
-        <div class="sec-head"><h3>Currently running</h3><p class="hint" id="liveHint">Nothing live yet &#183; Meta goes live 15 September</p></div>
+        <div class="sec-head"><h3>Currently running</h3><p class="hint" id="liveHint"></p></div>
         <div id="liveCampaigns"></div>
       </div>
 
@@ -716,18 +716,19 @@ const CAMPAIGNS = [
     testing:'Whether lifestyle-led, editorial creative attracts qualified new customers and converts them \u2014 measured against the product-led direction in Campaign 02.',
     note:'This campaign does not need to communicate every Pink Rabbit differentiator. It establishes the first few.',
     creative:['creative/web/lafl-07.jpg','creative/web/lafl-08.jpg','creative/web/lafl-09.jpg'] },
-  { name:'Product', base:'Campaign 02', platform:'Meta', status:'build',
+  { name:'Product', base:'Campaign 02', platform:'Meta', status:'live', liveSince:'2026-09-20',
     objective:'Website Sales',
     funnel:'MOF \u2192 BOF (Product-led direct response)',
     conversion:'Purchase',
     message:'Picks up the differentiators Campaign 01 does not carry',
-    creativeFmt:'Confirmed at build',
+    creativeFmt:'UGC video \u00b7 9:16',
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
-    audience:'Confirmed at build',
-    budget:'Confirmed at build',
-    launch:'After the 15-day test',
-    testing:'The direct-response counterpart to the lifestyle test \u2014 same objective, different creative direction.',
-    creative:[] }
+    audience:'To confirm',
+    budget:'$16 / day \u00b7 $176 over the flight',
+    flight:'11 days \u00b7 20\u201330 Sep',
+    launch:'Sun 20 Sep',
+    testing:'The video counterpart to the lifestyle carousel \u2014 same objective, different creative form. Running alongside Campaign 01 so the two can be compared over the same window.',
+    creative:['creative/web/vid-01.jpg'] }
 ];
 
 const CREATIVE = [
@@ -775,7 +776,7 @@ const CREATIVE = [
   {c:'Product', f:'creative/web/prod-07.jpg', r:'9:16', live:false},
   {c:'Product', f:'creative/web/prod-08.jpg', r:'9:16', live:false},
   {c:'Product', f:'creative/web/prod-09.jpg', r:'9:16', live:false},
-  {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:false}
+  {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:true}
 ];
 
 const LAUNCH = new Date(2026, 8, 15);   // Meta go-live, Tue 15 Sep
@@ -902,7 +903,7 @@ function campCard(c, wide){
       row('Conversion goal', c.conversion) + row('Core message', c.message) +
       row('Creative', c.creativeFmt) + row('Destination', c.destination) +
       row('Audience', c.audience) + row('Budget', c.budget) + row('Flight', c.flight) +
-      row(c.status === 'live' ? 'Live since' : 'Goes live', c.status === 'live' ? 'Tue 15 Sep' : c.launch) +
+      row(c.status === 'live' ? 'Live since' : 'Goes live', c.launch) +
     '</div>' +
     (c.primary ? '<div class="camp-block"><p class="lab">Primary text</p><p class="camp-copy">' + esc(c.primary) + '</p></div>' : '') +
     '</div><div class="camp-col">' +
@@ -920,7 +921,13 @@ const liveOnes = CAMPAIGNS.filter(c => c.status === 'live');
 $('#liveCampaigns').innerHTML = liveOnes.length
   ? '<div class="grid" style="grid-template-columns:1fr">' + liveOnes.map(function(c){ return campCard(c, true); }).join('') + '</div>'
   : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>Love at First Lash is built and ready to publish. Once it is running, this section fills with what is actually serving \u2014 including the artwork behind each card.</div>';
-if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') + ' live on Meta';
+if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') +
+  ' live on Meta \u00b7 funnel stage describes who the creative speaks to; both optimize for website purchases';
+// hide the planned section once nothing is left in it
+if(!CAMPAIGNS.filter(function(c){ return c.status !== 'live'; }).length){
+  const sec = $('#plannedCampaigns').closest('.sec');
+  if(sec) sec.hidden = true;
+}
 $('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status !== 'live').map(campCard).join('');
 $('#plannedCampaigns').className = 'grid g2';
 
@@ -1223,7 +1230,7 @@ $('#perfHint').textContent = METRICS.window;
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
   {d:'20 Sep', by:'Brooke', t:'Video ad live',
-   b:'Added a video ad alongside the carousel to see how it delivers. Video and Reels placements typically earn cheaper impressions than static or carousel, so this is also a test of whether our delivery costs come down.'},
+   b:'Campaign 02 went live with a UGC video, running through 30 September alongside the Love at First Lash carousel. Video and Reels placements typically earn cheaper impressions than static or carousel, so this also tests whether our delivery costs come down.'},
   {d:'20 Sep', by:'Brooke', t:'First five days',
    b:'$65.17 spent, 939 impressions, 511 people reached and one purchase. The important part: that purchase fired correctly through the Pixel, so tracking is confirmed end to end. Costs per impression are high while the account is new \u2014 Meta has no purchase history to learn from yet, so it bids cautiously and reaches a smaller group. We expect that to settle as data builds.'},
   {d:'18 Sep', by:'Brooke', t:'Creative updated',
