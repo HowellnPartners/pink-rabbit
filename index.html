@@ -507,12 +507,13 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>We walk you through everything on Monday 14 September &#8212; dashboard, campaign strategy, creative and reporting &#8212; and Meta goes live Tuesday 15 September across your full range. Brown Sugar, your best seller, is included from day one with its own ad set. Google follows on 1 November. We&#8217;re also recommending Pinterest for mid-October &#8212; it isn&#8217;t in your current plan, and the case for it is under Campaigns.</p>
+          <p>Both Meta campaigns are running: the Love at First Lash carousel since 15 September, the Checkout / Shopping video since the 20th, each at $16 a day and both ending 30 September. They share an audience and an objective, so the only thing that differs is the creative &#8212; that comparison is what this first flight is buying. Brown Sugar has been in the ads from day one. Google follows on 1 November, and we&#8217;re recommending Pinterest for mid-October &#8212; it isn&#8217;t in your current plan, and the case for it is under Campaigns.</p>
           <div class="hero-phases">
-            <span class="phase now">14 Sep &#183; Walkthrough</span>
-            <span class="phase">15 Sep &#183; Meta live</span>
+            <span class="phase">15 Sep &#183; Carousel</span>
+            <span class="phase">20 Sep &#183; Video</span>
+            <span class="phase now">To 30 Sep &#183; Testing</span>
             <span class="phase">Mid-Oct &#183; Pinterest (proposed)</span>
-            <span class="phase">1 Nov &#183; Google live</span>
+            <span class="phase">1 Nov &#183; Google</span>
           </div>
         </div>
         <div class="hero-side">
@@ -524,8 +525,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
           <div class="side-note">
             <p class="eyebrow">Waiting on Pink Rabbit</p>
             <ul>
-              <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Client walkthrough + final approval</b> &#8212; Monday 14 September, the day before launch</span></li>
-              <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Shopify collaborator request</b> &#8212; Settings &#8594; Users &#8594; Collaborators</span></li>
+                            <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Shopify collaborator request</b> &#8212; Settings &#8594; Users &#8594; Collaborators</span></li>
               <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Google Ads manager link</b> &#8212; accept our request when it arrives</span></li>
             </ul>
           </div>
@@ -792,7 +792,7 @@ const pct = d => ((toDate(d) - T0) / SPAN) * 100;
 
 /* ---------- routing: every section is a real page ---------- */
 const TITLES = {
-  dashboard:['Dashboard','Pre-launch \u00b7 Meta live 15 September'],
+  dashboard:['Dashboard','Two campaigns live \u00b7 both end 30 September'],
   campaigns:['Campaigns','Meta 15 Sep \u00b7 Google 1 Nov \u00b7 Pinterest recommended'],
   timeline :['Timeline','The first 90 days \u00b7 September \u2013 November 2026'],
   notes    :['Notes','Goes to Brooke and Abby together']
@@ -854,7 +854,7 @@ const IS_LIVE = CAMPAIGNS.some(c => c.status === 'live');
 /* bucket (last field): done | motion | you | proposed.
    The header counts are computed from these, so they always add up. */
 const READY = [
-  ['Client walkthrough + final approval','Monday 14 September, the day before launch: we walk you through the dashboard, campaign strategy, creative and reporting, and answer final launch questions.','Pink Rabbit','wait','Mon 14 Sep','you'],
+  ['Client walkthrough + final approval','Completed Monday 14 September \u2014 dashboard, campaign strategy, creative and the reporting process, with final questions answered before launch.','Pink Rabbit','live','Done','done'],
   ['Shopify collaborator access','Thanks for the code. Our request comes from our Shopify Partner account \u2014 approve it under Settings \u2192 Users and permissions \u2192 Collaborators when it arrives.','Pink Rabbit','wait','Needs you','you'],
   ['Meta Pixel + Conversions API','Shopify app install and domain verification. Needs 48 hours of traffic to validate before launch.','Howell\u2019n','prep','In progress','motion'],
   ['Product + Lifestyle campaign build','Both campaigns being built in Ads Manager for your walkthrough on Monday 14th.','Howell\u2019n','prep','In progress','motion'],
