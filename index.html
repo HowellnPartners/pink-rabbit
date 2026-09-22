@@ -537,7 +537,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="grid g4" id="metricTiles"></div>
         <div class="readnote">
           <p class="eyebrow">How to read these</p>
-          <p>The 30 September report won&#8217;t be a creative verdict. With 1,720 impressions across both campaigns and three purchases, there isn&#8217;t enough data to say the lifestyle carousel beat or lost to the video. They&#8217;re now running side by side at the same budget, so the comparison is fair &#8212; it just needs more volume before the difference between them means anything.</p>
+          <p>Campaign 01 started five days before Campaign 02, so comparing their totals on 30 September would flatter the carousel. We compare each campaign across its own first 11 days and first ~$176 of spend &#8212; the carousel&#8217;s 15&#8211;25 September against the video&#8217;s 20&#8211;30 September. Both windows close on the 30th. Until then, three purchases across the two is far too little to call a winner.</p>
         </div>
       </div>
 
@@ -1041,7 +1041,8 @@ const LANES = [
       items:['Campaign 01: Love at First Lash carousel, $16/day from 15 Sep','Campaign 02: Checkout / Shopping Video, $16/day from 20 Sep','Both run through 30 Sep'],
       dots:[
         {d:'2026-09-15', t:'Love at First Lash carousel live \u00b7 $16/day', w:'Howell\u2019n'},
-        {d:'2026-09-30', t:'Both campaigns end \u2014 first side-by-side read on carousel vs video', w:'Brooke &amp; Abby'}]},
+        {d:'2026-09-25', t:'Campaign 01 reaches day 11 \u2014 capture its numbers for the matched comparison', w:'Howell\u2019n'},
+        {d:'2026-09-30', t:'Both flights end \u2014 matched read: each campaign over its own first 11 days and ~$176', w:'Brooke &amp; Abby'}]},
     {n:'Pinterest foundation', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
       items:['Install Pinterest tag','Begin building site data','Prepare catalog + Pinterest account'],
       dots:[{d:'2026-09-18', t:'Your call on Pinterest \u2014 a yes by today keeps mid-October on track', w:'Pink Rabbit decides'}]},
@@ -1229,6 +1230,14 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'22 Sep', by:'Brooke', t:'How we will compare the two',
+   b:'Campaign 01 has a five-day head start, so we will not judge the two on their calendar totals. Each is measured across its own first 11 days and first ~$176 of spend \u2014 the carousel 15\u201325 September, the video 20\u201330 September \u2014 so the creative is the only thing that differs.'},
+  {d:'22 Sep', by:'Brooke', t:'Audience for Campaign 02',
+   b:'Campaign 02 runs to the same broad audience as Campaign 01 \u2014 US, 18+, women 18\u201345 with beauty and lash interests, Advantage+ Audience on \u2014 with recent purchasers excluded. Matching the targeting is what makes the test valid: if the audiences differed, any gap in cost per purchase could be the audience rather than the ad.'},
+  {d:'22 Sep', by:'Brooke', t:'No changes to the ads until 30 September',
+   b:'Editing an ad, its creative, its placements or its budget restarts Meta\u2019s learning phase. The carousel has just worked its way up to spending its full daily budget, and an edit now would throw that away and muddy the comparison. That includes Meta\u2019s own recommendations, which mostly raise budget or widen placements \u2014 we are declining those for now. New creative is batched for the next flight rather than dropped into a running one.'},
+  {d:'22 Sep', by:'Brooke', t:'Retargeting: not yet',
+   b:'A separate retargeting campaign is not worth carving out at this budget. With around 530 site visitors over 28 days and very few returning, the pool would be a few hundred people \u2014 too small for Meta to deliver against efficiently, and it would fragment an already small amount of spend across three lines. Advantage+ already re-reaches warm visitors inside the current campaigns. We revisit it for Campaign 03 once the traffic these flights drive has built real product-view, add-to-cart and checkout pools.'},
   {d:'22 Sep', by:'Brooke', t:'Week one check-in',
    b:'$146.58 spent across both campaigns and three purchases. The carousel has now delivered two sales and is spending on budget after a slow first few days, with its cost per purchase down from $65.17 to $55.19. The video picked up its first sale within two days of launch. Both run through 30 September.'},
   {d:'20 Sep', by:'Brooke', t:'Video ad live',
