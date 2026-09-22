@@ -537,7 +537,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="grid g4" id="metricTiles"></div>
         <div class="readnote">
           <p class="eyebrow">How to read these</p>
-          <p>The 29 September report won&#8217;t be a creative verdict. With 939 impressions and no delivery rankings yet, there isn&#8217;t enough data to say the lifestyle direction beat or lost to anything. Campaign 02 is meant to be measured against this one, and right now there&#8217;s no baseline to measure against &#8212; just a cold-start cost curve.</p>
+          <p>The 30 September report won&#8217;t be a creative verdict. With 1,720 impressions across both campaigns and three purchases, there isn&#8217;t enough data to say the lifestyle carousel beat or lost to the video. They&#8217;re now running side by side at the same budget, so the comparison is fair &#8212; it just needs more volume before the difference between them means anything.</p>
         </div>
       </div>
 
@@ -708,15 +708,15 @@ const CAMPAIGNS = [
     creativeFmt:'Lifestyle carousel \u00b7 4:5 feed, custom 9:16 for Stories',
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     audience:'US, 18+ \u00b7 women 18\u201345 interested in cosmetics, lash extensions, beauty, fashion and makeup \u00b7 Advantage+ Audience on',
-    budget:'$16 / day \u00b7 $240 over the flight',
-    flight:'15 days \u00b7 15\u201329 Sep',
+    budget:'$16 / day \u00b7 $256 over the flight',
+    flight:'16 days \u00b7 15\u201330 Sep',
     launch:'Tue 15 Sep',
     primary:'Love at first lash. Meet Pink Rabbit, 100% handmade lashes designed with the softness, dimension + look of professional lash extensions. Pre-glued for an easier, cleaner application, so getting the lash look you love feels effortless. Find your perfect lash.',
     cards:[['Find Your Perfect Lash','Introduce'],['The Lash Extension Look, Made Easy','Differentiate'],['Meet Your New Favorite Lashes','Convert']],
     testing:'Whether lifestyle-led, editorial creative attracts qualified new customers and converts them \u2014 measured against the product-led direction in Campaign 02.',
     note:'This campaign does not need to communicate every Pink Rabbit differentiator. It establishes the first few.',
     creative:['creative/web/lafl-07.jpg','creative/web/lafl-08.jpg','creative/web/lafl-09.jpg'] },
-  { name:'Product', base:'Campaign 02', platform:'Meta', status:'live', liveSince:'2026-09-20',
+  { name:'Checkout / Shopping Video', base:'Campaign 02', platform:'Meta', status:'live', liveSince:'2026-09-20',
     objective:'Website Sales',
     funnel:'MOF \u2192 BOF (Product-led direct response)',
     conversion:'Purchase',
@@ -1038,10 +1038,10 @@ const LANES = [
     {n:'Pre-launch QA', s:'2026-09-14', e:'2026-09-14', tone:'blush',
       items:['Confirm product availability, Brown Sugar included','Final campaign QA','Verify Meta access','Google Analytics admin access','Purchase + revenue tracking verification']},
     {n:'Meta live', s:'2026-09-15', e:'2026-11-30', tone:'rose',
-      items:['Love at First Lash carousel, 15-day test at $16/day','Brown Sugar in its own ad set','Product ad base follows the first read'],
+      items:['Campaign 01: Love at First Lash carousel, $16/day from 15 Sep','Campaign 02: Checkout / Shopping Video, $16/day from 20 Sep','Both run through 30 Sep'],
       dots:[
         {d:'2026-09-15', t:'Love at First Lash carousel live \u00b7 $16/day', w:'Howell\u2019n'},
-        {d:'2026-09-29', t:'15-day test ends \u2014 first read on the lifestyle creative', w:'Brooke &amp; Abby'}]},
+        {d:'2026-09-30', t:'Both campaigns end \u2014 first side-by-side read on carousel vs video', w:'Brooke &amp; Abby'}]},
     {n:'Pinterest foundation', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
       items:['Install Pinterest tag','Begin building site data','Prepare catalog + Pinterest account'],
       dots:[{d:'2026-09-18', t:'Your call on Pinterest \u2014 a yes by today keeps mid-October on track', w:'Pink Rabbit decides'}]},
@@ -1208,14 +1208,14 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Sep 15\u201319 \u00b7 day 5 of the 15-day flight \u00b7 updated 19 Sep',
+  window:'Sep 15\u201322 \u00b7 both campaigns \u00b7 updated 22 Sep',
   tiles:[
-    ['Ad spend','$65.17','of $240 across the flight'],
-    ['Purchases','1','first sale, day 5'],
-    ['Cost per purchase','$65.17','cold-start cost, first campaign'],
-    ['People reached','511','frequency 1.8'],
-    ['Impressions','939','Sep 15\u201319'],
-    ['CPM','$69.40','cost per 1,000 impressions'],
+    ['Ad spend','$146.58','across both campaigns'],
+    ['Purchases','3','2 carousel \u00b7 1 video'],
+    ['Cost per purchase','$48.86','blended across both'],
+    ['Impressions','1,720','blended CPM $85.22'],
+    ['Carousel \u00b7 C01','$55.19','per purchase \u00b7 749 reached'],
+    ['Video \u00b7 C02','$36.20','per purchase \u00b7 260 reached'],
     ['Attributed revenue','','awaiting purchase value'],
     ['ROAS','','needs revenue']
   ]
@@ -1229,6 +1229,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'22 Sep', by:'Brooke', t:'Week one check-in',
+   b:'$146.58 spent across both campaigns and three purchases. The carousel has now delivered two sales and is spending on budget after a slow first few days, with its cost per purchase down from $65.17 to $55.19. The video picked up its first sale within two days of launch. Both run through 30 September.'},
   {d:'20 Sep', by:'Brooke', t:'Video ad live',
    b:'Campaign 02 went live with a UGC video, running through 30 September alongside the Love at First Lash carousel. Video and Reels placements typically earn cheaper impressions than static or carousel, so this also tests whether our delivery costs come down.'},
   {d:'20 Sep', by:'Brooke', t:'First five days',
@@ -1236,7 +1238,7 @@ const LOG = [
   {d:'18 Sep', by:'Brooke', t:'Creative updated',
    b:'Swapped the \u201creusable\u201d messaging out across the Love at First Lash set, per Paula. The three cards now lead with handmade, the professional lash-extension look, and pre-glued ease.'},
   {d:'15 Sep', by:'Abby', t:'Campaign 01 live',
-   b:'Love at First Lash went live on Meta \u2014 a three-card lifestyle carousel at $16/day, running through 29 September, optimized for website purchases.'},
+   b:'Love at First Lash went live on Meta \u2014 a three-card lifestyle carousel at $16/day, running through 30 September, optimized for website purchases.'},
   {d:'14 Sep', by:'Abby', t:'Walkthrough with Paula',
    b:'Walked through the portal, campaign strategy, creative and the reporting process, and answered final questions before launch.'}
 ];
