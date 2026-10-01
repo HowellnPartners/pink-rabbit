@@ -537,7 +537,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="grid g4" id="metricTiles"></div>
         <div class="readnote">
           <p class="eyebrow">How to read these</p>
-          <p>Matched on spend: at roughly the same $147, the carousel had delivered two purchases and the video one, and the carousel reached more people for less &#8212; a $90 CPM against $122. On that basis the lifestyle carousel is the stronger of the two. The whole test produced three purchases, though, so treat it as a direction rather than a verdict. The more useful finding is that all three sales landed in the first week: the last eight days spent about $164 without one.</p>
+          <p>The flight had two halves. Through 22 September it delivered normally and produced all three purchases, at a blended $48.86 each. After the night of 24 September daily delivery fell about two thirds &#8212; from roughly 250 impressions a day to 85 &#8212; and the remaining $163.55 produced nothing. So the $103.38 figure above is the whole flight including that stall; while the ads were actually delivering, the number was less than half of it.</p>
+          <p>Matched on spend, the lifestyle carousel is the stronger creative: at roughly the same $147 it had two purchases to the video&#8217;s one, and reached people more cheaply. Three purchases is a direction rather than a verdict.</p>
         </div>
       </div>
 
@@ -1242,10 +1243,10 @@ const METRICS = {
     ['Ad spend','$310.13','of the $1,000 budget'],
     ['Budget remaining','$689.87','available for October'],
     ['Purchases','3','2 carousel \u00b7 1 video'],
-    ['Cost per purchase','$103.38','blended across both'],
+    ['Cost per purchase','$103.38','whole flight, stall included'],
+    ['CPA while delivering','$48.86','to 22 Sep, before the stall'],
     ['Carousel \u00b7 C01','$81.44','per purchase \u00b7 $162.88 spent'],
     ['Video \u00b7 C02','$147.25','per purchase \u00b7 $147.25 spent'],
-    ['People reached','1,487','3,016 impressions \u00b7 frequency 2.03'],
     ['Video ROAS \u00b7 C02','0.37','\u2248$54 back on $147.25 \u00b7 carousel value still to pull']
   ]
 };
@@ -1258,6 +1259,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'30 Sep', by:'Brooke', t:'Delivery stalled after 24 September',
+   b:'The daily numbers show the flight in two halves. From 15\u201324 September it ran at roughly 250 impressions a day, peaking at 410 on the 21st, and every purchase landed in that stretch. From the 25th it dropped to about 85 a day and never recovered, ending at almost nothing. That collapse coincides with a significant edit made to the carousel ad late on the 24th, and the ad finished in a not-delivering state with an error flagged against it. The second half spent $163.55 and returned nothing \u2014 so that money bought a delivery problem rather than a verdict on the creative. Finding out exactly what that error was is the first job before the next flight.'},
   {d:'30 Sep', by:'Brooke', t:'Who actually bought',
    b:'All three buyers were women, but older than the targeting assumed. The carousel\u2019s two purchases both came from the 35\u201344 bracket at $79.45 each; the video\u2019s single purchase came from 55\u201364 at $143.10 \u2014 outside the 18\u201345 range we suggested, found by Advantage+ expanding on its own. Nothing at all converted from 18\u201334, which is where most of the targeting intent sat. Three purchases is not a customer profile, but it is a reason not to narrow the age range in October.'},
   {d:'30 Sep', by:'Brooke', t:'What the video actually did',
