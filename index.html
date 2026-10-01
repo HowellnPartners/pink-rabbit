@@ -739,8 +739,9 @@ const CAMPAIGNS = [
     message:'Your perfect lash is waiting / Professional-looking lashes, without the appointment',
     creativeFmt:'Two message lines \u00b7 six statics across 4:5, 1:1 and 9:16',
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
-    audience:'',
-    budget:'',
+    audience:'US, women 25\u201355 \u00b7 Advantage+ Audience on \u00b7 recent purchasers excluded',
+    budget:'$32 / day \u00b7 $672 over the flight',
+    flight:'21 days \u00b7 30 Sep \u2013 20 Oct',
     launch:'Tue 30 Sep',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
@@ -1259,6 +1260,12 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'30 Sep', by:'Brooke', t:'October plan \u2014 concentrate the spend',
+   b:'$689.87 is left of the $1,000. Rather than spread it thinly across the whole month, Campaign 03 runs at $32 a day for 21 days, to 20 October, which commits $672 and holds a small buffer. September delivered about 250 impressions a day at $16; this should roughly double that, giving around 10,000 impressions over the flight \u2014 about three times everything September produced. One campaign, one ad set, both message lines inside it, so the budget concentrates instead of splitting.'},
+  {d:'30 Sep', by:'Brooke', t:'Age range for October',
+   b:'September suggested 18\u201345, but every purchase came from above it \u2014 two women aged 35\u201344 and one aged 55\u201364 \u2014 and nothing at all converted from 18\u201334. October runs women 25\u201355, dropping the under-25s who did not buy and lifting the ceiling to cover the bracket that did. Advantage+ stays on, so Meta can still reach beyond the range when it predicts a buyer, which is how it found the 55\u201364 purchase in the first place. Recent purchasers are excluded.'},
+  {d:'30 Sep', by:'Brooke', t:'Leaving it alone once it is live',
+   b:'The single clearest lesson from September. Delivery fell about two thirds after a significant edit on the 24th and never recovered, which cost roughly half the flight. The end date is set at creation so nothing needs changing mid-flight, and we do not touch budget, audience or creative for the first 7 to 10 days. Meta\u2019s own recommendations get declined for the same reason.'},
   {d:'30 Sep', by:'Brooke', t:'Campaign 03 live',
    b:'The Product Testing set is running: six statics carrying two message lines \u2014 \u201cYour perfect lash is waiting\u201d and \u201cProfessional-looking lashes, without the appointment\u201d \u2014 each built at 4:5, 1:1 and 9:16. Static over video, because that is what September favored, and both lines put a message on the image itself. The second finally runs the salon comparison, which nothing in the first flight said out loud.'},
   {d:'30 Sep', by:'Brooke', t:'Delivery stalled after 24 September',
