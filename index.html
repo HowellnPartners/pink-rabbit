@@ -507,11 +507,11 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>Both Meta campaigns are running: the Love at First Lash carousel since 15 September, the Checkout / Shopping video since the 20th, each at $16 a day and both ending 30 September. They share an audience and an objective, so the only thing that differs is the creative &#8212; that comparison is what this first flight is buying. Brown Sugar has been in the ads from day one. Google follows on 1 November, and we&#8217;re recommending Pinterest for mid-October &#8212; it isn&#8217;t in your current plan, and the case for it is under Campaigns.</p>
+          <p>Both September flights finished on 30 September. The Love at First Lash carousel ran from the 15th and the Checkout / Shopping video from the 20th, each at $16 a day, to the same audience and the same objective. Between them they spent $310.13 of the $1,000 budget and brought in three purchases. Nothing is running right now while we read the data and plan October.</p>
           <div class="hero-phases">
-            <span class="phase">15 Sep &#183; Carousel</span>
-            <span class="phase">20 Sep &#183; Video</span>
-            <span class="phase now">To 30 Sep &#183; Testing</span>
+            <span class="phase">15&#8211;30 Sep &#183; Flights complete</span>
+            <span class="phase now">Now &#183; Reading the data</span>
+            <span class="phase">October &#183; Round 2</span>
             <span class="phase">Mid-Oct &#183; Pinterest (proposed)</span>
             <span class="phase">1 Nov &#183; Google</span>
           </div>
@@ -537,7 +537,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="grid g4" id="metricTiles"></div>
         <div class="readnote">
           <p class="eyebrow">How to read these</p>
-          <p>Campaign 01 started five days before Campaign 02, so comparing their totals on 30 September would flatter the carousel. We compare each campaign across its own first 11 days and first ~$176 of spend &#8212; the carousel&#8217;s 15&#8211;25 September against the video&#8217;s 20&#8211;30 September. Both windows close on the 30th. Until then, three purchases across the two is far too little to call a winner.</p>
+          <p>Matched on spend: at roughly the same $147, the carousel had delivered two purchases and the video one, and the carousel reached more people for less &#8212; a $90 CPM against $122. On that basis the lifestyle carousel is the stronger of the two. The whole test produced three purchases, though, so treat it as a direction rather than a verdict. The more useful finding is that all three sales landed in the first week: the last eight days spent about $164 without one.</p>
         </div>
       </div>
 
@@ -698,7 +698,8 @@ const EMAILS = ['abigail@howellnmedia.com', 'brooke@howellnmedia.com'];
 // creative: add artwork by dropping image files into a /creative folder next to
 // this file, then listing them here, e.g. ['creative/brown-sugar-01.jpg'].
 const CAMPAIGNS = [
-  { name:'Love at First Lash', base:'Campaign 01', platform:'Meta', status:'live', liveSince:'2026-09-15',
+  { name:'Love at First Lash', base:'Campaign 01', platform:'Meta', status:'complete', liveSince:'2026-09-15',
+    result:'$162.88 spent \u00b7 2 purchases \u00b7 $81.44 each \u00b7 1,807 impressions, 939 reached',
     campaign:'PR | Sales | Lifestyle Sept.15',
     objective:'Website Sales',
     funnel:'TOF \u2192 MOF (Discovery + Product Education)',
@@ -709,14 +710,15 @@ const CAMPAIGNS = [
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     audience:'US, 18+ \u00b7 women 18\u201345 interested in cosmetics, lash extensions, beauty, fashion and makeup \u00b7 Advantage+ Audience on',
     budget:'$16 / day \u00b7 $256 over the flight',
-    flight:'16 days \u00b7 15\u201330 Sep',
+    flight:'15\u201330 Sep \u00b7 spent 64% of the $256 planned',
     launch:'Tue 15 Sep',
     primary:'Love at first lash. Meet Pink Rabbit, 100% handmade lashes designed with the softness, dimension + look of professional lash extensions. Pre-glued for an easier, cleaner application, so getting the lash look you love feels effortless. Find your perfect lash.',
     cards:[['Find Your Perfect Lash','Introduce'],['The Lash Extension Look, Made Easy','Differentiate'],['Meet Your New Favorite Lashes','Convert']],
     testing:'Whether lifestyle-led, editorial creative attracts qualified new customers and converts them \u2014 measured against the product-led direction in Campaign 02.',
     note:'This campaign does not need to communicate every Pink Rabbit differentiator. It establishes the first few.',
     creative:['creative/web/lafl-07.jpg','creative/web/lafl-08.jpg','creative/web/lafl-09.jpg'] },
-  { name:'Checkout / Shopping Video', base:'Campaign 02', platform:'Meta', status:'live', liveSince:'2026-09-20',
+  { name:'Checkout / Shopping Video', base:'Campaign 02', platform:'Meta', status:'complete', liveSince:'2026-09-20',
+    result:'$147.25 spent \u00b7 1 purchase \u00b7 $147.25 each \u00b7 1,209 impressions, 751 reached',
     objective:'Website Sales',
     funnel:'MOF \u2192 BOF (UGC \u00b7 conversion)',
     conversion:'Purchase',
@@ -725,7 +727,7 @@ const CAMPAIGNS = [
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     audience:'',   // hidden until confirmed
     budget:'$16 / day \u00b7 $176 over the flight',
-    flight:'11 days \u00b7 20\u201330 Sep',
+    flight:'20\u201330 Sep \u00b7 spent 84% of the $176 planned',
     launch:'Sun 20 Sep',
     testing:'The video counterpart to the lifestyle carousel \u2014 same objective, different creative form. Running alongside Campaign 01 so the two can be compared over the same window.',
     creative:['creative/web/vid-01.jpg'] }
@@ -829,6 +831,7 @@ apply(routeNow());
 /* "Live" comes from the campaigns, never from the calendar -- if launch slips a day,
    the portal keeps saying pre-launch until a campaign is actually marked live. */
 const IS_LIVE = CAMPAIGNS.some(c => c.status === 'live');
+const ALL_DONE = !IS_LIVE && CAMPAIGNS.some(c => c.status === 'complete');
 (function(){
   const days = Math.ceil((LAUNCH - new Date()) / 86400000);
   let n, small, big;
@@ -839,6 +842,9 @@ const IS_LIVE = CAMPAIGNS.some(c => c.status === 'live');
     small = n === 1 ? 'Day live' : 'Days live';
     big = n === 1 ? 'Day since Meta went live' : 'Days since Meta went live';
     const p = $('#statusPill'); p.className = 'pill live'; p.innerHTML = '<span class="dot"></span>Live';
+  } else if(ALL_DONE){
+    n = '$690'; small = 'Budget left'; big = 'Left of the $1,000 budget';
+    const p = $('#statusPill'); p.className = 'pill hold'; p.innerHTML = '<span class="dot"></span>Between flights';
   } else if(days > 0){
     n = days;
     small = days === 1 ? 'Day to launch' : 'Days to launch';
@@ -889,7 +895,8 @@ function campCard(c, wide){
       ? '<div class="slot filled"><img src="' + esc(src) + '" alt="' + esc(c.name) + ' creative ' + (i+1) + '" loading="lazy"></div>'
       : '<div class="slot"><span>Artwork<br>pending</span></div>';
   }).join('');
-  const pill = c.status === 'live' ? '<span class="pill live"><span class="dot"></span>Live</span>'
+  const pill = c.status === 'complete' ? '<span class="pill hold"><span class="dot"></span>Complete</span>'
+             : c.status === 'live' ? '<span class="pill live"><span class="dot"></span>Live</span>'
              : c.status === 'build' ? '<span class="pill hold"><span class="dot"></span>In build</span>'
              : '<span class="pill prep"><span class="dot"></span>Ready</span>';
   const row = (k,v) => v ? '<dl class="camp-row"><dt>' + k + '</dt><dd>' + esc(v) + '</dd></dl>' : '';
@@ -903,7 +910,8 @@ function campCard(c, wide){
       row('Conversion goal', c.conversion) + row('Core message', c.message) +
       row('Creative', c.creativeFmt) + row('Destination', c.destination) +
       row('Audience', c.audience) + row('Budget', c.budget) + row('Flight', c.flight) +
-      row(c.status === 'live' ? 'Live since' : 'Goes live', c.launch) +
+      row(c.status === 'live' ? 'Live since' : c.status === 'complete' ? 'Ran from' : 'Goes live', c.launch) +
+      row('Result', c.result) +
     '</div>' +
     (c.primary ? '<div class="camp-block"><p class="lab">Primary text</p><p class="camp-copy">' + esc(c.primary) + '</p></div>' : '') +
     '</div><div class="camp-col">' +
@@ -918,16 +926,24 @@ function campCard(c, wide){
 }
 
 const liveOnes = CAMPAIGNS.filter(c => c.status === 'live');
+const doneOnes = CAMPAIGNS.filter(c => c.status === 'complete');
 $('#liveCampaigns').innerHTML = liveOnes.length
   ? '<div class="grid" style="grid-template-columns:1fr">' + liveOnes.map(function(c){ return campCard(c, true); }).join('') + '</div>'
-  : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running yet.</strong><br>Love at First Lash is built and ready to publish. Once it is running, this section fills with what is actually serving \u2014 including the artwork behind each card.</div>';
+  : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running right now.</strong><br>Both September flights completed on 30 September. Their results are below, and the next flight is being planned from what they showed.</div>';
+if(!liveOnes.length) $('#liveHint').textContent = 'Both September flights complete';
 if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') +
   ' live on Meta \u00b7 funnel stage describes who the creative speaks to; both optimize for website purchases';
 // hide the planned section once nothing is left in it
-if(!CAMPAIGNS.filter(function(c){ return c.status !== 'live'; }).length){
+(function(){
+  const rest = CAMPAIGNS.filter(function(c){ return c.status !== 'live'; });
   const sec = $('#plannedCampaigns').closest('.sec');
-  if(sec) sec.hidden = true;
-}
+  if(!sec) return;
+  if(!rest.length){ sec.hidden = true; return; }
+  if(doneOnes.length && !liveOnes.length){
+    sec.querySelector('h3').textContent = 'September flights';
+    sec.querySelector('.hint').textContent = 'Same audience, same objective, same budget \u2014 the creative is what differed';
+  }
+})();
 $('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status !== 'live').map(campCard).join('');
 $('#plannedCampaigns').className = 'grid g2';
 
@@ -1209,16 +1225,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Sep 15\u201322 \u00b7 both campaigns \u00b7 updated 22 Sep',
+  window:'Final \u00b7 15\u201330 Sep \u00b7 both flights complete',
   tiles:[
-    ['Ad spend','$146.58','across both campaigns'],
+    ['Ad spend','$310.13','of the $1,000 budget'],
+    ['Budget remaining','$689.87','available for October'],
     ['Purchases','3','2 carousel \u00b7 1 video'],
-    ['Cost per purchase','$48.86','blended across both'],
-    ['Impressions','1,720','blended CPM $85.22'],
-    ['Carousel \u00b7 C01','$55.19','per purchase \u00b7 749 reached'],
-    ['Video \u00b7 C02','$36.20','per purchase \u00b7 260 reached'],
-    ['Attributed revenue','','awaiting purchase value'],
-    ['ROAS','','needs revenue']
+    ['Cost per purchase','$103.38','blended across both'],
+    ['Carousel \u00b7 C01','$81.44','per purchase \u00b7 $162.88 spent'],
+    ['Video \u00b7 C02','$147.25','per purchase \u00b7 $147.25 spent'],
+    ['People reached','1,487','3,016 impressions \u00b7 frequency 2.03'],
+    ['Attributed revenue','','still awaiting purchase value']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1230,6 +1246,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'30 Sep', by:'Brooke', t:'September flights complete',
+   b:'Both campaigns finished and are switched off. Together they spent $310.13 of the $1,000 budget and produced three purchases \u2014 two from the carousel at $81.44 each, one from the video at $147.25. Neither spent its full daily budget: the carousel delivered 64% of what was planned and the video 84%, which is what a purchase-optimized campaign does when the account has little conversion history to learn from. $689.87 is left for October.'},
   {d:'22 Sep', by:'Brooke', t:'What happens on 30 September',
    b:'Both flights close and we take the matched read \u2014 each campaign over its own first 11 days and first ~$176. That tells us which direction earns attention more cheaply, lifestyle carousel or UGC video. From there we pick the winning direction, brief the next round of creative from it rather than starting fresh, and decide whether to raise budget behind it or hold at $16 a day.'},
   {d:'22 Sep', by:'Brooke', t:'Next creative phase \u2014 October',
