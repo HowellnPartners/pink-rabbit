@@ -732,16 +732,16 @@ const CAMPAIGNS = [
     launch:'Sun 20 Sep',
     testing:'The video counterpart to the lifestyle carousel \u2014 same objective, different creative form. Running alongside Campaign 01 so the two can be compared over the same window.',
     creative:['creative/web/vid-01.jpg'] },
-  { name:'Product Testing', base:'Campaign 03', platform:'Meta', status:'build',
+  { name:'Product Testing', base:'Campaign 03', platform:'Meta', status:'live', liveSince:'2026-09-30',
     objective:'Website Sales',
     funnel:'TOF \u2192 MOF (Product-led, message-first)',
     conversion:'Purchase',
     message:'Your perfect lash is waiting / Professional-looking lashes, without the appointment',
-    creativeFmt:'Two static lines \u00b7 4:5, 1:1 and 9:16',
+    creativeFmt:'Two message lines \u00b7 six statics across 4:5, 1:1 and 9:16',
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     audience:'',
     budget:'',
-    launch:'Thu 1 Oct',
+    launch:'Tue 30 Sep',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
 ];
@@ -782,15 +782,15 @@ const CREATIVE = [
   {c:'Main Character', f:'creative/web/mc-12.jpg', r:'9:16', live:false},
   {c:'Main Character', f:'creative/web/mc-13.jpg', r:'4:5', live:false},
   {c:'Main Character', f:'creative/web/mc-14.jpg', r:'9:16', live:false},
-  {c:'Product', f:'creative/web/prod-01.jpg', r:'4:5', live:false},
-  {c:'Product', f:'creative/web/prod-02.jpg', r:'4:5', live:false},
+  {c:'Product', f:'creative/web/prod-01.jpg', r:'4:5', live:true},
+  {c:'Product', f:'creative/web/prod-02.jpg', r:'4:5', live:true},
   {c:'Product', f:'creative/web/prod-03.jpg', r:'1:1', live:false},
-  {c:'Product', f:'creative/web/prod-04.jpg', r:'1:1', live:false},
-  {c:'Product', f:'creative/web/prod-05.jpg', r:'1:1', live:false},
+  {c:'Product', f:'creative/web/prod-04.jpg', r:'1:1', live:true},
+  {c:'Product', f:'creative/web/prod-05.jpg', r:'1:1', live:true},
   {c:'Product', f:'creative/web/prod-06.jpg', r:'4:5', live:false},
   {c:'Product', f:'creative/web/prod-07.jpg', r:'9:16', live:false},
-  {c:'Product', f:'creative/web/prod-08.jpg', r:'9:16', live:false},
-  {c:'Product', f:'creative/web/prod-09.jpg', r:'9:16', live:false},
+  {c:'Product', f:'creative/web/prod-08.jpg', r:'9:16', live:true},
+  {c:'Product', f:'creative/web/prod-09.jpg', r:'9:16', live:true},
   {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:true}
 ];
 
@@ -952,7 +952,7 @@ if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' +
   const sec = $('#plannedCampaigns').closest('.sec');
   if(!sec) return;
   if(!rest.length){ sec.hidden = true; return; }
-  if(doneOnes.length && !liveOnes.length){
+  if(doneOnes.length){
     sec.querySelector('h3').textContent = 'September flights';
     sec.querySelector('.hint').textContent = 'Same audience, same objective, same budget \u2014 the creative is what differed';
   }
@@ -1259,6 +1259,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'30 Sep', by:'Brooke', t:'Campaign 03 live',
+   b:'The Product Testing set is running: six statics carrying two message lines \u2014 \u201cYour perfect lash is waiting\u201d and \u201cProfessional-looking lashes, without the appointment\u201d \u2014 each built at 4:5, 1:1 and 9:16. Static over video, because that is what September favored, and both lines put a message on the image itself. The second finally runs the salon comparison, which nothing in the first flight said out loud.'},
   {d:'30 Sep', by:'Brooke', t:'Delivery stalled after 24 September',
    b:'The daily numbers show the flight in two halves. From 15\u201324 September it ran at roughly 250 impressions a day, peaking at 410 on the 21st, and every purchase landed in that stretch. From the 25th it dropped to about 85 a day and never recovered, ending at almost nothing. That collapse coincides with a significant edit made to the carousel ad late on the 24th, and the ad finished in a not-delivering state with an error flagged against it. The second half spent $163.55 and returned nothing \u2014 so that money bought a delivery problem rather than a verdict on the creative. Finding out exactly what that error was is the first job before the next flight.'},
   {d:'30 Sep', by:'Brooke', t:'Who actually bought',
