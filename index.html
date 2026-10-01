@@ -699,7 +699,7 @@ const EMAILS = ['abigail@howellnmedia.com', 'brooke@howellnmedia.com'];
 // this file, then listing them here, e.g. ['creative/brown-sugar-01.jpg'].
 const CAMPAIGNS = [
   { name:'Love at First Lash', base:'Campaign 01', platform:'Meta', status:'complete', liveSince:'2026-09-15',
-    result:'$162.88 spent \u00b7 2 purchases \u00b7 $81.44 each \u00b7 1,807 impressions, 939 reached',
+    result:'$162.88 spent \u00b7 2 purchases \u00b7 $81.44 each \u00b7 1,807 impressions, 939 reached \u00b7 both buyers women, 35\u201344',
     campaign:'PR | Sales | Lifestyle Sept.15',
     objective:'Website Sales',
     funnel:'TOF \u2192 MOF (Discovery + Product Education)',
@@ -718,7 +718,7 @@ const CAMPAIGNS = [
     note:'This campaign does not need to communicate every Pink Rabbit differentiator. It establishes the first few.',
     creative:['creative/web/lafl-07.jpg','creative/web/lafl-08.jpg','creative/web/lafl-09.jpg'] },
   { name:'Checkout / Shopping Video', base:'Campaign 02', platform:'Meta', status:'complete', liveSince:'2026-09-20',
-    result:'$147.25 spent \u00b7 1 purchase \u00b7 $147.25 each \u00b7 1,209 impressions, 751 reached',
+    result:'$147.25 spent \u00b7 1 purchase \u00b7 $147.25 each \u00b7 ROAS 0.37 (\u2248$54 back) \u00b7 1,064 video plays, 40% hook rate \u00b7 buyer a woman, 55\u201364',
     objective:'Website Sales',
     funnel:'MOF \u2192 BOF (UGC \u00b7 conversion)',
     conversion:'Purchase',
@@ -730,7 +730,19 @@ const CAMPAIGNS = [
     flight:'20\u201330 Sep \u00b7 spent 84% of the $176 planned',
     launch:'Sun 20 Sep',
     testing:'The video counterpart to the lifestyle carousel \u2014 same objective, different creative form. Running alongside Campaign 01 so the two can be compared over the same window.',
-    creative:['creative/web/vid-01.jpg'] }
+    creative:['creative/web/vid-01.jpg'] },
+  { name:'Product Testing', base:'Campaign 03', platform:'Meta', status:'build',
+    objective:'Website Sales',
+    funnel:'TOF \u2192 MOF (Product-led, message-first)',
+    conversion:'Purchase',
+    message:'Your perfect lash is waiting / Professional-looking lashes, without the appointment',
+    creativeFmt:'Two static lines \u00b7 4:5, 1:1 and 9:16',
+    destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
+    audience:'',
+    budget:'',
+    launch:'Thu 1 Oct',
+    testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
+    creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
 ];
 
 const CREATIVE = [
@@ -1234,7 +1246,7 @@ const METRICS = {
     ['Carousel \u00b7 C01','$81.44','per purchase \u00b7 $162.88 spent'],
     ['Video \u00b7 C02','$147.25','per purchase \u00b7 $147.25 spent'],
     ['People reached','1,487','3,016 impressions \u00b7 frequency 2.03'],
-    ['Attributed revenue','','still awaiting purchase value']
+    ['Video ROAS \u00b7 C02','0.37','\u2248$54 back on $147.25 \u00b7 carousel value still to pull']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1246,6 +1258,12 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'30 Sep', by:'Brooke', t:'Who actually bought',
+   b:'All three buyers were women, but older than the targeting assumed. The carousel\u2019s two purchases both came from the 35\u201344 bracket at $79.45 each; the video\u2019s single purchase came from 55\u201364 at $143.10 \u2014 outside the 18\u201345 range we suggested, found by Advantage+ expanding on its own. Nothing at all converted from 18\u201334, which is where most of the targeting intent sat. Three purchases is not a customer profile, but it is a reason not to narrow the age range in October.'},
+  {d:'30 Sep', by:'Brooke', t:'What the video actually did',
+   b:'1,064 plays, a 40% hook rate \u2014 four in ten people stopped to watch, which is a good first frame. But average play time was 4 seconds of a 15-second video: about 57% were gone by the 2-second mark and only 6.5% reached the end. The hook works and the middle does not, so anything said after the third second was effectively never seen. Return was 0.37, roughly $54 back on $147.25 spent.'},
+  {d:'30 Sep', by:'Brooke', t:'Next up \u2014 Product Testing creative',
+   b:'Campaign 03 launches 1 October with the Product Testing set: two written lines, \u201cYour perfect lash is waiting\u201d and \u201cProfessional-looking lashes, without the appointment\u201d, each built at 4:5, 1:1 and 9:16. Static rather than video, because that is what September favoured, and both carry a message on the image \u2014 the second one finally puts the salon comparison in front of people, which nothing in the first flight did.'},
   {d:'30 Sep', by:'Brooke', t:'What the two campaigns showed',
    b:'Matched on spend, the lifestyle carousel is the stronger of the two: at roughly the same $147 it had delivered two purchases to the video\u2019s one, and it reached people more cheaply \u2014 a $90 CPM against $122. Both ran to the same audience with the same objective, so the creative is the difference. Three purchases is a direction rather than a verdict, and the clearest limit was volume: 1,487 people reached all month at a frequency of 2.0 is not enough for Meta to learn who buys. October is about concentrating spend rather than spreading it.'},
   {d:'30 Sep', by:'Brooke', t:'September flights complete',
