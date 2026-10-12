@@ -743,7 +743,7 @@ const CAMPAIGNS = [
     budget:'$32 / day \u00b7 $672 over the flight',
     flight:'21 days \u00b7 30 Sep \u2013 20 Oct',
     launch:'Tue 30 Sep',
-    result:'$140.89 of $672 spent \u00b7 3 purchases \u00b7 $46.96 each \u00b7 1,279 impressions, 823 reached \u00b7 first five days, no edits since launch',
+    result:'$365.61 of $672 spent \u00b7 8 purchases \u00b7 $45.70 each \u00b7 3,320 impressions, 1,897 reached \u00b7 day 12 of 21, no edits since launch',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
 ];
@@ -1240,16 +1240,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Campaign 03 live \u00b7 first five days \u00b7 30 Sep \u2013 4 Oct',
+  window:'Campaign 03 live \u00b7 day 12 of 21 \u00b7 30 Sep \u2013 11 Oct',
   tiles:[
-    ['Ad spend','$451.02','of the $1,000 budget'],
-    ['Budget remaining','$548.98','$531.11 of it committed to this flight'],
-    ['Purchases \u00b7 October','3','in the first five days'],
-    ['Cost per purchase','$46.96','October \u00b7 against $103.38 across September'],
-    ['Spent \u00b7 Campaign 03','$140.89','of the $672 committed \u00b7 about $28 a day'],
-    ['Reach \u00b7 October','823','1,279 impressions \u00b7 frequency 1.6'],
-    ['CPM \u00b7 October','$110.16','against $90 on the September carousel'],
-    ['Purchases \u00b7 total','6','3 in September \u00b7 3 in October']
+    ['Ad spend','$675.74','of the $1,000 budget'],
+    ['Budget remaining','$324.26','$306.39 of it committed to this flight'],
+    ['Purchases \u00b7 October','8','in twelve days'],
+    ['Cost per purchase','$45.70','October \u00b7 against $103.38 across September'],
+    ['Spent \u00b7 Campaign 03','$365.61','of the $672 committed \u00b7 about $30 a day'],
+    ['Reach \u00b7 October','1,897','3,320 impressions \u00b7 frequency 1.8'],
+    ['CPM \u00b7 October','$110.12','against $90 on the September carousel'],
+    ['Purchases \u00b7 total','11','3 in Sep \u00b7 8 in Oct \u00b7 $61.43 blended']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1261,6 +1261,10 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'12 Oct', by:'Brooke', t:'It now says \u201clearning limited\u201d \u2014 nothing changes',
+   b:'The ad set has moved from learning to learning limited, which is what we expected on 5 October and is not a fault. It means Meta is not getting the roughly 50 conversions a week it wants in order to finish optimising. At $45.70 a purchase that would take about $2,285 a week, against a budget of $224. So the label is reporting the size of the budget, not a problem with the campaign \u2014 which is converting at less than half September\u2019s cost while carrying it. Meta will now suggest widening the audience, raising the budget or combining ad sets to clear the flag. We are declining all of it. Every one of those is a significant edit, and a significant edit on 24 September is what cost us two thirds of delivery for the back half of that month. The flight runs untouched to 20 October.'},
+  {d:'12 Oct', by:'Brooke', t:'Campaign 03 at the halfway mark',
+   b:'Twelve days in: $365.61 spent, eight purchases at $45.70 each. The pace has held \u2014 five of those eight landed in the last seven days at $44.94, so cost per purchase is drifting down rather than up as the flight matures. Against September that is 56% cheaper per purchase, and 44% under the best single September campaign at $81.44. The volume comparison is starker: September produced three purchases in fifteen days, October has produced eight in twelve. Delivery is running at about $30 of the $32 daily budget, against roughly $28 at day five and well short of budget on both September flights. CPM is steady at $110. On this pace the flight finishes near $640 of the $672 committed, putting the two months together at roughly $950 of the $1,000.'},
   {d:'5 Oct', by:'Brooke', t:'Why it says \u201clearning\u201d, and why that is fine',
    b:'Meta holds an ad set in the learning phase until it records roughly 50 conversions in a seven-day window, after which delivery settles down. At three purchases in five days this campaign will not get there \u2014 50 a week at $46.96 each would need about $2,350 a week, far beyond the budget. It will most likely move to \u201clearning limited\u201d, which reads like a fault and is not one at this account size. The campaign is converting at less than half September\u2019s cost while still in learning, so the label is describing the budget rather than the performance. The thing that would genuinely cost us is editing the campaign to chase the label, because that resets the phase and the delivery with it.'},
   {d:'5 Oct', by:'Brooke', t:'Campaign 03 \u2014 the first five days',
