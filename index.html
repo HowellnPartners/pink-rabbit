@@ -743,7 +743,7 @@ const CAMPAIGNS = [
     budget:'$32 / day \u00b7 $672 over the flight',
     flight:'21 days \u00b7 30 Sep \u2013 20 Oct',
     launch:'Tue 30 Sep',
-    result:'$503.28 of $672 spent \u00b7 12 purchases \u00b7 $41.94 each \u00b7 day 16 of 21 \u00b7 delivery Active, no edits since launch',
+    result:'$503.23 of $672 spent \u00b7 12 purchases \u00b7 $41.94 each \u00b7 4,759 impressions, 2,430 reached \u00b7 day 16 of 21 \u00b7 delivery Active, no edits since launch',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
 ];
@@ -1242,14 +1242,14 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 const METRICS = {
   window:'Campaign 03 live \u00b7 day 16 of 21 \u00b7 30 Sep \u2013 15 Oct',
   tiles:[
-    ['Ad spend','$813.41','of the $1,000 budget'],
-    ['Budget remaining','$186.59','$168.72 of it committed to this flight'],
+    ['Ad spend','$813.36','of the $1,000 budget'],
+    ['Budget remaining','$186.64','$168.77 of it committed to this flight'],
     ['Purchases \u00b7 October','12','in sixteen days'],
     ['Cost per purchase','$41.94','October \u00b7 against $103.38 across September'],
-    ['Spent \u00b7 Campaign 03','$503.28','of the $672 committed \u00b7 about $31 a day'],
-    ['Last four days','$34.42','per purchase \u00b7 the cheapest stretch yet'],
-    ['Delivery','Active','cleared the learning limited flag'],
-    ['Purchases \u00b7 total','15','3 in Sep \u00b7 12 in Oct \u00b7 $54.23 blended']
+    ['Spent \u00b7 Campaign 03','$503.23','of the $672 committed \u00b7 about $31 a day'],
+    ['Reach \u00b7 October','2,430','4,759 impressions \u00b7 frequency 2.0'],
+    ['Last four days','$34.41','per purchase \u00b7 the cheapest stretch yet'],
+    ['Purchases \u00b7 total','15','3 in Sep \u00b7 12 in Oct \u00b7 $54.22 blended']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1264,7 +1264,7 @@ const LOG = [
   {d:'16 Oct', by:'Brooke', t:'It cleared learning limited',
    b:'Delivery now reads Active. On 12 October we said the ad set would stay learning limited for good at this budget, because Meta looks for roughly 50 conversions a week and this campaign produces about five. That was wrong. Meta lifted the flag anyway, four days later, once the conversion rate had held steady long enough for it to be confident without the volume. The advice attached to it stands, and is the reason this happened: nothing was edited. Had we widened the audience or raised the budget to chase the label, the learning phase would have reset and the flight would have been back at the beginning with five days left.'},
   {d:'16 Oct', by:'Brooke', t:'Day sixteen \u2014 cost is still falling',
-   b:'Twelve purchases at $41.94 each. Four of those came in the last four days at $34.42, the cheapest stretch of the flight so far, so the trend is still moving the right way with five days to run. Delivery is at about $31 of the $32 daily budget, essentially full, against 64% and 84% on the two September flights. Across both months that is $813.41 spent for fifteen purchases, a blended $54.23 against September\u2019s $103.38 on its own. On this pace the flight closes near $661 of the $672 committed, and the two months together land at roughly $971 of the $1,000.'},
+   b:'Twelve purchases at $41.94 each. Four of those landed in the last four days at $34.41, the cheapest stretch of the flight so far, so the trend is still moving the right way with five days to run. Delivery is at about $31 of the $32 daily budget, essentially full, against 64% and 84% on the two September flights. Reach has passed 2,430 people from 4,759 impressions at a frequency of 2.0 \u2014 September managed 1,487 people across its entire month. Cost per thousand impressions has eased to $105.74 from $110.12 at the halfway mark, so the campaign is buying attention more cheaply as well as converting it better. Across both months that is $813.36 spent for fifteen purchases, a blended $54.22 against September\u2019s $103.38 alone. On this pace the flight closes near $660 of the $672 committed and the two months land at roughly $971 of the $1,000.'},
   {d:'12 Oct', by:'Abby', t:'One month in \u2014 the short version',
    b:'Four weeks of paid media: $675.74 spent of the $1,000 and eleven purchases. The month divides cleanly in two. September was the learning flight \u2014 three purchases at $103.38 each, and a delivery problem in the back half that is written up below. October has been the payoff \u2014 eight purchases at $45.70 each, less than half September\u2019s cost, from a campaign that has run untouched since 30 September. It is still live and closes on 20 October. Nothing needs a decision from you before then. We will bring you the full flight report and a November recommendation the week after it closes, and if anything comes up in the meantime the note box below reaches us both.'},
   {d:'12 Oct', by:'Brooke', t:'Why October worked',
