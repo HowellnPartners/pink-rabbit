@@ -743,7 +743,7 @@ const CAMPAIGNS = [
     budget:'$32 / day \u00b7 carried into the 15 Oct \u2013 14 Nov cycle',
     flight:'46 days \u00b7 30 Sep \u2013 14 Nov \u00b7 extended on 20 Oct',
     launch:'Wed 30 Sep',
-    result:'$503.23 of $672 spent \u00b7 12 purchases \u00b7 $41.94 each \u00b7 4,759 impressions, 2,430 reached \u00b7 through 15 Oct \u00b7 delivery Active, no edits since launch',
+    result:'$607.58 spent \u00b7 14 purchases \u00b7 $43.40 each \u00b7 6,009 impressions, 2,861 reached \u00b7 through 19 Oct \u00b7 delivery active, no significant edit since launch',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
 ];
@@ -1240,16 +1240,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Campaign 03 live \u00b7 extended to 14 Nov \u00b7 figures through 15 Oct',
+  window:'Campaign 03 live \u00b7 extended to 14 Nov \u00b7 figures through 19 Oct',
   tiles:[
-    ['Ad spend to date','$813.36','across two budget cycles'],
+    ['Ad spend to date','$917.71','across two budget cycles'],
     ['Budget cycle 2','$1,000','renewed 15 Oct \u00b7 runs to 14 Nov'],
-    ['Purchases \u00b7 October','12','in sixteen days'],
-    ['Cost per purchase','$41.94','October \u00b7 against $103.38 across September'],
-    ['Spent \u00b7 Campaign 03','$503.23','of the $672 committed \u00b7 about $31 a day'],
-    ['Reach \u00b7 October','2,430','4,759 impressions \u00b7 frequency 2.0'],
-    ['Last four days','$34.41','per purchase \u00b7 the cheapest stretch yet'],
-    ['Purchases \u00b7 total','15','3 in Sep \u00b7 12 in Oct \u00b7 $54.22 blended']
+    ['Purchases \u00b7 Campaign 03','14','since 30 September'],
+    ['Cost per purchase','$43.40','against $103.38 across September'],
+    ['Spent \u00b7 Campaign 03','$607.58','about $30 a day'],
+    ['Reach \u00b7 Campaign 03','2,861','6,009 impressions \u00b7 frequency 2.1'],
+    ['CPM','$101.11','down from $110 at mid-month'],
+    ['Purchases \u00b7 total','17','3 in Sep \u00b7 14 on Campaign 03 \u00b7 $53.98 blended']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1261,6 +1261,12 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'20 Oct', by:'Brooke', t:'The extension did not reset the learning',
+   b:'Meta\u2019s own record confirms the thing we most wanted to protect. Last significant edit still reads 30 September, the day the campaign launched. Extending an end date and clearing a spending cap are not the kind of changes that restart the learning phase the way a budget, audience or creative change would, so three weeks of conversion signal carried through intact. That was the entire reason for extending rather than building something new in November.'},
+  {d:'20 Oct', by:'Brooke', t:'The spending limit was throttling it',
+   b:'Delivery slowed through the final week, and the campaign spending limit is why. It was set at $672 when the campaign was built, sized against a budget assumption that turned out to be wrong, and the campaign had reached 90% of it. Meta paces delivery down as a campaign approaches that ceiling, and the daily figures show it: about $34 a day from 12 to 15 October, then about $26 a day from the 16th to the 19th, a drop of roughly a quarter. Cost per purchase moved with it, from $34.41 across the earlier stretch to $52.18 across the later one. The limit has now been cleared. The $32 daily budget is what keeps spending inside the monthly $1,000 \u2014 Meta caps weekly spend at $224, which is $992 across a month \u2014 so nothing is given up by removing a second ceiling that was only slowing delivery.'},
+  {d:'20 Oct', by:'Brooke', t:'Day twenty \u2014 fourteen purchases',
+   b:'$607.58 spent, fourteen purchases at $43.40 each, 2,861 people reached from 6,009 impressions at a frequency of 2.1. Cost per thousand impressions has fallen again, $101.11 against $105.74 at the halfway point and $110 before that, so the campaign keeps buying attention more cheaply. Cost per purchase has edged up from $41.94 on the 15th, which is the throttling rather than creative fatigue \u2014 at a frequency of 2.1 the audience has been seeing the ad roughly twice and is nowhere near worn out. Across both months that is $917.71 for seventeen purchases, a blended $53.98 against September\u2019s $103.38 on its own.'},
   {d:'20 Oct', by:'Brooke', t:'Extended to 14 November',
    b:'The flight was set to close today. It now runs to 14 November, where the budget cycle renews, so the campaign carries straight through instead of stopping and starting. The reason for extending rather than building something fresh in November: a new campaign restarts the learning phase and discards three weeks of conversion signal that $503 paid for, which would put us back at September prices while Meta re-learned what it already knows. And cost per purchase was still falling on the day we would have switched it off \u2014 $34.41 across the last four days against $41.94 for the flight as a whole \u2014 so there was nothing to be gained by stopping a campaign that was still getting better. The daily budget stays at $32, which is almost exactly $1,000 across a 15th-to-14th cycle.'},
   {d:'16 Oct', by:'Brooke', t:'The creative direction works',
