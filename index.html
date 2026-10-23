@@ -743,7 +743,7 @@ const CAMPAIGNS = [
     budget:'$32 / day \u00b7 carried into the 15 Oct \u2013 14 Nov cycle',
     flight:'46 days \u00b7 30 Sep \u2013 14 Nov \u00b7 extended on 20 Oct',
     launch:'Wed 30 Sep',
-    result:'$607.58 spent \u00b7 14 purchases \u00b7 $43.40 each \u00b7 6,009 impressions, 2,861 reached \u00b7 through 19 Oct \u00b7 delivery active, no significant edit since launch',
+    result:'$700.18 spent \u00b7 14 purchases \u00b7 $50.01 each \u00b7 7,105 impressions, 3,228 reached \u00b7 through 22 Oct \u00b7 delivery active, no significant edit since launch',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
 ];
@@ -1240,16 +1240,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Campaign 03 live \u00b7 extended to 14 Nov \u00b7 figures through 19 Oct',
+  window:'Campaign 03 live \u00b7 runs to 14 Nov \u00b7 figures through 22 Oct',
   tiles:[
-    ['Ad spend to date','$917.71','across two budget cycles'],
+    ['Ad spend to date','$1,010.31','across two budget cycles'],
     ['Budget cycle 2','$1,000','renewed 15 Oct \u00b7 runs to 14 Nov'],
     ['Purchases \u00b7 Campaign 03','14','since 30 September'],
-    ['Cost per purchase','$43.40','against $103.38 across September'],
-    ['Spent \u00b7 Campaign 03','$607.58','about $30 a day'],
-    ['Reach \u00b7 Campaign 03','2,861','6,009 impressions \u00b7 frequency 2.1'],
-    ['CPM','$101.11','down from $110 at mid-month'],
-    ['Purchases \u00b7 total','17','3 in Sep \u00b7 14 on Campaign 03 \u00b7 $53.98 blended']
+    ['Cost per purchase','$50.01','against $103.38 across September'],
+    ['Spent \u00b7 Campaign 03','$700.18','back to about $31 a day'],
+    ['Reach \u00b7 Campaign 03','3,228','7,105 impressions \u00b7 frequency 2.2'],
+    ['CPM','$98.55','$84.49 across the last three days'],
+    ['Purchases \u00b7 total','17','3 in Sep \u00b7 14 on Campaign 03 \u00b7 $59.43 blended']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1261,6 +1261,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'23 Oct', by:'Brooke', t:'Delivery recovered, purchases have not followed yet',
+   b:'Three days since the spending limit came off, and the delivery half of the diagnosis was right. Spend is back to $30.87 a day from $26, impressions have risen to roughly 365 a day from 270, and 367 new people have been reached. The impressions themselves got cheaper too: $84.49 per thousand across those three days against $98.55 for the flight as a whole. What has not followed is purchases. There were none across the three days, which moved cost per purchase from $43.40 to $50.01. Two things before reading too much into that. The attribution window is seven days from click, so sales from the last few days are still landing and recent figures always understate. And at roughly one purchase every day and a half across the flight, three quiet days sits inside ordinary variance rather than signalling anything. Frequency is 2.2, so this is not an audience that has seen the ad too often. We give it to the end of the week before drawing a conclusion, and nothing gets touched in the meantime.'},
   {d:'20 Oct', by:'Brooke', t:'The extension did not reset the learning',
    b:'Meta\u2019s own record confirms the thing we most wanted to protect. Last significant edit still reads 30 September, the day the campaign launched. Extending an end date and clearing a spending cap are not the kind of changes that restart the learning phase the way a budget, audience or creative change would, so three weeks of conversion signal carried through intact. That was the entire reason for extending rather than building something new in November.'},
   {d:'20 Oct', by:'Brooke', t:'The spending limit was throttling it',
