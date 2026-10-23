@@ -507,13 +507,12 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>Both September flights finished on 30 September. The Love at First Lash carousel ran from the 15th and the Checkout / Shopping video from the 20th, each at $16 a day, to the same audience and the same objective. Between them they spent $310.13 of the $1,000 budget and brought in three purchases. Nothing is running right now while we read the data and plan October.</p>
+          <p>Campaign 03 has been live since 30 September and now runs to 14 November. It has produced 14 purchases at $50.01 each from $700.18 spent, against $103.38 a purchase across both September flights. Nothing has been edited since it launched, which is deliberate &#8212; and it is the main reason October is costing less than half what September did.</p>
           <div class="hero-phases">
             <span class="phase">15&#8211;30 Sep &#183; Flights complete</span>
-            <span class="phase now">Now &#183; Reading the data</span>
-            <span class="phase">October &#183; Round 2</span>
-            <span class="phase">Mid-Oct &#183; Pinterest (proposed)</span>
-            <span class="phase">1 Nov &#183; Google</span>
+            <span class="phase now">Now &#183; Campaign 03 live</span>
+            <span class="phase">14 Nov &#183; Flight closes</span>
+            <span class="phase">Late Nov &#183; Black Friday</span>
           </div>
         </div>
         <div class="hero-side">
@@ -543,7 +542,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>Launch readiness</h3><p class="hint" id="readyHint"></p></div>
+        <div class="sec-head"><h3>Access &amp; setup</h3><p class="hint" id="readyHint"></p></div>
         <div class="ready" id="readyList"></div>
       </div>
 
@@ -566,7 +565,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>The creative test</h3><p class="hint">Funnel stage describes who the creative speaks to &#8212; both campaigns are optimized for website purchases</p></div>
+        <div class="sec-head"><h3>The creative test</h3><p class="hint">The September flights, kept for comparison &#8212; every campaign is optimized for website purchases</p></div>
         <div class="grid g2" id="plannedCampaigns"></div>
       </div>
 
@@ -595,7 +594,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>Lash styles at launch</h3><p class="hint">Driven by what is physically in stock on 15 September</p></div>
+        <div class="sec-head"><h3>Lash styles</h3><p class="hint">Stock position as of the 15 September launch</p></div>
         <div class="tblwrap"><table>
           <thead><tr><th>Style</th><th>Inventory</th><th>In ads from</th><th>Role</th></tr></thead>
           <tbody id="styleRows"></tbody>
@@ -614,7 +613,6 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
             <span><i style="background:#F6E6B4"></i>Creative</span>
             <span><i style="background:#D9E2F0"></i>Google</span>
             <span><i style="background:#EADACA"></i>Reporting + optimization</span>
-            <span><i style="background:rgba(234,218,202,.35);border:1.5px dashed #B8977C;box-sizing:border-box"></i>Pinterest &#8212; recommended, needs your approval</span>
             <span><i style="background:repeating-linear-gradient(45deg,#E8CFC0,#E8CFC0 4px,#F5E7DE 4px,#F5E7DE 8px)"></i>Learning phase &#8212; hands off</span>
             <span><i style="width:11px;height:11px;border-radius:50%;background:#D9536F"></i>Deliverable</span>
             <span><i style="width:9px;height:9px;border-radius:2px;background:#D9536F;transform:rotate(45deg)"></i>Milestone</span>
@@ -810,7 +808,7 @@ const pct = d => ((toDate(d) - T0) / SPAN) * 100;
 /* ---------- routing: every section is a real page ---------- */
 const TITLES = {
   dashboard:['Dashboard','Two campaigns live \u00b7 both end 30 September'],
-  campaigns:['Campaigns','Meta 15 Sep \u00b7 Google 1 Nov \u00b7 Pinterest recommended'],
+  campaigns:['Campaigns','Meta live \u00b7 Google 1 Nov \u00b7 Pinterest on hold'],
   timeline :['Timeline','The first 90 days \u00b7 September \u2013 November 2026'],
   notes    :['Notes','Goes to Brooke and Abby together']
 };
@@ -882,7 +880,7 @@ const READY = [
   ['Competitor &amp; audience research','DIY and cluster-lash category \u2014 positioning, offers, creative angles and price laddering.','Howell\u2019n','prep','In progress','motion'],
   ['Product samples to Brooke','Ships as soon as the rushed Brown Sugar boxes arrive, so every style is covered. Tracking to follow.','Pink Rabbit','prep','Ships soon','motion'],
   ['Google Ads account link','A manager link request is coming from us \u2014 accept it under Admin \u2192 Access and security \u2192 Managers when it arrives. Merchant Center and campaign setup follow 20\u201331 October.','Pink Rabbit','wait','Needs you','you'],
-  ['Pinterest','Not part of your current plan \u2014 our recommendation, with the reasoning under Campaigns. Nothing is set up without your go-ahead.','Your call','prop','Recommended','proposed'],
+  ['Pinterest','On hold. Still our recommendation, but Meta is working and getting cheaper, so November concentrates there rather than splitting a small budget. Revisited when Meta plateaus or the budget grows.','Your call','prop','On hold','proposed'],
   ['Google Analytics 4 access','Granted for brooke@howellnmedia.com and abigail@howellnmedia.com \u2014 revenue is attributed by channel from day one.','Pink Rabbit','live','Done','done'],
   ['Meta partner access','Accepted. Pink Rabbit keeps ownership of the ad account, Page, Instagram and Pixel \u2014 we have partner access only.','Pink Rabbit','live','Done','done'],
   ['Creative Drive','First batch received 10 Sep. More uploading from Pink Rabbit.','Pink Rabbit','live','Received','done'],
@@ -1003,7 +1001,7 @@ $('#plannedCampaigns').className = 'grid g2';
 /* ---------- why we roll out channels in phases ---------- */
 const PHASES = [
   ['Meta \u2014 September 15','plan','Our first priority is creating demand. Pink Rabbit needs to get in front of potential customers before we can expect them to search for the brand. Meta allows us to introduce the product through highly visual creative, test different audiences and messaging, and begin building valuable first-party campaign data.'],
-  ['Pinterest \u2014 mid-October','prop','Next, we expand into visual discovery and inspiration. Beauty, style and how-to content naturally fit the way people use Pinterest. We\u2019ll install tracking ahead of launch so we\u2019re already collecting useful website behavior while Meta is running.'],
+  ['Pinterest \u2014 on hold','prop','Next, we expand into visual discovery and inspiration. Beauty, style and how-to content naturally fit the way people use Pinterest. We\u2019ll install tracking ahead of launch so we\u2019re already collecting useful website behavior while Meta is running.'],
   ['Google \u2014 November 1','plan','Google becomes our demand-capture channel. By this point, Pink Rabbit has had weeks of exposure through Meta and Pinterest, while Google allows us to reach people actively searching for lashes, relevant products and Pink Rabbit itself. It also positions the brand for stronger Q4 purchase intent.']
 ];
 const PHASE_TAG = {
@@ -1012,7 +1010,7 @@ const PHASE_TAG = {
 };
 $('#whyBox').innerHTML = PHASES.map(function(ph){
   return '<div class="why-phase"><div class="hd"><b>' + ph[0] + '</b>' + PHASE_TAG[ph[1]] + '</div><p>' + ph[2] + '</p>' +
-    (ph[1] === 'prop' ? '<p class="aside">Pinterest isn\u2019t part of your current plan. It\u2019s our recommendation, and nothing is set up without your go-ahead \u2014 a yes by Friday 18 September leaves time for the tag to collect site activity before a mid-October launch.</p>' : '') +
+    (ph[1] === 'prop' ? '<p class="aside">Pinterest is on hold. Meta is working and still getting cheaper, so November concentrates there rather than splitting a small budget across two channels. We revisit Pinterest when Meta plateaus or the budget grows.</p>' : '') : '') +
   '</div>';
 }).join('') +
 '<p style="margin-top:4px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:11.5px;color:var(--ink-mute);line-height:1.6">Budget is confirmed with you at campaign build, 12\u201314 September, and reviewed at every monthly call.</p>';
@@ -1054,14 +1052,12 @@ const LANES = [
     {n:'Campaign creative', s:'2026-09-08', e:'2026-09-14', tone:'honey',
       items:['Product Campaign + Lifestyle/Messaging Campaign','Ad copy','Creative variations'],
       dots:[{d:'2026-09-14', t:'Creative + campaigns approved at the client walkthrough', w:'Pink Rabbit approves'}]},
-    {n:'Pinterest visual assets', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
-      items:['Adapt visual assets for Pinterest']},
     {n:'Creative round 2', s:'2026-10-01', e:'2026-10-15', tone:'honey',
       items:['New creative built on September data','Product-specific variations','Lifestyle iterations','Retargeting creative']},
     {n:'Holiday creative', s:'2026-11-15', e:'2026-11-30', tone:'honey',
       items:['Holiday creative','Gift + product messaging']}
   ]},
-  {name:'Media + channels', color:'#D9536F', sub:'Meta \u2192 Pinterest \u2192 Google', bars:[
+  {name:'Media + channels', color:'#D9536F', sub:'Meta \u2192 Google', bars:[
     {n:'Backend foundation', s:'2026-09-01', e:'2026-09-11', tone:'blush',
       items:['Meta account setup','Partner access','Pixel / CAPI setup','Conversion tracking']},
     {n:'Meta campaign build', s:'2026-09-08', e:'2026-09-14', tone:'blush',
@@ -1074,12 +1070,6 @@ const LANES = [
         {d:'2026-09-15', t:'Love at First Lash carousel live \u00b7 $16/day', w:'Howell\u2019n'},
         {d:'2026-09-25', t:'Campaign 01 reaches day 11 \u2014 capture its numbers for the matched comparison', w:'Howell\u2019n'},
         {d:'2026-09-30', t:'Both flights end \u2014 matched read: each campaign over its own first 11 days and ~$176', w:'Brooke &amp; Abby'}]},
-    {n:'Pinterest foundation', s:'2026-09-21', e:'2026-09-30', when:'Late September', tone:'proposed', proposed:true,
-      items:['Install Pinterest tag','Begin building site data','Prepare catalog + Pinterest account'],
-      dots:[{d:'2026-09-18', t:'Your call on Pinterest \u2014 a yes by today keeps mid-October on track', w:'Pink Rabbit decides'}]},
-    {n:'Pinterest live', s:'2026-10-15', e:'2026-11-30', tone:'proposed', proposed:true,
-      items:['Visual discovery campaigns','Pinterest testing alongside Meta'],
-      dots:[{d:'2026-10-15', label:'Mid-October', t:'Pinterest launch \u2014 if approved', w:'Howell\u2019n'}]},
     {n:'Google preparation', s:'2026-10-20', e:'2026-10-31', tone:'cloud',
       items:['Google Ads setup','Merchant Center + catalog','Product feed QA','Search / Shopping structure','Conversion tracking']},
     {n:'Google live', s:'2026-11-01', e:'2026-11-30', tone:'cloud',
@@ -1101,9 +1091,9 @@ const LANES = [
       items:['First meaningful performance read','Identify winning creative + audiences','Cut weak performers','Shift budget toward stronger ads'],
       dots:[{d:'2026-10-05', t:'September report + strategy call', w:'Brooke &amp; Abby'}]},
     {n:'Optimize + scale', s:'2026-10-15', e:'2026-10-31', tone:'sugar',
-      items:['Meta optimization, plus Pinterest if approved','Retarget site visitors','Scale winning creative','Keep testing products + messages']},
+      items:['Meta optimization','Retarget site visitors','Scale winning creative','Keep testing products + messages']},
     {n:'Cross-channel growth', s:'2026-11-01', e:'2026-11-15', tone:'sugar',
-      items:['Meta + Google working together, plus Pinterest if approved','Prospecting + discovery + retargeting + search capture'],
+      items:['Meta + Google working together','Prospecting + discovery + retargeting + search capture'],
       dots:[{d:'2026-11-05', t:'October report + strategy call', w:'Brooke &amp; Abby'}]},
     {n:'Holiday / BFCM push', s:'2026-11-15', e:'2026-11-30', tone:'sugar',
       items:['Retargeting','Scale proven campaigns based on performance']},
@@ -1116,7 +1106,6 @@ const LANES = [
 const MILES = [
   {d:'2026-09-14', l:'09.14 Walkthrough', t:'Client walkthrough + final approval', w:'Dashboard, campaign strategy, creative and reporting \u2014 the day before launch'},
   {d:'2026-09-15', l:'09.15 Meta live', t:'Meta launch \u2014 Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'},
-  {d:'2026-10-15', l:'Mid-Oct Pinterest', label:'Mid-October', t:'Pinterest launch \u2014 recommended', w:'Not in your current plan; launches only with your go-ahead'},
   {d:'2026-11-01', l:'11.01 Google live', t:'Google launch \u2014 Search + Shopping', w:'Howell\u2019n'},
   {d:'2026-11-27', l:'BFCM', t:'Black Friday 27 Nov \u2192 Cyber Monday 30 Nov', w:'Holiday push'},
   {d:'2026-11-30', l:'90-day review', label:'End of November', t:'90-day review', w:'Full performance analysis, channel comparison, CPA/ROAS, December recommendations'}
@@ -1133,13 +1122,11 @@ const ROADMAP = [
   {when:'Sept 15\u201317', phase:'Meta Review Period', what:['Ads enter Meta review','Monitor approvals + delivery','Expect early spend/performance volatility']},
   {when:'Sept 18\u201324', phase:'Learning Phase', what:['Allow campaigns to gather data','Minimal intervention','Monitor spend, clicks, ATC + purchases','Establish baseline performance']},
   {when:'Sept 25\u2013Oct 5', phase:'First Optimization', what:['First meaningful performance read','Identify winning creative/audiences','Cut weak performers','Shift budget toward stronger ads']},
-  {when:'Late Sept', phase:'Pinterest Foundation', prop:true, what:['Install Pinterest Tag','Begin building site data','Prepare catalog + Pinterest account','Adapt visual assets']},
   {when:'Oct 1\u201315', phase:'Creative Round 2', what:['Use September data to develop new creative','Product-specific variations','Lifestyle iterations','Retargeting creative']},
-  {when:'Mid-Oct', phase:'Pinterest Launch', ms:true, prop:true, what:['Launch visual discovery campaigns','Begin Pinterest testing alongside Meta']},
-  {when:'Oct 15\u201331', phase:'Optimize + Scale', what:['Meta + Pinterest (if approved) optimization','Retarget site visitors','Scale winning creative','Continue testing products/messages']},
+  {when:'Oct 15\u201331', phase:'Optimize + Scale', what:['Meta optimization','Retarget site visitors','Scale winning creative','Continue testing products/messages']},
   {when:'Oct 20\u201331', phase:'Google Preparation', what:['Google Ads setup','Merchant Center/catalog','Product feed QA','Keyword research','Search/Shopping structure','Conversion tracking']},
   {when:'Nov 1', phase:'Google Launch', ms:true, what:['Search + Shopping campaigns begin','Capture active purchase/search intent']},
-  {when:'Nov 1\u201315', phase:'Cross-Channel Growth', what:['Meta + Pinterest (if approved) + Google working together','Prospecting + discovery + retargeting + search capture']},
+  {when:'Nov 1\u201315', phase:'Cross-Channel Growth', what:['Meta + Google working together','Prospecting + discovery + retargeting + search capture']},
   {when:'Nov 15\u201330', phase:'Holiday / BFCM Push', what:['Holiday creative','Gift/product messaging','Retargeting','Scale proven campaigns based on performance']},
   {when:'End of Nov', phase:'90-Day Review', ms:true, what:['Full performance analysis','Channel comparison','CPA/ROAS','Winning creative/products/audiences','December recommendations']}
 ];
@@ -1261,6 +1248,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'23 Oct', by:'Brooke', t:'Pinterest is on hold',
+   b:'Pinterest has come off the timeline. It was recommended for mid-October and the roadmap still showed it as due, which was no longer true. The reasoning has changed rather than the recommendation: that sequence was designed in September when Meta was underperforming and spreading risk across channels made sense. Meta is now working and still getting cheaper, so splitting a small monthly budget across two channels to meet a date chosen six weeks ago would be the wrong trade. It stays our recommendation and comes back on the table when Meta plateaus or the budget grows. Nothing has been spent on it and nothing was set up.'},
   {d:'23 Oct', by:'Brooke', t:'Shopify access is through',
    b:'Collaborator access is granted with Reports, Analytics and Products permissions, which is the part that matters. Until now we could say what a sale costs \u2014 $50.01 in October against $103.38 in September \u2014 but not what one is worth. Three numbers follow from this: average order value, what the product costs to make, and how many buyers come back. Together they settle whether the current cost per sale is a good trade or a thin one, and they decide whether November is about spending more or about lifting the value of each order. It is the most useful thing to land on this account since the campaign launched.'},
   {d:'23 Oct', by:'Brooke', t:'Delivery recovered, purchases have not followed yet',
