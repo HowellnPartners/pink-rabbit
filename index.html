@@ -876,7 +876,7 @@ const ALL_DONE = !IS_LIVE && CAMPAIGNS.some(c => c.status === 'complete');
    The header counts are computed from these, so they always add up. */
 const READY = [
   ['Client walkthrough + final approval','Completed Monday 14 September \u2014 dashboard, campaign strategy, creative and the reporting process, with final questions answered before launch.','Pink Rabbit','live','Done','done'],
-  ['Shopify collaborator access','Thanks for the code. Our request comes from our Shopify Partner account \u2014 approve it under Settings \u2192 Users and permissions \u2192 Collaborators when it arrives.','Pink Rabbit','wait','Needs you','you'],
+  ['Shopify collaborator access','Granted, with Reports, Analytics and Products permissions. That lets us read average order value, product margin and returning customer rate \u2014 the three numbers that tell us what a sale is worth, not just what one costs.','Pink Rabbit','live','Done','done'],
   ['Meta Pixel + Conversions API','Shopify app install and domain verification. Needs 48 hours of traffic to validate before launch.','Howell\u2019n','prep','In progress','motion'],
   ['Product + Lifestyle campaign build','Both campaigns being built in Ads Manager for your walkthrough on Monday 14th.','Howell\u2019n','prep','In progress','motion'],
   ['Competitor &amp; audience research','DIY and cluster-lash category \u2014 positioning, offers, creative angles and price laddering.','Howell\u2019n','prep','In progress','motion'],
@@ -1261,6 +1261,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'23 Oct', by:'Brooke', t:'Shopify access is through',
+   b:'Collaborator access is granted with Reports, Analytics and Products permissions, which is the part that matters. Until now we could say what a sale costs \u2014 $50.01 in October against $103.38 in September \u2014 but not what one is worth. Three numbers follow from this: average order value, what the product costs to make, and how many buyers come back. Together they settle whether the current cost per sale is a good trade or a thin one, and they decide whether November is about spending more or about lifting the value of each order. It is the most useful thing to land on this account since the campaign launched.'},
   {d:'23 Oct', by:'Brooke', t:'Delivery recovered, purchases have not followed yet',
    b:'Three days since the spending limit came off, and the delivery half of the diagnosis was right. Spend is back to $30.87 a day from $26, impressions have risen to roughly 365 a day from 270, and 367 new people have been reached. The impressions themselves got cheaper too: $84.49 per thousand across those three days against $98.55 for the flight as a whole. What has not followed is purchases. There were none across the three days, which moved cost per purchase from $43.40 to $50.01. Two things before reading too much into that. The attribution window is seven days from click, so sales from the last few days are still landing and recent figures always understate. And at roughly one purchase every day and a half across the flight, three quiet days sits inside ordinary variance rather than signalling anything. Frequency is 2.2, so this is not an audience that has seen the ad too often. We give it to the end of the week before drawing a conclusion, and nothing gets touched in the meantime.'},
   {d:'20 Oct', by:'Brooke', t:'The extension did not reset the learning',
