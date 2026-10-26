@@ -507,7 +507,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>Campaign 03 has been live since 30 September and now runs to 14 November. It has produced 14 purchases at $50.01 each from $700.18 spent, against $103.38 a purchase across both September flights. Nothing has been edited since it launched, which is deliberate &#8212; and it is the main reason October is costing less than half what September did.</p>
+          <p>Campaign 03 has been live since 30 September and now runs to 14 November. It has produced 15 purchases at $54.08 each from $811.20 spent, against $103.38 a purchase across both September flights. Nothing has been edited since it launched, which is deliberate &#8212; and it is the main reason October is costing about half what September did.</p>
           <div class="hero-phases">
             <span class="phase">15&#8211;30 Sep &#183; Flights complete</span>
             <span class="phase now">Now &#183; Campaign 03 live</span>
@@ -741,7 +741,7 @@ const CAMPAIGNS = [
     budget:'$32 / day \u00b7 carried into the 15 Oct \u2013 14 Nov cycle',
     flight:'46 days \u00b7 30 Sep \u2013 14 Nov \u00b7 extended on 20 Oct',
     launch:'Wed 30 Sep',
-    result:'$700.18 spent \u00b7 14 purchases \u00b7 $50.01 each \u00b7 7,105 impressions, 3,228 reached \u00b7 through 22 Oct \u00b7 delivery active, no significant edit since launch',
+    result:'$811.20 spent \u00b7 15 purchases \u00b7 $54.08 each \u00b7 8,122 impressions, 3,594 reached \u00b7 through 25 Oct \u00b7 delivery active, no significant edit since launch',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg','creative/web/prod-02.jpg','creative/web/prod-08.jpg'] }
 ];
@@ -1227,16 +1227,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Campaign 03 live \u00b7 runs to 14 Nov \u00b7 figures through 22 Oct',
+  window:'Campaign 03 live \u00b7 runs to 14 Nov \u00b7 figures through 25 Oct',
   tiles:[
-    ['Ad spend to date','$1,010.31','across two budget cycles'],
+    ['Ad spend to date','$1,121.33','across two budget cycles'],
     ['Budget cycle 2','$1,000','renewed 15 Oct \u00b7 runs to 14 Nov'],
-    ['Purchases \u00b7 Campaign 03','14','since 30 September'],
-    ['Cost per purchase','$50.01','against $103.38 across September'],
-    ['Spent \u00b7 Campaign 03','$700.18','back to about $31 a day'],
-    ['Reach \u00b7 Campaign 03','3,228','7,105 impressions \u00b7 frequency 2.2'],
-    ['CPM','$98.55','$84.49 across the last three days'],
-    ['Purchases \u00b7 total','17','3 in Sep \u00b7 14 on Campaign 03 \u00b7 $59.43 blended']
+    ['Purchases \u00b7 Campaign 03','15','since 30 September'],
+    ['Cost per purchase','$54.08','against $103.38 across September'],
+    ['Spent \u00b7 Campaign 03','$811.20','about $37 a day across the last three'],
+    ['Reach \u00b7 Campaign 03','3,594','8,122 impressions \u00b7 frequency 2.3'],
+    ['CPM','$99.88','$109.16 across the last three days'],
+    ['Purchases \u00b7 total','18','3 in Sep \u00b7 15 on Campaign 03 \u00b7 $62.30 blended']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1248,6 +1248,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'26 Oct', by:'Brooke', t:'One more purchase, and impressions cost more again',
+   b:'Figures through 25 October. Campaign 03 has its fifteenth purchase, the first since 19 October, which takes cost per purchase to $54.08 \u2014 still about half the $103.38 September averaged. Spend ran to $111.02 across the three days, about $37 a day. That is above the $32 daily budget, but Meta is allowed to spend up to 75% over on a given day as long as the week averages out, and across the six days since the limit came off it averages $34. The cheaper impressions of last week did not hold: $109.16 per thousand across these three days against $99.88 for the flight, with about 340 impressions a day and 366 new people reached. Frequency is 2.3, so the audience is not yet tired of the ad. One purchase in six days is slower than the first three weeks, and the seven-day attribution window means some of last week\u2019s sales may still land. If the week to 1 November also comes in at one or two purchases, that is a trend rather than variance, and it is the point to look at fresh creative. Until then nothing gets touched.'},
   {d:'23 Oct', by:'Brooke', t:'Pinterest is on hold',
    b:'Pinterest has come off the timeline. It was recommended for mid-October and the roadmap still showed it as due, which was no longer true. The reasoning has changed rather than the recommendation: that sequence was designed in September when Meta was underperforming and spreading risk across channels made sense. Meta is now working and still getting cheaper, so splitting a small monthly budget across two channels to meet a date chosen six weeks ago would be the wrong trade. It stays our recommendation and comes back on the table when Meta plateaus or the budget grows. Nothing has been spent on it and nothing was set up.'},
   {d:'23 Oct', by:'Brooke', t:'Shopify access is through',
