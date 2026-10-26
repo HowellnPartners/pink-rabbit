@@ -524,7 +524,6 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
           <div class="side-note">
             <p class="eyebrow">Waiting on Pink Rabbit</p>
             <ul>
-                            <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Shopify collaborator request</b> &#8212; Settings &#8594; Users &#8594; Collaborators</span></li>
               <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Google Ads manager link</b> &#8212; accept our request when it arrives</span></li>
             </ul>
           </div>
@@ -536,7 +535,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="grid g4" id="metricTiles"></div>
         <div class="readnote">
           <p class="eyebrow">How to read these</p>
-          <p>These tiles are Campaign 03, live since 30 September. Its first three weeks produced 14 purchases; the six days since 20 October have produced one, which is why cost per purchase has drifted from $43.40 to $54.08. Part of that is timing: Meta credits a sale up to seven days after the click, so the most recent days always read low at first and fill in later. It is still about half the $103.38 a purchase September averaged.</p>
+          <p>These tiles are Perfect Lash (Campaign 03) alone, live since 30 September; nothing from the other campaigns is counted. Its first three weeks produced 14 purchases; the six days since 20 October have produced one, which is why cost per purchase has drifted from $43.40 to $54.08. Part of that is timing: Meta credits a sale up to seven days after the click, so the most recent days always read low at first and fill in later.</p>
           <p>Delivery has been steady since the spending limit came off on 20 October, and frequency of 2.3 means most people have seen the ad about twice, which is not yet too often. The number to watch is purchases over the week to 1 November. One or two again would be a real slowdown, and the point to bring in fresh creative; anything more and the campaign is simply doing what it did in its first three weeks.</p>
         </div>
       </div>
@@ -1227,16 +1226,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Campaign 03 live \u00b7 runs to 14 Nov \u00b7 figures through 25 Oct',
+  window:'Perfect Lash \u00b7 Campaign 03 only \u00b7 figures through 25 Oct',
   tiles:[
-    ['Ad spend to date','$1,121.33','across two budget cycles'],
-    ['Budget cycle 2','$1,000','renewed 15 Oct \u00b7 runs to 14 Nov'],
-    ['Purchases \u00b7 Campaign 03','15','since 30 September'],
-    ['Cost per purchase','$54.08','against $103.38 across September'],
-    ['Spent \u00b7 Campaign 03','$811.20','about $37 a day across the last three'],
-    ['Reach \u00b7 Campaign 03','3,594','8,122 impressions \u00b7 frequency 2.3'],
+    ['Amount spent','$811.20','since launch on 30 Sep'],
+    ['Daily budget','$32','about $37 a day across the last three'],
+    ['Purchases','15','website purchases since 30 Sep'],
+    ['Cost per purchase','$54.08','7-day click attribution'],
+    ['Impressions','8,122','about 340 a day lately'],
+    ['Reach','3,594','frequency 2.3'],
     ['CPM','$99.88','$109.16 across the last three days'],
-    ['Purchases \u00b7 total','18','3 in Sep \u00b7 15 on Campaign 03 \u00b7 $62.30 blended']
+    ['Flight','Day 26 of 46','30 Sep \u2013 14 Nov \u00b7 highest-volume bidding']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
