@@ -507,7 +507,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>Campaign 03 has been live since 30 September and now runs to 14 November. It has produced 16 purchases at $51.68 each from $826.87 spent, against $103.38 a purchase across both September flights. Nothing has been edited since it launched, which is deliberate &#8212; and it is the main reason October is costing about half what September did.</p>
+          <p>Campaign 03 has been live since 30 September and now runs to 14 November. It has produced 19 purchases at $49.85 each from $947.23 spent, against $103.38 a purchase across both September flights. Nothing has been edited since it launched, which is deliberate &#8212; and it is the main reason October is costing about half what September did.</p>
           <div class="hero-phases">
             <span class="phase">15&#8211;30 Sep &#183; Flights complete</span>
             <span class="phase now">Now &#183; Campaign 03 live</span>
@@ -524,7 +524,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
           <div class="side-note">
             <p class="eyebrow">Waiting on Pink Rabbit</p>
             <ul>
-              <li><svg class="tick" style="color:#B57828"><use href="#i-check"/></svg><span><b>Google Ads manager link</b> &#8212; accept our request when it arrives</span></li>
+              <li><span>Nothing right now &#8212; everything is running on Meta.</span></li>
             </ul>
           </div>
         </div>
@@ -535,8 +535,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="grid g4" id="metricTiles"></div>
         <div class="readnote">
           <p class="eyebrow">How to read these</p>
-          <p>These tiles are Perfect Lash (Campaign 03) alone, live since 30 September; nothing from the other campaigns is counted. Its first three weeks produced 14 purchases; the week since 20 October has produced two, the second of them today. Cost per purchase drifted from $43.40 to $54.08 across the quiet days and is back to $51.68 with today&#8217;s sale. Part of that is timing: Meta credits a sale up to seven days after the click, so the most recent days always read low at first and fill in later.</p>
-          <p>Delivery has been steady since the spending limit came off on 20 October, and frequency of 2.3 means most people have seen the ad about twice, which is not yet too often. The number to watch is purchases over the week to 1 November. One or two again would be a real slowdown, and the point to bring in fresh creative; anything more and the campaign is simply doing what it did in its first three weeks.</p>
+          <p>These tiles are Perfect Lash (Campaign 03) alone, live since 30 September; nothing from the other campaigns is counted. It has 19 purchases: 14 in its first three weeks and five since 20 October, three of them in the past week. Those three cost about $40 each, which brought cost per purchase back under $50. Meta credits a sale up to seven days after the click, so the most recent days read low at first and fill in later.</p>
+          <p>The number to watch now is spend. Since 26 October the campaign has spent about $17 a day against its $32 budget, and impressions have slowed to roughly 215 a day from 340. The impressions it does buy are cheaper, so Meta is delivering less rather than charging more. We are finding the cause before changing anything, because a change to budget, audience or creative would restart what the campaign has learned since 30 September. Frequency is 2.3, so the audience is not tired of the ad.</p>
         </div>
       </div>
 
@@ -574,7 +574,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       </div>
 
       <div class="sec">
-        <div class="sec-head"><h3>Why we&#8217;re rolling out channels in phases</h3><p class="hint">Meta and Google are in your plan &#183; Pinterest is our recommendation</p></div>
+        <div class="sec-head"><h3>Why we&#8217;re rolling out channels in phases</h3><p class="hint">Meta is live &#183; Google and Pinterest are on hold</p></div>
         <div class="grid g2">
           <div class="card" id="whyBox"></div>
           <div style="display:grid;gap:14px;align-content:start">
@@ -610,7 +610,6 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
             <span><i style="background:#D9536F"></i>Meta live</span>
             <span><i style="background:#F2C3CE"></i>Strategy, setup + build</span>
             <span><i style="background:#F6E6B4"></i>Creative</span>
-            <span><i style="background:#D9E2F0"></i>Google</span>
             <span><i style="background:#EADACA"></i>Reporting + optimization</span>
             <span><i style="background:repeating-linear-gradient(45deg,#E8CFC0,#E8CFC0 4px,#F5E7DE 4px,#F5E7DE 8px)"></i>Learning phase &#8212; hands off</span>
             <span><i style="width:11px;height:11px;border-radius:50%;background:#D9536F"></i>Deliverable</span>
@@ -740,7 +739,7 @@ const CAMPAIGNS = [
     budget:'$32 / day \u00b7 carried into the 15 Oct \u2013 14 Nov cycle',
     flight:'46 days \u00b7 30 Sep \u2013 14 Nov \u00b7 extended on 20 Oct',
     launch:'Wed 30 Sep',
-    result:'$826.87 spent \u00b7 16 purchases \u00b7 $51.68 each \u00b7 8,292 impressions, 3,612 reached \u00b7 through 26 Oct \u00b7 delivery active, no significant edit since launch',
+    result:'$947.23 spent \u00b7 19 purchases \u00b7 $49.85 each \u00b7 9,792 impressions, 4,258 reached \u00b7 through 2 Nov \u00b7 delivery active, no significant edit since launch',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
     creative:['creative/web/prod-01.jpg'] }
 ];
@@ -807,7 +806,7 @@ const pct = d => ((toDate(d) - T0) / SPAN) * 100;
 /* ---------- routing: every section is a real page ---------- */
 const TITLES = {
   dashboard:['Dashboard','One campaign live \u00b7 Perfect Lash runs to 14 November'],
-  campaigns:['Campaigns','Meta live \u00b7 Google to follow \u00b7 Pinterest on hold'],
+  campaigns:['Campaigns','Meta only \u00b7 Google and Pinterest on hold'],
   timeline :['Timeline','The first 90 days \u00b7 September \u2013 November 2026'],
   notes    :['Notes','Goes to Brooke and Abby together']
 };
@@ -878,7 +877,7 @@ const READY = [
   ['Product + Lifestyle campaign build','Both campaigns being built in Ads Manager for your walkthrough on Monday 14th.','Howell\u2019n','prep','In progress','motion'],
   ['Competitor &amp; audience research','DIY and cluster-lash category \u2014 positioning, offers, creative angles and price laddering.','Howell\u2019n','prep','In progress','motion'],
   ['Product samples to Brooke','Ships as soon as the rushed Brown Sugar boxes arrive, so every style is covered. Tracking to follow.','Pink Rabbit','prep','Ships soon','motion'],
-  ['Google Ads account link','A manager link request is coming from us \u2014 accept it under Admin \u2192 Access and security \u2192 Managers when it arrives. Merchant Center and campaign setup follow 20\u201331 October.','Pink Rabbit','wait','Needs you','you'],
+  ['Google Ads','On hold. Everything is running on Meta for now, so there is nothing to set up or accept. Nothing on Google starts without agreeing a date with you first.','Your call','prop','On hold','proposed'],
   ['Pinterest','On hold. Still our recommendation, but Meta is working and getting cheaper, so November concentrates there rather than splitting a small budget. Revisited when Meta plateaus or the budget grows.','Your call','prop','On hold','proposed'],
   ['Google Analytics 4 access','Granted for brooke@howellnmedia.com and abigail@howellnmedia.com \u2014 revenue is attributed by channel from day one.','Pink Rabbit','live','Done','done'],
   ['Meta partner access','Accepted. Pink Rabbit keeps ownership of the ad account, Page, Instagram and Pixel \u2014 we have partner access only.','Pink Rabbit','live','Done','done'],
@@ -1000,16 +999,17 @@ $('#plannedCampaigns').className = 'grid g2';
 /* ---------- why we roll out channels in phases ---------- */
 const PHASES = [
   ['Meta \u2014 September 15','plan','Our first priority is creating demand. Pink Rabbit needs to get in front of potential customers before we can expect them to search for the brand. Meta allows us to introduce the product through highly visual creative, test different audiences and messaging, and begin building valuable first-party campaign data.'],
-  ['Pinterest \u2014 on hold','prop','Next, we expand into visual discovery and inspiration. Beauty, style and how-to content naturally fit the way people use Pinterest. We\u2019ll install tracking ahead of launch so we\u2019re already collecting useful website behavior while Meta is running.'],
-  ['Google \u2014 November 1','plan','Google becomes our demand-capture channel. By this point, Pink Rabbit has had weeks of exposure through Meta and Pinterest, while Google allows us to reach people actively searching for lashes, relevant products and Pink Rabbit itself. It also positions the brand for stronger Q4 purchase intent.']
+  ['Pinterest \u2014 on hold','prop','Next, we expand into visual discovery and inspiration. Beauty, style and how-to content naturally fit the way people use Pinterest. We\u2019ll install tracking ahead of launch so we\u2019re already collecting useful website behavior while Meta is running.','Pinterest is on hold. Meta is working and still getting cheaper, so November concentrates there rather than splitting a small budget across two channels. We revisit Pinterest when Meta plateaus or the budget grows.'],
+  ['Google \u2014 on hold','hold','Google becomes our demand-capture channel. By this point, Pink Rabbit has had weeks of exposure through Meta and Pinterest, while Google allows us to reach people actively searching for lashes, relevant products and Pink Rabbit itself. It also positions the brand for stronger Q4 purchase intent.','Google is not running right now. Everything is on Meta, and nothing on Google is set up until we agree a date with you.']
 ];
 const PHASE_TAG = {
   plan:'<span class="pill live">In your plan</span>',
-  prop:'<span class="pill prop">Recommended</span>'
+  prop:'<span class="pill prop">Recommended</span>',
+  hold:'<span class="pill prop">On hold</span>'
 };
 $('#whyBox').innerHTML = PHASES.map(function(ph){
   return '<div class="why-phase"><div class="hd"><b>' + ph[0] + '</b>' + PHASE_TAG[ph[1]] + '</div><p>' + ph[2] + '</p>' +
-    (ph[1] === 'prop' ? '<p class="aside">Pinterest is on hold. Meta is working and still getting cheaper, so November concentrates there rather than splitting a small budget across two channels. We revisit Pinterest when Meta plateaus or the budget grows.</p>' : '') +
+    (ph[3] ? '<p class="aside">' + ph[3] + '</p>' : '') +
   '</div>';
 }).join('') +
 '<p style="margin-top:4px;padding-top:14px;border-top:1px solid var(--line-soft);font-size:11.5px;color:var(--ink-mute);line-height:1.6">Budget is confirmed with you at campaign build, 12\u201314 September, and reviewed at every monthly call.</p>';
@@ -1042,8 +1042,6 @@ const LANES = [
   {name:'Strategy + research', color:'#F2C3CE', sub:'Competitor analysis \u00b7 positioning \u00b7 audiences \u00b7 rollout planning', bars:[
     {n:'Research + strategy', s:'2026-09-01', e:'2026-09-11', tone:'blush',
       items:['Competitor analysis','Market positioning','Audience research','Initial targeting','Product + lifestyle campaign strategy','Channel rollout planning']},
-    {n:'Keyword research', s:'2026-10-20', e:'2026-10-31', tone:'blush',
-      items:['Keyword research for Search + Shopping']},
     {n:'December recommendations', s:'2026-11-23', e:'2026-11-30', when:'End of November', tone:'blush',
       items:['Winning creative, products + audiences','December recommendations']}
   ]},
@@ -1056,7 +1054,7 @@ const LANES = [
     {n:'Holiday creative', s:'2026-11-15', e:'2026-11-30', tone:'honey',
       items:['Holiday creative','Gift + product messaging']}
   ]},
-  {name:'Media + channels', color:'#D9536F', sub:'Meta \u2192 Google', bars:[
+  {name:'Media + channels', color:'#D9536F', sub:'Meta', bars:[
     {n:'Backend foundation', s:'2026-09-01', e:'2026-09-11', tone:'blush',
       items:['Meta account setup','Partner access','Pixel / CAPI setup','Conversion tracking']},
     {n:'Meta campaign build', s:'2026-09-08', e:'2026-09-14', tone:'blush',
@@ -1069,11 +1067,6 @@ const LANES = [
         {d:'2026-09-15', t:'Love at First Lash carousel live \u00b7 $16/day', w:'Howell\u2019n'},
         {d:'2026-09-25', t:'Campaign 01 reaches day 11 \u2014 capture its numbers for the matched comparison', w:'Howell\u2019n'},
         {d:'2026-09-30', t:'Both flights end \u2014 matched read: each campaign over its own first 11 days and ~$176', w:'Brooke &amp; Abby'}]},
-    {n:'Google preparation', s:'2026-10-20', e:'2026-10-31', tone:'cloud',
-      items:['Google Ads setup','Merchant Center + catalog','Product feed QA','Search / Shopping structure','Conversion tracking']},
-    {n:'Google live', s:'2026-11-01', e:'2026-11-30', tone:'cloud',
-      items:['Search + Shopping campaigns','Capturing active purchase + search intent'],
-      dots:[{d:'2026-11-01', t:'Search + Shopping campaigns begin', w:'Howell\u2019n'}]}
   ]},
   {name:'Reporting + optimization', color:'#EADACA', sub:'Dashboard \u00b7 review \u00b7 learning \u00b7 optimization \u00b7 scaling', bars:[
     {n:'Dashboard + reporting', s:'2026-09-01', e:'2026-09-11', tone:'sugar',
@@ -1091,8 +1084,8 @@ const LANES = [
       dots:[{d:'2026-10-05', t:'September report + strategy call', w:'Brooke &amp; Abby'}]},
     {n:'Optimize + scale', s:'2026-10-15', e:'2026-10-31', tone:'sugar',
       items:['Meta optimization','Retarget site visitors','Scale winning creative','Keep testing products + messages']},
-    {n:'Cross-channel growth', s:'2026-11-01', e:'2026-11-15', tone:'sugar',
-      items:['Meta + Google working together','Prospecting + discovery + retargeting + search capture'],
+    {n:'Meta growth', s:'2026-11-01', e:'2026-11-15', tone:'sugar',
+      items:['Campaign 03 runs to 14 November','Prospecting + retargeting on Meta'],
       dots:[{d:'2026-11-05', t:'October report + strategy call', w:'Brooke &amp; Abby'}]},
     {n:'Holiday / BFCM push', s:'2026-11-15', e:'2026-11-30', tone:'sugar',
       items:['Retargeting','Scale proven campaigns based on performance']},
@@ -1105,7 +1098,6 @@ const LANES = [
 const MILES = [
   {d:'2026-09-14', l:'09.14 Walkthrough', t:'Client walkthrough + final approval', w:'Dashboard, campaign strategy, creative and reporting \u2014 the day before launch'},
   {d:'2026-09-15', l:'09.15 Meta live', t:'Meta launch \u2014 Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'},
-  {d:'2026-11-01', l:'11.01 Google live', t:'Google launch \u2014 Search + Shopping', w:'Howell\u2019n'},
   {d:'2026-11-27', l:'BFCM', t:'Black Friday 27 Nov \u2192 Cyber Monday 30 Nov', w:'Holiday push'},
   {d:'2026-11-30', l:'90-day review', label:'End of November', t:'90-day review', w:'Full performance analysis, channel comparison, CPA/ROAS, December recommendations'}
 ];
@@ -1123,9 +1115,7 @@ const ROADMAP = [
   {when:'Sept 25\u2013Oct 5', phase:'First Optimization', what:['First meaningful performance read','Identify winning creative/audiences','Cut weak performers','Shift budget toward stronger ads']},
   {when:'Oct 1\u201315', phase:'Creative Round 2', what:['Use September data to develop new creative','Product-specific variations','Lifestyle iterations','Retargeting creative']},
   {when:'Oct 15\u201331', phase:'Optimize + Scale', what:['Meta optimization','Retarget site visitors','Scale winning creative','Continue testing products/messages']},
-  {when:'Oct 20\u201331', phase:'Google Preparation', what:['Google Ads setup','Merchant Center/catalog','Product feed QA','Keyword research','Search/Shopping structure','Conversion tracking']},
-  {when:'Nov 1', phase:'Google Launch', ms:true, what:['Search + Shopping campaigns begin','Capture active purchase/search intent']},
-  {when:'Nov 1\u201315', phase:'Cross-Channel Growth', what:['Meta + Google working together','Prospecting + discovery + retargeting + search capture']},
+  {when:'Nov 1\u201315', phase:'Meta Growth', what:['Campaign 03 runs to 14 November','Prospecting + retargeting on Meta']},
   {when:'Nov 15\u201330', phase:'Holiday / BFCM Push', what:['Holiday creative','Gift/product messaging','Retargeting','Scale proven campaigns based on performance']},
   {when:'End of Nov', phase:'90-Day Review', ms:true, what:['Full performance analysis','Channel comparison','CPA/ROAS','Winning creative/products/audiences','December recommendations']}
 ];
@@ -1226,16 +1216,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Perfect Lash \u00b7 Campaign 03 only \u00b7 figures through 26 Oct, today so far',
+  window:'Perfect Lash \u00b7 Campaign 03 only \u00b7 figures through 2 Nov',
   tiles:[
-    ['Amount spent','$826.87','since launch on 30 Sep'],
-    ['Daily budget','$32','spent about $37 a day, 23\u201325 Oct'],
-    ['Purchases','16','website purchases since 30 Sep'],
-    ['Cost per purchase','$51.68','7-day click attribution'],
-    ['Impressions','8,292','about 340 a day lately'],
-    ['Reach','3,612','frequency 2.3'],
-    ['CPM','$99.72','$109.16 across 23\u201325 Oct'],
-    ['Flight','Day 27 of 46','30 Sep \u2013 14 Nov \u00b7 highest-volume bidding']
+    ['Amount spent','$947.23','since launch on 30 Sep'],
+    ['Daily budget','$32','spent about $17 a day since 26 Oct'],
+    ['Purchases','19','website purchases since 30 Sep'],
+    ['Cost per purchase','$49.85','about $40 each for the three since 26 Oct'],
+    ['Impressions','9,792','about 215 a day since 26 Oct'],
+    ['Reach','4,258','frequency 2.3'],
+    ['CPM','$96.74','$80.24 since 26 Oct'],
+    ['Flight','Day 34 of 46','30 Sep \u2013 14 Nov \u00b7 highest-volume bidding']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1247,6 +1237,10 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'2 Nov', by:'Brooke', t:'The week to 1 November: sales held, spend slowed',
+   b:'Figures through 2 November. The 26 October note made the week to 1 November the test: one or two purchases would have meant a real slowdown. It came in at three, at about $40 each, which takes Campaign 03 to 19 purchases and brings cost per purchase to $49.85 \u2014 under $50 for the first time since 22 October. So the quiet stretch after the 20th reads as ordinary variance, and the creative stays as it is. What has changed is delivery. Since 26 October the campaign has spent about $17 a day against its $32 budget, and impressions have slowed to roughly 215 a day from 340. The impressions it does buy are cheaper, $80.24 per thousand against $96.74 for the flight, so Meta is delivering less rather than charging more. We are finding the cause this week before changing anything, because a budget, audience or creative change would restart the learning the campaign has built since 30 September. Meta is also showing a recommendation on the campaign, and we are not accepting it for the same reason. The flight runs to 14 November.'},
+  {d:'2 Nov', by:'Brooke', t:'Google is on hold',
+   b:'Google has come off the timeline. Everything is running on Meta, and nothing on Google is set up until we agree a date with you. The setup steps that were scheduled for late October have been removed rather than left showing as overdue.'},
   {d:'26 Oct', by:'Brooke', t:'One more purchase, and impressions cost more again',
    b:'Figures through 25 October. Campaign 03 has its fifteenth purchase, the first since 19 October, which takes cost per purchase to $54.08 \u2014 still about half the $103.38 September averaged. Spend ran to $111.02 across the three days, about $37 a day. That is above the $32 daily budget, but Meta is allowed to spend up to 75% over on a given day as long as the week averages out, and across the six days since the limit came off it averages $34. The cheaper impressions of last week did not hold: $109.16 per thousand across these three days against $99.88 for the flight, with about 340 impressions a day and 366 new people reached. Frequency is 2.3, so the audience is not yet tired of the ad. One purchase in six days is slower than the first three weeks, and the seven-day attribution window means some of last week\u2019s sales may still land. If the week to 1 November also comes in at one or two purchases, that is a trend rather than variance, and it is the point to look at fresh creative. Until then nothing gets touched. Later on the 26th: a sixteenth purchase landed today, bringing cost per purchase back to $51.68 on $826.87 spent.'},
   {d:'23 Oct', by:'Brooke', t:'Pinterest is on hold',
