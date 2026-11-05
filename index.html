@@ -690,9 +690,9 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
             <h4>Older than we first targeted</h4>
             <div class="ages" id="agesSep"></div>
             <p class="aud-small">Both carousel buyers were 35&#8211;44. The video buyer was 55&#8211;64, outside the 18&#8211;45 range, found by Advantage+ on its own. Nobody 18&#8211;34 bought. Three purchases is a direction rather than a profile, but it is why October moved the range to 25&#8211;55.</p>
-            <p class="eyebrow" style="margin-top:22px">Where the carousel&#8217;s $162.88 went</p>
+            <p class="eyebrow" style="margin-top:22px">Where September&#8217;s $310.13 went &#183; both ads</p>
             <div class="ages" id="spendSep"></div>
-            <p class="aud-small">The targeting said 18&#8211;45, but Advantage+ put 47% of the carousel&#8217;s spend on women 45 and over, and only $1.94 on 18&#8211;24. Meta was already finding the older buyer on its own &#8212; another reason the range moved up.</p>
+            <p class="aud-small">The targeting said 18&#8211;45, but Advantage+ put 58% of September&#8217;s spend on women 45 and over, and only $3.12 on 18&#8211;24. The video leaned oldest: its biggest share went to 55&#8211;64. Meta was already finding the older buyer on its own &#8212; another reason the range moved up.</p>
           </div>
           <div class="card">
             <p class="eyebrow" id="c03BuyersHead">Perfect Lash &#183; 19 purchases</p>
@@ -967,8 +967,8 @@ const CREATIVE = [
 // Purchases by age from Ads Manager (ad set > Breakdown > Age), all women so far.
 // AGES_C03 stays empty until Perfect Lash's breakdown is pulled; the card says so meanwhile.
 const AGES_SEP = [['18\u201324',0],['25\u201334',0],['35\u201344',2],['45\u201354',0],['55\u201364',1],['65+',0]];
-// Love at First Lash (Campaign 01) amount spent by age, Maximum date range.
-const SPEND_SEP = [['18\u201324',1.94],['25\u201334',26.13],['35\u201344',58.29],['45\u201354',37.26],['55\u201364',26.79],['65+',12.47]];
+// September amount spent by age, Maximum date range: Love at First Lash + 5 Minutes | One Mission video.
+const SPEND_SEP = [['18\u201324',1.94+1.18],['25\u201334',26.13+11.35],['35\u201344',58.29+30.97],['45\u201354',37.26+31.46],['55\u201364',26.79+45.14],['65+',12.47+27.15]];
 const AGES_C03 = [];
 const AGES_C03_THROUGH = '';
 
