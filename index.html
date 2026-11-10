@@ -551,11 +551,12 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>Campaign 03 has been live since 30 September and now runs to 14 November. It has produced 21 purchases at $53.73 each from $1,128.35 spent, against $103.38 a purchase across both September flights. Its cost per purchase has crept up from about $50, so its budget is now $15 a day and new ads are going live alongside it in their own campaign.</p>
+          <p>Perfect Lash (Campaign 03) ran from 30 September to 10 November and brought 21 purchases at $57.25 each from $1,202.28, against $103.38 a purchase across both September flights. It stopped selling after 4 November, so it is off and its budget has moved to new creative. A new video has been live since 4 November and has made its first sale, and a carousel built around the full range, <em>Lashes for every version of you</em>, goes live on 15 November.</p>
           <div class="hero-phases">
             <span class="phase">15&#8211;30 Sep &#183; Flights complete</span>
-            <span class="phase now">Now &#183; Campaign 03 live</span>
-            <span class="phase">14 Nov &#183; Flight closes</span>
+            <span class="phase">30 Sep &#8211; 10 Nov &#183; Perfect Lash</span>
+            <span class="phase now">Now &#183; Video test live</span>
+            <span class="phase">15 Nov &#183; New carousel</span>
             <span class="phase">Late Nov &#183; Black Friday</span>
           </div>
         </div>
@@ -568,7 +569,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
           <div class="side-note">
             <p class="eyebrow">Waiting on Pink Rabbit</p>
             <ul>
-              <li><span>Nothing right now &#8212; everything is running on Meta.</span></li>
+              <li><span>Which lash style is in each look of the new carousel &#8212; the creative, the boss and the night out &#8212; so each card links to the right product.</span></li>
             </ul>
           </div>
         </div>
@@ -579,8 +580,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="grid g4" id="metricTiles"></div>
         <div class="readnote">
           <p class="eyebrow">How to read these</p>
-          <p>These tiles are Perfect Lash (Campaign 03) alone, live since 30 September; nothing from the other campaigns is counted. It has 21 purchases at $53.73 each from $1,128.35, spent over 36 days at about $31 a day. Meta credits a sale up to seven days after the click, so the most recent days read low at first and fill in later.</p>
-          <p>The ad is levelling off rather than stopping. Cost per purchase has moved from about $50 to $53.73, Meta marks it learning limited, and people have now seen it 2.4 times on average. So on 4 November we lowered its budget to $15 a day and moved the rest of this month&#8217;s budget to a new campaign testing a new video against a new static ad. Perfect Lash keeps running as the benchmark until 14 November.</p>
+          <p>The top row is Perfect Lash (Campaign 03) for its whole run, 30 September to 9 November, its last full day. The bottom row is the video test (Campaign 04), live since 4 November. Nothing from the September campaigns is counted. Meta credits a sale up to seven days after the click, so the most recent days read low at first and fill in later.</p>
+          <p>Perfect Lash did its job: 21 sales at $57.25 each, a little over half what a sale cost in September. But it made no sales after 4 November, on about $74 of spend, and people had seen it 2.5 times on average. So we turned it off on 10 November, four days before its planned end, and its budget goes to new creative. One sale on the video is too few to judge, so it runs untouched to 18 November.</p>
         </div>
       </div>
 
@@ -605,6 +606,11 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       <div class="sec">
         <div class="sec-head"><h3>Currently running</h3><p class="hint" id="liveHint"></p></div>
         <div id="liveCampaigns"></div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-head"><h3>Up next</h3><p class="hint">Built and approved, not live yet</p></div>
+        <div class="grid" style="grid-template-columns:1fr" id="nextCampaigns"></div>
       </div>
 
       <div class="sec">
@@ -653,7 +659,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
             <p class="eyebrow" style="color:rgba(246,239,234,.5)">Why the first 90 days are a test</p>
             <h4 style="font-family:var(--display);font-size:30px;font-weight:400;line-height:1.15;margin-top:8px">Learn who buys first, then scale what works.</h4>
             <p>The first 90 days are for finding out who buys Pink Rabbit and which ad makes them buy. Meta learns from a steady stream of purchases, and every change to a running ad restarts that learning. So we run fewer things for longer, and change one thing at a time. That way each result tells us something we can build on, rather than leaving us to guess which of several changes made the difference.</p>
-            <p>It is already paying off. In September two campaigns split the budget and a sale cost $103.38. Since 30 September one ad, left alone, has brought a sale for $49.85.</p>
+            <p>It is already paying off. In September two campaigns split the budget and a sale cost $103.38. From 30 September one ad, left alone, brought 21 sales at $57.25 each.</p>
           </div>
           <div class="aud-day">
             <div class="n num" id="audDay">50</div>
@@ -695,7 +701,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
             <p class="aud-small">The targeting said 18&#8211;45, but Advantage+ put 58% of September&#8217;s spend on women 45 and over, and only $3.12 on 18&#8211;24. The video leaned oldest: its biggest share went to 55&#8211;64. Meta was already finding the older buyer on its own &#8212; another reason the range moved up.</p>
           </div>
           <div class="card">
-            <p class="eyebrow" id="c03BuyersHead">Perfect Lash &#183; 19 purchases</p>
+            <p class="eyebrow" id="c03BuyersHead">Perfect Lash &#183; 21 purchases</p>
             <h4 id="c03BuyersTitle">The October and November buyers</h4>
             <div class="ages" id="agesC03"></div>
             <p class="aud-small" id="c03BuyersNote"></p>
@@ -706,13 +712,35 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       <div class="sec">
         <div class="sec-head"><h3>What each ad is doing</h3><p class="hint">What it was built to test, what it showed, and what happens next</p></div>
         <div class="card aud-ad">
+          <img src="creative/web/ev-01.jpg" alt="Lashes for every version of you carousel" loading="lazy">
+          <div>
+            <h4>Lashes for every version of you carousel <span class="pill prep">In build</span></h4>
+            <dl>
+              <dt>Testing</dt><dd>Whether showing the range as a set of looks &#8212; the creative, the boss, the night out &#8212; sells better than one product alone, and whether people buy more than one style.</dd>
+              <dt>Launch</dt><dd>Five cards in one carousel, live 15 November, in a campaign of its own so the video test stays clean.</dd>
+              <dt>Next</dt><dd>Planned to carry into Black Friday with the offer added to the first card.</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="card aud-ad">
+          <img src="creative/web/vid-02.jpg" alt="The Lash That Changed Her Mind UGC video" loading="lazy">
+          <div>
+            <h4>The Lash That Changed Her Mind &#183; UGC video <span class="pill live"><span class="dot"></span>Live</span></h4>
+            <dl>
+              <dt>Testing</dt><dd>Whether a creator talking through her own first try sells better than a still image, now that Perfect Lash has set the benchmark.</dd>
+              <dt>Showing</dt><dd>1 purchase from $164.66 in its first week, reaching 754 people. Too early to read &#8212; it is still in Meta&#8217;s learning phase.</dd>
+              <dt>Next</dt><dd>Runs untouched to 18 November. What it shows feeds the Black Friday creative.</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="card aud-ad">
           <img src="creative/web/prod-01.jpg" alt="Perfect Lash product static" loading="lazy">
           <div>
-            <h4>Perfect Lash product static <span class="pill live"><span class="dot"></span>Live</span></h4>
+            <h4>Perfect Lash product static <span class="pill hold">Complete</span></h4>
             <dl>
-              <dt>Testing</dt><dd>Whether a product-led static, with the message written on the image, sells better than lifestyle imagery or video.</dd>
-              <dt>Showing</dt><dd>21 purchases at $53.73 each from $1,128.35 &#8212; about half September&#8217;s cost. Cost per purchase has crept up from about $50, and people have seen it 2.4 times on average.</dd>
-              <dt>Next</dt><dd>Budget lowered to $15 a day on 4 November. It runs to 14 November as the benchmark the new ads are measured against.</dd>
+              <dt>Tested</dt><dd>Whether a product-led static, with the message written on the image, sells better than lifestyle imagery or video.</dd>
+              <dt>Showed</dt><dd>21 purchases at $57.25 each from $1,202.28 &#8212; a little over half September&#8217;s cost. No sales after 4 November, and people had seen it 2.5 times on average.</dd>
+              <dt>Learned</dt><dd>A product static with a clear written message sells. Every ad wears out eventually; this one carried six weeks before it did. Turned off 10 November.</dd>
             </dl>
           </div>
         </div>
@@ -746,12 +774,12 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
           <div class="card tint-blush aud-why">
             <p class="eyebrow">Every ad has to learn</p>
             <div class="n">~4 a week</div>
-            <p style="color:#7A3A4A">Meta looks for around 50 purchases a week to finish learning. Perfect Lash brings about four a week on its own. Split that across more ads and each one learns more slowly.</p>
+            <p style="color:#7A3A4A">Meta looks for around 50 purchases a week to finish learning. Perfect Lash brought about four a week on its own. Split that across more ads and each one learns more slowly.</p>
           </div>
           <div class="card tint-cloud aud-why">
             <p class="eyebrow">Splitting cost us in September</p>
-            <div class="n">$103 &#8594; $50</div>
-            <p style="color:#3E5A85">Two campaigns at $16 a day: 3 purchases at $103.38 each. One ad at $32 a day: 19 purchases at $49.85 each.</p>
+            <div class="n">$103 &#8594; $57</div>
+            <p style="color:#3E5A85">Two campaigns at $16 a day: 3 purchases at $103.38 each. One ad at $32 a day: 21 purchases at $57.25 each.</p>
           </div>
           <div class="card tint-honey aud-why">
             <p class="eyebrow">Five ads, $6 each</p>
@@ -764,7 +792,8 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
       <div class="sec">
         <div class="sec-head"><h3>What we test next</h3><p class="hint">New concepts, added one step at a time so each one can be measured &#183; subject to change</p></div>
         <div class="road">
-          <div class="road-row"><div class="when">This week</div><div class="ph">New ads alongside Perfect Lash <span class="pill prep">In setup</span></div><div class="what">A new video and a new static ad in their own campaign, at about $25 a day, split evenly between the two, with the same audience and settings as Perfect Lash. Perfect Lash stays live at $15 a day, so the new ads are measured against a proven one. It is funded from this month&#8217;s budget. By Black Friday we know which new ad sells, instead of guessing.</div></div>
+          <div class="road-row"><div class="when">4&#8211;18 Nov</div><div class="ph">Video test <span class="pill live"><span class="dot"></span>Live</span></div><div class="what">A new UGC video in its own campaign, with the same audience and settings as Perfect Lash. It runs untouched to 18 November, so by Black Friday we know whether video sells for Pink Rabbit, instead of guessing.</div></div>
+          <div class="road-row"><div class="when">15 Nov</div><div class="ph">Lashes for every version of you <span class="pill prep">In build</span></div><div class="what">A five-card carousel that shows the range as looks: the creative, the boss and the night out. Its own campaign, so the video test stays clean.</div></div>
           <div class="road-row"><div class="when">Production shoot</div><div class="ph">From imagery to how-to video <span class="pill prep">Planned</span></div><div class="what">Educational content that focuses on the application: mapping the eye, applying step by step, and putting the full look together. It answers the part people worry about before they buy.</div></div>
           <div class="road-row"><div class="when">27&#8211;30 Nov</div><div class="ph">Black Friday &#8594; Cyber Monday <span class="pill prep">Planned</span></div><div class="what">The holiday push runs longer and is built from whichever ads win the test, so the biggest week of the year goes behind proven creative. Bundles and a free-shipping threshold raise what each order is worth. Ad costs rise for every brand that week, so a temporary bump in cost per purchase is expected.</div></div>
           <div class="road-row ms"><div class="when">End of Nov</div><div class="ph"><i></i>90-day review</div><div class="what">Who bought, which creative sold, what each sale cost, and the plan for December.</div></div>
@@ -900,7 +929,7 @@ const CAMPAIGNS = [
     launch:'Sun 20 Sep',
     testing:'The video counterpart to the lifestyle carousel \u2014 same objective, different creative form. Running alongside Campaign 01 so the two can be compared over the same window.',
     creative:['creative/web/vid-01.jpg'] },
-  { name:'Product Testing', base:'Campaign 03', platform:'Meta', status:'live', liveSince:'2026-09-30',
+  { name:'Product Testing', base:'Campaign 03', platform:'Meta', status:'complete', liveSince:'2026-09-30',
     objective:'Website Sales',
     funnel:'TOF \u2192 MOF (Product-led, message-first)',
     conversion:'Purchase',
@@ -908,12 +937,40 @@ const CAMPAIGNS = [
     creativeFmt:'Single static \u00b7 Shopify product catalog attached \u00b7 Shop Now',
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     audience:'US, women 25\u201355 \u00b7 Advantage+ Audience on \u00b7 recent purchasers excluded',
-    budget:'$32 / day \u00b7 carried into the 15 Oct \u2013 14 Nov cycle',
-    flight:'46 days \u00b7 30 Sep \u2013 14 Nov \u00b7 extended on 20 Oct',
-    launch:'Wed 30 Sep',
-    result:'$1,128.35 spent \u00b7 21 purchases \u00b7 $53.73 each \u00b7 11,385 impressions, 4,714 reached \u00b7 through 4 Nov \u00b7 learning limited \u00b7 budget lowered to $15 a day on 4 Nov',
+    budget:'$32 / day \u00b7 lowered to $15 a day on 4 Nov',
+    flight:'30 Sep \u2013 10 Nov \u00b7 turned off four days before its planned 14 Nov end',
+    launch:'Wed 30 Sep \u2013 Tue 10 Nov',
+    result:'$1,202.28 spent \u00b7 21 purchases \u00b7 $57.25 each \u00b7 12,135 impressions, 4,924 reached \u00b7 no purchases after 4 Nov',
     testing:'Static product creative that leads with a written message, chosen because the September read favored static over video and because both lines carry a differentiator the first flight never said out loud \u2014 the salon comparison in particular.',
-    creative:['creative/web/prod-01.jpg'] }
+    creative:['creative/web/prod-01.jpg'] },
+  { name:'Video vs Static', base:'Campaign 04', platform:'Meta', status:'live', liveSince:'2026-11-04',
+    campaign:'Video vs Static | Campaign',
+    objective:'Website Sales',
+    funnel:'TOF \u2192 MOF (UGC video)',
+    conversion:'Purchase \u00b7 judged on cost per add to cart',
+    message:'The lash that changed her mind',
+    creativeFmt:'UGC video \u00b7 9:16 \u00b7 \u201cThe Lash That Changed Her Mind\u201d',
+    destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
+    budget:'$18 / day to 14 Nov \u00b7 $25 / day from 15 Nov',
+    flight:'14 days \u00b7 4 \u2013 18 Nov',
+    launch:'Wed 4 Nov',
+    result:'$164.66 spent \u00b7 1 purchase \u00b7 1,183 impressions, 754 reached \u00b7 through 10 Nov \u00b7 still in the learning phase',
+    testing:'Whether a creator talking through her own first try sells better than a still image, now that Perfect Lash has set the benchmark. It runs untouched to 18 November, so by Black Friday we know whether video earns a place.',
+    creative:['creative/web/vid-02.jpg'] },
+  { name:'Lashes for Every Version of You', base:'Campaign 05', platform:'Meta', status:'build',
+    campaign:'Every Version | Carousel',
+    objective:'Website Sales',
+    funnel:'TOF \u2192 MOF (Lifestyle carousel \u00b7 one look per card)',
+    conversion:'Purchase',
+    message:'Lashes for every version of you',
+    creativeFmt:'Carousel \u00b7 5 square cards \u00b7 Shop Now',
+    destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
+    flight:'From 15 Nov into Black Friday',
+    launch:'Sun 15 Nov',
+    primary:'Making art at noon. Running the meeting at 3. Out the door by 9. Reusable lash clusters for every version of you. Which one are you today?',
+    cards:[['Lashes for every version of you','Introduce'],['The creative','Everyday'],['The boss','9 to 5'],['The night out','After dark'],['Find your lash','Shop all lashes']],
+    testing:'Whether showing the range as a set of looks sells better than one product on its own, and whether people buy more than one style. It runs in a campaign of its own so the video test is not disturbed, and is planned to carry into Black Friday with the offer added.',
+    creative:['creative/web/ev-01.jpg','creative/web/ev-02.jpg','creative/web/ev-03.jpg'] }
 ];
 
 const CREATIVE = [
@@ -961,7 +1018,12 @@ const CREATIVE = [
   {c:'Product', f:'creative/web/prod-07.jpg', r:'9:16', live:false},
   {c:'Product', f:'creative/web/prod-08.jpg', r:'9:16', live:false},
   {c:'Product', f:'creative/web/prod-09.jpg', r:'9:16', live:false},
-  {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:true}
+  {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:true},
+  {c:'Every Version', f:'creative/web/ev-01.jpg', r:'1:1', live:false},
+  {c:'Every Version', f:'creative/web/ev-02.jpg', r:'1:1', live:false},
+  {c:'Every Version', f:'creative/web/ev-03.jpg', r:'1:1', live:false},
+  {c:'Every Version', f:'creative/web/ev-04.jpg', r:'1:1', live:false},
+  {c:'Every Version', f:'creative/web/ev-05.jpg', r:'1:1', live:false}
 ];
 
 // Purchases by age from Ads Manager (ad set > Breakdown > Age), all women so far.
@@ -985,7 +1047,7 @@ const pct = d => ((toDate(d) - T0) / SPAN) * 100;
 
 /* ---------- routing: every section is a real page ---------- */
 const TITLES = {
-  dashboard:['Dashboard','Perfect Lash live to 14 November \u00b7 new ads testing alongside it'],
+  dashboard:['Dashboard','Video test live \u00b7 new carousel from 15 November'],
   campaigns:['Campaigns','Meta only \u00b7 Google and Pinterest on hold'],
   audience :['Audience','Who we reach \u00b7 who buys \u00b7 what each ad is teaching us'],
   timeline :['Timeline','The first 90 days \u00b7 September \u2013 November 2026'],
@@ -1028,8 +1090,7 @@ const ALL_DONE = !IS_LIVE && CAMPAIGNS.some(c => c.status === 'complete');
   const days = Math.ceil((LAUNCH - new Date()) / 86400000);
   let n, small, big;
   if(IS_LIVE){
-    const since = CAMPAIGNS.filter(c => c.status === 'live' && c.liveSince).map(c => c.liveSince).sort()[0];
-    const start = since ? toDate(since) : LAUNCH;
+    const start = LAUNCH;
     n = Math.max(1, Math.floor((new Date() - start) / 86400000) + 1);
     small = n === 1 ? 'Day live' : 'Days live';
     big = n === 1 ? 'Day since Meta went live' : 'Days since Meta went live';
@@ -1124,19 +1185,25 @@ $('#liveCampaigns').innerHTML = liveOnes.length
   : '<div class="empty-state"><strong style="color:var(--ink)">Nothing is running right now.</strong><br>Both September flights completed on 30 September. Their results are below, and the next flight is being planned from what they showed.</div>';
 if(!liveOnes.length) $('#liveHint').textContent = 'Both September flights complete';
 if(liveOnes.length) $('#liveHint').textContent = liveOnes.length + ' campaign' + (liveOnes.length>1?'s':'') +
-  ' live on Meta \u00b7 funnel stage describes who the creative speaks to; both optimize for website purchases';
+  ' live on Meta \u00b7 funnel stage describes who the creative speaks to; optimized for website purchases';
 // hide the planned section once nothing is left in it
 (function(){
-  const rest = CAMPAIGNS.filter(function(c){ return c.status !== 'live'; });
+  const rest = CAMPAIGNS.filter(function(c){ return c.status === 'complete'; });
   const sec = $('#plannedCampaigns').closest('.sec');
   if(!sec) return;
   if(!rest.length){ sec.hidden = true; return; }
   if(doneOnes.length){
-    sec.querySelector('h3').textContent = 'September flights';
-    sec.querySelector('.hint').textContent = 'Same audience, same objective, same budget \u2014 the creative is what differed';
+    sec.querySelector('h3').textContent = 'Completed flights';
+    sec.querySelector('.hint').textContent = 'Kept for comparison \u2014 every campaign is optimized for website purchases';
   }
 })();
-$('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status !== 'live').map(campCard).join('');
+$('#plannedCampaigns').innerHTML = CAMPAIGNS.filter(c => c.status === 'complete').map(campCard).join('');
+(function(){
+  const next = CAMPAIGNS.filter(c => c.status === 'build' || c.status === 'ready');
+  const sec = $('#nextCampaigns').closest('.sec');
+  if(!next.length){ sec.hidden = true; return; }
+  $('#nextCampaigns').innerHTML = next.map(function(c){ return campCard(c, true); }).join('');
+})();
 $('#plannedCampaigns').className = 'grid g2';
 
 /* ---------- creative library ---------- */
@@ -1266,7 +1333,7 @@ const LANES = [
     {n:'Optimize + scale', s:'2026-10-15', e:'2026-10-31', tone:'sugar',
       items:['Meta optimization','Retarget site visitors','Scale winning creative','Keep testing products + messages']},
     {n:'Meta growth', s:'2026-11-01', e:'2026-11-15', tone:'sugar',
-      items:['Campaign 03 runs to 14 November','Prospecting + retargeting on Meta'],
+      items:['Campaign 03 ran to 10 November','Video test from 4 November','Lashes for every version of you carousel from 15 November'],
       dots:[{d:'2026-11-05', t:'October report + strategy call', w:'Brooke &amp; Abby'}]},
     {n:'Holiday / BFCM push', s:'2026-11-15', e:'2026-11-30', tone:'sugar',
       items:['Retargeting','Scale proven campaigns based on performance']},
@@ -1296,7 +1363,7 @@ const ROADMAP = [
   {when:'Sept 25\u2013Oct 5', phase:'First Optimization', what:['First meaningful performance read','Identify winning creative/audiences','Cut weak performers','Shift budget toward stronger ads']},
   {when:'Oct 1\u201315', phase:'Creative Round 2', what:['Use September data to develop new creative','Product-specific variations','Lifestyle iterations','Retargeting creative']},
   {when:'Oct 15\u201331', phase:'Optimize + Scale', what:['Meta optimization','Retarget site visitors','Scale winning creative','Continue testing products/messages']},
-  {when:'Nov 1\u201315', phase:'Meta Growth', what:['Campaign 03 runs to 14 November','Prospecting + retargeting on Meta']},
+  {when:'Nov 1\u201315', phase:'Meta Growth', what:['Campaign 03 ran to 10 November','Video test from 4 November','Lashes for every version of you carousel from 15 November']},
   {when:'Nov 15\u201330', phase:'Holiday / BFCM Push', what:['Holiday creative','Gift/product messaging','Retargeting','Scale proven campaigns based on performance']},
   {when:'End of Nov', phase:'90-Day Review', ms:true, what:['Full performance analysis','Channel comparison','CPA/ROAS','Winning creative/products/audiences','December recommendations']}
 ];
@@ -1397,16 +1464,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'Perfect Lash \u00b7 Campaign 03 only \u00b7 figures through 4 Nov',
+  window:'Top row Perfect Lash, whole run \u00b7 bottom row the video test, through 10 Nov',
   tiles:[
-    ['Amount spent','$1,128.35','since launch on 30 Sep \u00b7 about $31 a day'],
-    ['Daily budget','$15','lowered from $32 on 4 Nov'],
-    ['Purchases','21','website purchases since 30 Sep'],
-    ['Cost per purchase','$53.73','up from about $50 \u00b7 7-day click'],
-    ['Impressions','11,385','since 30 Sep'],
-    ['Reach','4,714','frequency 2.4'],
-    ['CPM','$99.11','cost per 1,000 impressions'],
-    ['Flight','Day 36 of 46','30 Sep \u2013 14 Nov \u00b7 highest-volume bidding']
+    ['Perfect Lash \u00b7 spent','$1,202.28','30 Sep \u2013 9 Nov \u00b7 about $29 a day'],
+    ['Perfect Lash \u00b7 purchases','21','none after 4 Nov \u00b7 turned off 10 Nov'],
+    ['Perfect Lash \u00b7 cost per purchase','$57.25','up from $53.73 on 4 Nov \u00b7 7-day click'],
+    ['Perfect Lash \u00b7 reach','4,924','12,135 impressions \u00b7 frequency 2.5'],
+    ['Video test \u00b7 spent','$164.66','live since 4 Nov'],
+    ['Video test \u00b7 purchases','1','its first sale, in week one'],
+    ['Video test \u00b7 cost per purchase','$164.66','one sale \u00b7 too early to read'],
+    ['Video test \u00b7 reach','754','1,183 impressions \u00b7 frequency 1.6']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1418,6 +1485,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'10 Nov', by:'Brooke', t:'Perfect Lash is off, the video has its first sale, and a carousel goes live on the 15th',
+   b:'Perfect Lash made no sales after 4 November. It spent about $74 in that time, cost per purchase rose to $57.25, and people had seen it 2.5 times on average, so we turned it off on 10 November rather than run it to the 14th. It finishes at 21 purchases from $1,202.28, a little over half what a sale cost in September, and the static, message-first approach it proved carries into what comes next. The video test (Campaign 04) has made its first sale: one purchase from $164.66, with 1,183 impressions and 754 people reached since 4 November. One sale is too few to read, and the campaign is still in Meta\u2019s learning phase, so it runs untouched to 18 November. Next is a carousel, Lashes for every version of you, built around the full range: five cards showing the creative, the boss and the night out, each wearing Pink Rabbit. It goes live on 15 November in a campaign of its own, so the video test is not disturbed. The artwork is on the Campaigns page.'},
   {d:'4 Nov', by:'Brooke', t:'Correction, and new ads going in alongside',
    b:'A correction first. The figures we posted on 2 November, and the first version of today\u2019s, were read from a date range in Ads Manager that stopped short of the full flight. They understated spend and made it look as though Meta had slowed delivery to about $17 a day and then $5. It had not. The full figures through 4 November are $1,128.35 spent, 21 purchases at $53.73 each, 11,385 impressions and 4,714 people reached, about $31 a day across 36 days. Every number on this page now uses the full flight. What the full figures do show is an ad levelling off: cost per purchase has moved from about $50 to $53.73, Meta marks it learning limited, and frequency is up to 2.4. That is the point to bring in new creative. Perfect Lash\u2019s budget is now $15 a day, and a new campaign tests a new video against a new static ad at about $25 a day, split evenly, with the same audience and settings. Perfect Lash stays live to 14 November as the benchmark, and whichever new ad wins goes into Black Friday.'},
   {d:'2 Nov', by:'Brooke', t:'The week to 1 November: sales held, spend slowed',
