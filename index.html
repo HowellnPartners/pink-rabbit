@@ -551,12 +551,12 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
         <div class="hero-main">
           <p class="eyebrow">Where we are</p>
           <h1>One channel first, <em>done properly</em>.</h1>
-          <p>November&#8217;s tests are in. The <em>Lashes for every version of you</em> carousel brought sales for $46.03 each, the lowest of any campaign so far, while the video cost $152.97 a sale, so Black Friday is built on static ads. It runs 19 to 30 November: 50% off sitewide, any 3 lashes for $60, and free shipping on every order, no code needed. Perfect Lash finished with 22 sales at $55.82 each, against $103.38 a sale in September.</p>
+          <p>Black Friday is live. Two ads run from 20 November to midnight on Cyber Monday, 30 November: 15% off sitewide, and any 3 lash styles for $60, both with free shipping and a surprise gift on orders over $50. They are built on what November proved: the <em>Lashes for every version of you</em> carousel brought sales for $46.03 each, the lowest of any campaign so far, while the video cost $152.97 a sale. Perfect Lash finished with 22 sales at $55.82 each, against $103.38 a sale in September.</p>
           <div class="hero-phases">
             <span class="phase">15&#8211;30 Sep &#183; Flights complete</span>
             <span class="phase">30 Sep &#8211; 10 Nov &#183; Perfect Lash</span>
             <span class="phase">4&#8211;18 Nov &#183; Video + carousel tests</span>
-            <span class="phase now">19&#8211;30 Nov &#183; Black Friday</span>
+            <span class="phase now">20&#8211;30 Nov &#183; Black Friday</span>
             <span class="phase">December &#183; The Holiday Edit</span>
           </div>
         </div>
@@ -569,7 +569,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
           <div class="side-note">
             <p class="eyebrow">Waiting on Pink Rabbit</p>
             <ul>
-              <li><span>Whether 50% off also applies to the 3-for-$60 bundle.</span></li>
+              <li><span>A test purchase, to confirm the 15% off, free shipping and gift all work at checkout, and that the bundle page shows the 3-for-$60 offer.</span></li>
               <li><span>Your last shipping date for Christmas delivery, for the December ads.</span></li>
               <li><span>Your current abandoned-cart and order emails, for us to review.</span></li>
               <li><span>Dates for the January shoot.</span></li>
@@ -824,7 +824,7 @@ td .style-nm{display:flex;align-items:center;gap:10px;font-weight:500}
           <div class="road-row"><div class="when">4&#8211;18 Nov</div><div class="ph">Video test <span class="pill hold">Done</span></div><div class="what">2 sales at $152.97 each. Video does not earn a place at this budget yet.</div></div>
           <div class="road-row"><div class="when">10&#8211;18 Nov</div><div class="ph">Lashes for every version of you <span class="pill hold">Done</span></div><div class="what">3 sales at $46.03 each, the lowest cost per sale so far. The idea carries into Black Friday.</div></div>
           <div class="road-row"><div class="when">Production shoot</div><div class="ph">From imagery to how-to video <span class="pill prep">Planned</span></div><div class="what">Educational content that focuses on the application: mapping the eye, applying step by step, and putting the full look together. It answers the part people worry about before they buy.</div></div>
-          <div class="road-row"><div class="when">19&#8211;30 Nov</div><div class="ph">Black Friday &#8594; Cyber Monday <span class="pill prep">Next</span></div><div class="what">50% off sitewide and any 3 lashes for $60, with free shipping on every order and no code needed. Two static ads, one for each offer, built on what November proved, plus a last-day ad on Cyber Monday. It ends at midnight on 30 November. Ad costs rise for every brand that week, so a temporary bump in cost per purchase is expected.</div></div>
+          <div class="road-row"><div class="when">20&#8211;30 Nov</div><div class="ph">Black Friday &#8594; Cyber Monday <span class="pill live">Live</span></div><div class="what">15% off sitewide and any 3 lash styles for $60, both with free shipping and a surprise gift on orders over $50. Two carousel ads, one for each offer, built on what November proved. On Cyber Monday the copy on both switches to last-day messaging, and it ends at midnight on 30 November. Ad costs rise for every brand that week, so a temporary bump in cost per purchase is expected.</div></div>
           <div class="road-row"><div class="when">December</div><div class="ph">The Holiday Edit <span class="pill prep">Planned</span></div><div class="what">The look moves from Black Friday pink to a luxe holiday treatment across the ads, website header and pop-up: gifting first, then the last shipping days, then the new year.</div></div>
           <div class="road-row ms"><div class="when">End of Nov</div><div class="ph"><i></i>90-day review</div><div class="what">Who bought, which creative sold, what each sale cost, and the plan for December.</div></div>
         </div>
@@ -1003,18 +1003,32 @@ const CAMPAIGNS = [
     testing:'Whether showing the range as a set of looks sells better than one product on its own, and whether people buy more than one style.',
     note:'Takeaway: the lowest cost per sale of any campaign so far, in eight days. Showing the range as looks works, and it is the base for the Black Friday creative.',
     creative:['creative/web/ev-01.jpg','creative/web/ev-02.jpg','creative/web/ev-03.jpg'] },
-  { name:'Black Friday \u2192 Cyber Monday', base:'Campaign 06', platform:'Meta', status:'live', liveSince:'2026-11-19',
+  { name:'Black Friday \u00b7 15% Off Sitewide', base:'Campaign 06', platform:'Meta', status:'live', liveSince:'2026-11-20',
     objective:'Website Sales',
-    funnel:'TOF \u2192 BOF (Offer-led static ads)',
+    funnel:'TOF \u2192 BOF (Offer-led lifestyle carousel)',
     conversion:'Purchase',
-    message:'50% off sitewide \u00b7 any 3 lashes for $60 \u00b7 free shipping on every order, no code needed',
-    creativeFmt:'Two static ads, one for each offer \u00b7 feed and Stories sizes \u00b7 a last-day ad on Cyber Monday',
-    destination:'Sitewide sale: Lash Collection \u00b7 Bundle: the 3-for-$60 bundle page',
-    flight:'12 days \u00b7 19 \u2013 30 Nov \u00b7 ends midnight on Cyber Monday',
-    launch:'Thu 19 Nov',
-    primary:'Have you heard the news? Every Pink Rabbit lash is 50% off, with free shipping on every order. No code needed. Handmade lashes. Effortless application. Black Friday through Cyber Monday.',
-    testing:'Built on what November proved: static, lifestyle-led creative with the offer stated on the image. The two offers run side by side and Meta puts more behind whichever sells. We check results daily and will recommend stopping early if performance drops.',
-    creative:[] }
+    message:'15% off sitewide \u00b7 free shipping and a surprise gift on orders over $50',
+    creativeFmt:'Carousel \u00b7 3 cards \u00b7 feed and Stories sizes \u00b7 Shop Now',
+    destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
+    flight:'11 days \u00b7 20 \u2013 30 Nov \u00b7 ends midnight on Cyber Monday',
+    launch:'Fri 20 Nov',
+    primary:'Have you heard the news? \ud83d\udc97 Your favorite Pink Rabbit lashes are 15% off sitewide, plus free shipping and a surprise gift when you spend over $50. Handmade lashes. Effortless application. Black Friday deals, all week long, through Cyber Monday.',
+    cards:[['Have you heard the news?','15% off sitewide'],['15% off every lash','Black Friday, all week long'],['Free shipping + a gift','On orders over $50']],
+    testing:'Whether a sitewide discount brings in sales at a lower cost than November\u2019s full-price ads, running side by side with the 3-for-$60 bundle so we can see which offer sells. On Cyber Monday the copy switches to last-day messaging. We check results daily.',
+    creative:['creative/web/bf-a-01.jpg','creative/web/bf-a-02.jpg','creative/web/bf-a-03.jpg'] },
+  { name:'Black Friday \u00b7 3 Lash Styles for $60', base:'Campaign 07', platform:'Meta', status:'live', liveSince:'2026-11-20',
+    objective:'Website Sales',
+    funnel:'TOF \u2192 BOF (Offer-led lifestyle carousel)',
+    conversion:'Purchase',
+    message:'Any 3 lash styles for $60 \u00b7 free shipping and a surprise gift included',
+    creativeFmt:'Carousel \u00b7 3 cards \u00b7 feed and Stories sizes \u00b7 Shop Now',
+    destination:'The 3-for-$60 bundle page \u00b7 Shop Now',
+    flight:'11 days \u00b7 20 \u2013 30 Nov \u00b7 ends midnight on Cyber Monday',
+    launch:'Fri 20 Nov',
+    primary:'Three styles. Endless possibilities. \ud83d\udc97 Pick any 3 Pink Rabbit lash styles for $60, with free shipping and a surprise gift included. Handmade lashes. Effortless application. Black Friday deals, all week long, through Cyber Monday.',
+    cards:[['3 lash styles. $60.','Pick your three'],['Lift \u00b7 Lengthen \u00b7 Define','The everyday set'],['Flirty \u00b7 Bold \u00b7 Dramatic','The going-out set']],
+    testing:'Whether a set price for three styles lifts the order value and gets people trying more of the range. It builds on November\u2019s finding that showing the range sells better than one product on its own. On Cyber Monday the copy switches to last-day messaging. We check results daily.',
+    creative:['creative/web/bf-b-01.jpg','creative/web/bf-b-02.jpg','creative/web/bf-b-03.jpg'] }
 ];
 
 const CREATIVE = [
@@ -1033,9 +1047,9 @@ const CREATIVE = [
   {c:'Love At First Lash', f:'creative/web/lafl-04.jpg', r:'1:1', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-05.jpg', r:'1:1', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-06.jpg', r:'1:1', live:false},
-  {c:'Love At First Lash', f:'creative/web/lafl-07.jpg', r:'4:5', live:true},
-  {c:'Love At First Lash', f:'creative/web/lafl-08.jpg', r:'4:5', live:true},
-  {c:'Love At First Lash', f:'creative/web/lafl-09.jpg', r:'4:5', live:true},
+  {c:'Love At First Lash', f:'creative/web/lafl-07.jpg', r:'4:5', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-08.jpg', r:'4:5', live:false},
+  {c:'Love At First Lash', f:'creative/web/lafl-09.jpg', r:'4:5', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-10.jpg', r:'9:16', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-11.jpg', r:'9:16', live:false},
   {c:'Love At First Lash', f:'creative/web/lafl-12.jpg', r:'9:16', live:false},
@@ -1053,7 +1067,7 @@ const CREATIVE = [
   {c:'Main Character', f:'creative/web/mc-12.jpg', r:'9:16', live:false},
   {c:'Main Character', f:'creative/web/mc-13.jpg', r:'4:5', live:false},
   {c:'Main Character', f:'creative/web/mc-14.jpg', r:'9:16', live:false},
-  {c:'Product', f:'creative/web/prod-01.jpg', r:'4:5', live:true},
+  {c:'Product', f:'creative/web/prod-01.jpg', r:'4:5', live:false},
   {c:'Product', f:'creative/web/prod-02.jpg', r:'4:5', live:false},
   {c:'Product', f:'creative/web/prod-03.jpg', r:'1:1', live:false},
   {c:'Product', f:'creative/web/prod-04.jpg', r:'1:1', live:false},
@@ -1062,12 +1076,21 @@ const CREATIVE = [
   {c:'Product', f:'creative/web/prod-07.jpg', r:'9:16', live:false},
   {c:'Product', f:'creative/web/prod-08.jpg', r:'9:16', live:false},
   {c:'Product', f:'creative/web/prod-09.jpg', r:'9:16', live:false},
-  {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:true},
+  {c:'Video', f:'creative/web/vid-01.jpg', v:'creative/web/vid-01.mp4', r:'9:16', live:false},
   {c:'Every Version', f:'creative/web/ev-01.jpg', r:'1:1', live:false},
   {c:'Every Version', f:'creative/web/ev-02.jpg', r:'1:1', live:false},
   {c:'Every Version', f:'creative/web/ev-03.jpg', r:'1:1', live:false},
   {c:'Every Version', f:'creative/web/ev-04.jpg', r:'1:1', live:false},
-  {c:'Every Version', f:'creative/web/ev-05.jpg', r:'1:1', live:false}
+  {c:'Every Version', f:'creative/web/ev-05.jpg', r:'1:1', live:false},
+  {c:'Black Friday \u00b7 15% off', f:'creative/web/bf-a-01.jpg', r:'1:1', live:true},
+  {c:'Black Friday \u00b7 15% off', f:'creative/web/bf-a-02.jpg', r:'4:5', live:true},
+  {c:'Black Friday \u00b7 15% off', f:'creative/web/bf-a-03.jpg', r:'9:16', live:true},
+  {c:'Black Friday \u00b7 3 for $60', f:'creative/web/bf-b-01.jpg', r:'1:1', live:true},
+  {c:'Black Friday \u00b7 3 for $60', f:'creative/web/bf-b-02.jpg', r:'1:1', live:true},
+  {c:'Black Friday \u00b7 3 for $60', f:'creative/web/bf-b-03.jpg', r:'1:1', live:true},
+  {c:'Black Friday \u00b7 3 for $60', f:'creative/web/bf-b-04.jpg', r:'9:16', live:true},
+  {c:'Black Friday \u00b7 3 for $60', f:'creative/web/bf-b-05.jpg', r:'9:16', live:true},
+  {c:'Black Friday \u00b7 3 for $60', f:'creative/web/bf-b-06.jpg', r:'9:16', live:true}
 ];
 
 // Purchases by age from Ads Manager (ad set > Breakdown > Age), all women so far.
@@ -1091,7 +1114,7 @@ const pct = d => ((toDate(d) - T0) / SPAN) * 100;
 
 /* ---------- routing: every section is a real page ---------- */
 const TITLES = {
-  dashboard:['Dashboard','Black Friday 19\u201330 November \u00b7 November tests complete'],
+  dashboard:['Dashboard','Black Friday live \u00b7 20\u201330 November'],
   campaigns:['Campaigns','Meta only \u00b7 Google and Pinterest on hold'],
   audience :['Audience','Who we reach \u00b7 who buys \u00b7 what each ad is teaching us'],
   timeline :['Timeline','The first 90 days \u00b7 September \u2013 November 2026'],
@@ -1389,7 +1412,7 @@ const LANES = [
       items:['Campaign 03 ran to 10 November','Video test 4\u201318 November','Lashes for every version of you carousel 10\u201318 November'],
       dots:[{d:'2026-11-05', t:'October report + strategy call', w:'Brooke &amp; Abby'}]},
     {n:'Holiday / BFCM push', s:'2026-11-15', e:'2026-11-30', tone:'sugar',
-      items:['Black Friday \u2192 Cyber Monday, 19\u201330 November','50% off sitewide \u00b7 any 3 lashes for $60','Free shipping on every order, no code needed']},
+      items:['Black Friday \u2192 Cyber Monday, 20\u201330 November','15% off sitewide \u00b7 any 3 lash styles for $60','Free shipping + a surprise gift on orders over $50']},
     {n:'90-day review', s:'2026-11-23', e:'2026-11-30', when:'End of November', tone:'sugar',
       items:['Full performance analysis','Channel comparison','CPA + ROAS','Winning creative, products + audiences'],
       dots:[{d:'2026-11-30', label:'End of November', t:'90-day review delivered', w:'Brooke &amp; Abby'}]}
@@ -1399,7 +1422,7 @@ const LANES = [
 const MILES = [
   {d:'2026-09-14', l:'09.14 Walkthrough', t:'Client walkthrough + final approval', w:'Dashboard, campaign strategy, creative and reporting \u2014 the day before launch'},
   {d:'2026-09-15', l:'09.15 Meta live', t:'Meta launch \u2014 Product + Lifestyle/Messaging campaigns live', w:'Howell\u2019n'},
-  {d:'2026-11-19', l:'BFCM', t:'Black Friday \u2192 Cyber Monday, 19\u201330 Nov', w:'50% off sitewide \u00b7 any 3 lashes for $60'},
+  {d:'2026-11-20', l:'BFCM', t:'Black Friday \u2192 Cyber Monday, 20\u201330 Nov', w:'15% off sitewide \u00b7 any 3 lash styles for $60'},
   {d:'2026-11-30', l:'90-day review', label:'End of November', t:'90-day review', w:'Full performance analysis, channel comparison, CPA/ROAS, December recommendations'}
 ];
 
@@ -1417,7 +1440,7 @@ const ROADMAP = [
   {when:'Oct 1\u201315', phase:'Creative Round 2', what:['Use September data to develop new creative','Product-specific variations','Lifestyle iterations','Retargeting creative']},
   {when:'Oct 15\u201331', phase:'Optimize + Scale', what:['Meta optimization','Retarget site visitors','Scale winning creative','Continue testing products/messages']},
   {when:'Nov 1\u201318', phase:'Meta Growth', what:['Campaign 03 ran to 10 November','Video test 4\u201318 November','Lashes for every version of you carousel 10\u201318 November']},
-  {when:'Nov 19\u201330', phase:'Black Friday \u2192 Cyber Monday', what:['50% off sitewide','Any 3 lashes for $60','Free shipping on every order, no code needed','Ends midnight on Cyber Monday']},
+  {when:'Nov 20\u201330', phase:'Black Friday \u2192 Cyber Monday', what:['15% off sitewide','Any 3 lash styles for $60','Free shipping + a surprise gift on orders over $50','Ends midnight on Cyber Monday']},
   {when:'End of Nov', phase:'90-Day Review', ms:true, what:['Full performance analysis','Channel comparison','CPA/ROAS','Winning creative/products/audiences','December recommendations']}
 ];
 
@@ -1538,8 +1561,10 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'20 Nov', by:'Brooke', t:'Black Friday is live: two ads, one for each offer',
+   b:'Both Black Friday ads went live on 20 November and run to midnight on Cyber Monday, 30 November. The first is a carousel for 15% off sitewide. It opens on \u201cHave you heard the news?\u201d and links to the lash collection. The second is a carousel for any 3 lash styles for $60, showing the looks side by side (Lift, Lengthen, Define and Flirty, Bold, Dramatic), and links straight to the bundle page. Both come with free shipping and a surprise gift on orders over $50. They run in Facebook and Instagram feeds, Stories and Reels, with artwork sized for each. Each offer has its own campaign so we can see which one sells. On Cyber Monday the copy on both switches to last-day messaging. We check results daily, and the first numbers land here once Meta has a few days of data. The artwork is on the Campaigns page.'},
   {d:'18 Nov', by:'Brooke', t:'The November tests are in, and what they taught us',
-   b:'Both tests finished on 18 November. The carousel, Lashes for every version of you, brought 3 sales at $46.03 each from $138.09 in eight days \u2014 the lowest cost per sale of any campaign so far, ahead of Perfect Lash\u2019s $55.82. The video, The Lash That Changed Her Mind, brought 2 sales at $152.97 each from $305.94. Four takeaways. First, static and lifestyle images beat video again, as they did in September, so Black Friday runs on static ads. Second, showing the range as looks people recognise themselves in works better than one product on its own. Third, ads wear out: Perfect Lash sold well for about six weeks, so fresh creative every four to six weeks keeps costs down. Fourth, the interest is there: Meta counted 63 adds to cart from the carousel against 3 purchases. Some of those carts are counted from people who saw the ad without clicking, but many shoppers still leave before checking out, which abandoned-cart emails and a quick checkout are the usual fix for. Perfect Lash also picked up a late sale and finishes at 22 purchases at $55.82 each. Black Friday goes live on 19 November and runs to midnight on Cyber Monday: 50% off sitewide, any 3 lashes for $60, and free shipping on every order, no code needed.'},
+   b:'Both tests finished on 18 November. The carousel, Lashes for every version of you, brought 3 sales at $46.03 each from $138.09 in eight days \u2014 the lowest cost per sale of any campaign so far, ahead of Perfect Lash\u2019s $55.82. The video, The Lash That Changed Her Mind, brought 2 sales at $152.97 each from $305.94. Four takeaways. First, static and lifestyle images beat video again, as they did in September, so Black Friday runs on static ads. Second, showing the range as looks people recognise themselves in works better than one product on its own. Third, ads wear out: Perfect Lash sold well for about six weeks, so fresh creative every four to six weeks keeps costs down. Fourth, the interest is there: Meta counted 63 adds to cart from the carousel against 3 purchases. Some of those carts are counted from people who saw the ad without clicking, but many shoppers still leave before checking out, which abandoned-cart emails and a quick checkout are the usual fix for. Perfect Lash also picked up a late sale and finishes at 22 purchases at $55.82 each. Black Friday comes next and runs to midnight on Cyber Monday.'},
   {d:'10 Nov', by:'Brooke', t:'Perfect Lash is off, the video has its first sale, and a carousel goes live on the 15th',
    b:'Perfect Lash made no sales after 4 November. It spent about $74 in that time, cost per purchase rose to $57.25, and people had seen it 2.5 times on average, so we turned it off on 10 November rather than run it to the 14th. It finishes at 21 purchases from $1,202.28, a little over half what a sale cost in September, and the static, message-first approach it proved carries into what comes next. The video test (Campaign 04) has made its first sale: one purchase from $164.66, with 1,183 impressions and 754 people reached since 4 November. One sale is too few to read, and the campaign is still in Meta\u2019s learning phase, so it runs untouched to 18 November. Next is a carousel, Lashes for every version of you, built around the full range: five cards showing the creative, the boss and the night out, each wearing Pink Rabbit. It goes live on 15 November in a campaign of its own, so the video test is not disturbed. The artwork is on the Campaigns page.'},
   {d:'4 Nov', by:'Brooke', t:'Correction, and new ads going in alongside',
