@@ -1012,6 +1012,7 @@ const CAMPAIGNS = [
     destination:'Pink Rabbit Lash Collection \u00b7 Shop Now',
     flight:'11 days \u00b7 20 \u2013 30 Nov \u00b7 ends midnight on Cyber Monday',
     launch:'Fri 20 Nov',
+    result:'$149.66 spent \u00b7 1 purchase, a $60 order \u00b7 1,830 impressions, 964 reached \u00b7 first five days, 20\u201324 Nov',
     primary:'Have you heard the news? \ud83d\udc97 Your favorite Pink Rabbit lashes are 15% off sitewide, and all orders ship free. Spend over $50 and get a surprise gift too. Handmade lashes. Effortless application. Black Friday deals, all week long, through Cyber Monday.',
     cards:[['Have you heard the news?','15% off sitewide'],['15% off every lash','Black Friday, all week long'],['All orders ship free','Plus a gift over $50']],
     testing:'Whether a sitewide discount brings in sales at a lower cost than November\u2019s full-price ads, running side by side with the 3-for-$60 bundle so we can see which offer sells. On Cyber Monday the copy switches to last-day messaging. We check results daily.',
@@ -1025,6 +1026,7 @@ const CAMPAIGNS = [
     destination:'The 3-for-$60 bundle page \u00b7 Shop Now',
     flight:'11 days \u00b7 20 \u2013 30 Nov \u00b7 ends midnight on Cyber Monday',
     launch:'Fri 20 Nov',
+    result:'$103.44 spent \u00b7 no purchases yet \u00b7 1,049 impressions, 683 reached \u00b7 first five days, 20\u201324 Nov',
     primary:'Three styles. Endless possibilities. \ud83d\udc97 Pick any 3 Pink Rabbit lash styles for $60, with free shipping and a surprise gift included. Handmade lashes. Effortless application. Black Friday deals, all week long, through Cyber Monday.',
     cards:[['3 lash styles. $60.','Pick your three'],['Lift \u00b7 Lengthen \u00b7 Define','The everyday set'],['Flirty \u00b7 Bold \u00b7 Dramatic','The going-out set']],
     testing:'Whether a set price for three styles lifts the order value and gets people trying more of the range. It builds on November\u2019s finding that showing the range sells better than one product on its own. On Cyber Monday the copy switches to last-day messaging. We check results daily.',
@@ -1543,16 +1545,16 @@ const tipAttr = o => ' data-k="' + (TIPS.push(o) - 1) + '"';
 /* ---------- performance ----------
    Latest pull from Ads Manager. Update these after each report. */
 const METRICS = {
-  window:'November tests, final \u00b7 top row the carousel, bottom row the video',
+  window:'Black Friday, first five days (20\u201324 Nov) \u00b7 top row 15% off, bottom row 3 for $60',
   tiles:[
-    ['Carousel \u00b7 spent','$138.09','10\u201318 Nov \u00b7 8 days'],
-    ['Carousel \u00b7 purchases','3','63 adds to cart'],
-    ['Carousel \u00b7 cost per purchase','$46.03','the lowest of any campaign so far'],
-    ['Carousel \u00b7 reach','1,623','2,856 impressions'],
-    ['Video \u00b7 spent','$305.94','4\u201318 Nov \u00b7 14 days'],
-    ['Video \u00b7 purchases','2','people watched, few bought'],
-    ['Video \u00b7 cost per purchase','$152.97','not used for Black Friday'],
-    ['Video \u00b7 reach','1,194','2,126 impressions']
+    ['15% off \u00b7 spent','$149.66','20\u201324 Nov \u00b7 5 days'],
+    ['15% off \u00b7 purchases','1','a $60 order'],
+    ['15% off \u00b7 cost per purchase','$149.66','one sale, too early to judge'],
+    ['15% off \u00b7 reach','964','1,830 impressions'],
+    ['3 for $60 \u00b7 spent','$103.44','20\u201324 Nov \u00b7 5 days'],
+    ['3 for $60 \u00b7 purchases','0','none yet'],
+    ['3 for $60 \u00b7 cost per purchase','','no sale yet'],
+    ['3 for $60 \u00b7 reach','683','1,049 impressions']
   ]
 };
 $('#metricTiles').innerHTML = METRICS.tiles.map(function(t){
@@ -1564,6 +1566,8 @@ $('#perfHint').textContent = METRICS.window;
 /* ---------- running log ----------
    Newest first. Add an entry each time there is something worth recording. */
 const LOG = [
+  {d:'24 Nov', by:'Brooke', t:'Black Friday, the first five days',
+   b:'A slow start. In the first five days the two ads spent $253.10 and brought one sale: a $60 order from the 15% off ad. The 15% off ad has spent $149.66 and reached 964 people. The 3-for-$60 ad has spent $103.44, reached 683 people and has no sale yet. Both are still in Meta\u2019s learning phase, and the biggest buying days are still ahead: Black Friday itself on 27 November, then the weekend and Cyber Monday. Before then we are checking the setup on both ads: that every card links to pinkrabbitcosmetics.com, that feeds show the square artwork and Stories the tall version, and that the ad text matches the artwork. A test purchase would also confirm the 15% off, free shipping and the 3-for-$60 bundle all work at checkout. We check results daily.'},
   {d:'20 Nov', by:'Brooke', t:'Black Friday is live: two ads, one for each offer',
    b:'Both Black Friday ads went live on 20 November and run to midnight on Cyber Monday, 30 November. The first is a carousel for 15% off sitewide. It opens on \u201cHave you heard the news?\u201d and links to the lash collection. The second is a carousel for any 3 lash styles for $60, showing the looks side by side (Lift, Lengthen, Define and Flirty, Bold, Dramatic), and links straight to the bundle page. All orders ship free, and every order over $50 gets a surprise gift. They run in Facebook and Instagram feeds, Stories and Reels, with artwork sized for each. Each offer has its own campaign so we can see which one sells. On Cyber Monday the copy on both switches to last-day messaging. We check results daily, and the first numbers land here once Meta has a few days of data. The artwork is on the Campaigns page.'},
   {d:'18 Nov', by:'Brooke', t:'The November tests are in, and what they taught us',
